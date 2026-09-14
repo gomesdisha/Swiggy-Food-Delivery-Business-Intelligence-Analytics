@@ -49,18 +49,66 @@
       {
         "name": "orders",
         "columns": [
-          { "name": "order_id", "dataType": "int64", "sourceColumn": "order_id" },
-          { "name": "user_id", "dataType": "int64", "sourceColumn": "user_id" },
-          { "name": "restaurant_id", "dataType": "int64", "sourceColumn": "restaurant_id" },
-          { "name": "partner_id", "dataType": "int64", "sourceColumn": "partner_id" },
-          { "name": "order_date", "dataType": "dateTime", "sourceColumn": "order_date" },
-          { "name": "order_time", "dataType": "string", "sourceColumn": "order_time" },
-          { "name": "order_status", "dataType": "string", "sourceColumn": "order_status" },
-          { "name": "total_amount", "dataType": "decimal", "sourceColumn": "total_amount" },
-          { "name": "discount_amount", "dataType": "decimal", "sourceColumn": "discount_amount" },
-          { "name": "delivery_fee", "dataType": "decimal", "sourceColumn": "delivery_fee" },
-          { "name": "delivery_time_mins", "dataType": "int64", "sourceColumn": "delivery_time_mins" },
-          { "name": "payment_method", "dataType": "string", "sourceColumn": "payment_method" }
+          {
+            "name": "order_id",
+            "dataType": "int64",
+            "sourceColumn": "order_id"
+          },
+          {
+            "name": "user_id",
+            "dataType": "int64",
+            "sourceColumn": "user_id"
+          },
+          {
+            "name": "restaurant_id",
+            "dataType": "int64",
+            "sourceColumn": "restaurant_id"
+          },
+          {
+            "name": "partner_id",
+            "dataType": "int64",
+            "sourceColumn": "partner_id"
+          },
+          {
+            "name": "order_date",
+            "dataType": "dateTime",
+            "sourceColumn": "order_date"
+          },
+          {
+            "name": "order_time",
+            "dataType": "string",
+            "sourceColumn": "order_time"
+          },
+          {
+            "name": "order_status",
+            "dataType": "string",
+            "sourceColumn": "order_status"
+          },
+          {
+            "name": "total_amount",
+            "dataType": "decimal",
+            "sourceColumn": "total_amount"
+          },
+          {
+            "name": "discount_amount",
+            "dataType": "decimal",
+            "sourceColumn": "discount_amount"
+          },
+          {
+            "name": "delivery_fee",
+            "dataType": "decimal",
+            "sourceColumn": "delivery_fee"
+          },
+          {
+            "name": "delivery_time_mins",
+            "dataType": "int64",
+            "sourceColumn": "delivery_time_mins"
+          },
+          {
+            "name": "payment_method",
+            "dataType": "string",
+            "sourceColumn": "payment_method"
+          }
         ],
         "measures": [
           {
@@ -71,17 +119,17 @@
           {
             "name": "Total GMV",
             "expression": "CALCULATE(SUM('orders'[total_amount]), 'orders'[order_status] = \"Delivered\")",
-            "formatString": "₹ #,##0"
+            "formatString": "\u20b9 #,##0"
           },
           {
             "name": "Average Order Value",
             "expression": "DIVIDE([Total GMV], [Total Orders], 0)",
-            "formatString": "₹ #,##0.0"
+            "formatString": "\u20b9 #,##0.0"
           },
           {
             "name": "Swiggy Commission Revenue",
             "expression": "[Total GMV] * 0.21",
-            "formatString": "₹ #,##0"
+            "formatString": "\u20b9 #,##0"
           },
           {
             "name": "Swiggy One Orders",
@@ -113,63 +161,287 @@
             "expression": "DIVIDE(CALCULATE(COUNTROWS('orders'), 'orders'[order_status] = \"Cancelled\"), COUNTROWS('orders'), 0)",
             "formatString": "0.0%"
           }
+        ],
+        "partitions": [
+          {
+            "name": "orders-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:/Desktop/Projects/PowerBI_DA/data/orders.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
         ]
       },
       {
         "name": "users",
         "columns": [
-          { "name": "user_id", "dataType": "int64", "sourceColumn": "user_id" },
-          { "name": "name", "dataType": "string", "sourceColumn": "name" },
-          { "name": "gender", "dataType": "string", "sourceColumn": "gender" },
-          { "name": "age", "dataType": "int64", "sourceColumn": "age" },
-          { "name": "city", "dataType": "string", "sourceColumn": "city" },
-          { "name": "signup_date", "dataType": "dateTime", "sourceColumn": "signup_date" },
-          { "name": "is_swiggy_one", "dataType": "int64", "sourceColumn": "is_swiggy_one" }
+          {
+            "name": "user_id",
+            "dataType": "int64",
+            "sourceColumn": "user_id"
+          },
+          {
+            "name": "name",
+            "dataType": "string",
+            "sourceColumn": "name"
+          },
+          {
+            "name": "gender",
+            "dataType": "string",
+            "sourceColumn": "gender"
+          },
+          {
+            "name": "age",
+            "dataType": "int64",
+            "sourceColumn": "age"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city"
+          },
+          {
+            "name": "signup_date",
+            "dataType": "dateTime",
+            "sourceColumn": "signup_date"
+          },
+          {
+            "name": "is_swiggy_one",
+            "dataType": "int64",
+            "sourceColumn": "is_swiggy_one"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "users-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:/Desktop/Projects/PowerBI_DA/data/users.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
         ]
       },
       {
         "name": "restaurants",
         "columns": [
-          { "name": "restaurant_id", "dataType": "int64", "sourceColumn": "restaurant_id" },
-          { "name": "restaurant_name", "dataType": "string", "sourceColumn": "restaurant_name" },
-          { "name": "city", "dataType": "string", "sourceColumn": "city" },
-          { "name": "cuisine", "dataType": "string", "sourceColumn": "cuisine" },
-          { "name": "rating", "dataType": "decimal", "sourceColumn": "rating" },
-          { "name": "rating_count", "dataType": "int64", "sourceColumn": "rating_count" },
-          { "name": "cost_for_two", "dataType": "decimal", "sourceColumn": "cost_for_two" },
-          { "name": "swiggy_url", "dataType": "string", "sourceColumn": "swiggy_url" }
+          {
+            "name": "restaurant_id",
+            "dataType": "int64",
+            "sourceColumn": "restaurant_id"
+          },
+          {
+            "name": "restaurant_name",
+            "dataType": "string",
+            "sourceColumn": "restaurant_name"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city"
+          },
+          {
+            "name": "cuisine",
+            "dataType": "string",
+            "sourceColumn": "cuisine"
+          },
+          {
+            "name": "rating",
+            "dataType": "decimal",
+            "sourceColumn": "rating"
+          },
+          {
+            "name": "rating_count",
+            "dataType": "int64",
+            "sourceColumn": "rating_count"
+          },
+          {
+            "name": "cost_for_two",
+            "dataType": "decimal",
+            "sourceColumn": "cost_for_two"
+          },
+          {
+            "name": "swiggy_url",
+            "dataType": "string",
+            "sourceColumn": "swiggy_url"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "restaurants-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:/Desktop/Projects/PowerBI_DA/data/restaurants.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
         ]
       },
       {
         "name": "menu_items",
         "columns": [
-          { "name": "item_id", "dataType": "int64", "sourceColumn": "item_id" },
-          { "name": "item_name", "dataType": "string", "sourceColumn": "item_name" },
-          { "name": "menu_category", "dataType": "string", "sourceColumn": "menu_category" },
-          { "name": "price", "dataType": "decimal", "sourceColumn": "price" },
-          { "name": "veg_or_non_veg", "dataType": "string", "sourceColumn": "veg_or_non_veg" }
+          {
+            "name": "item_id",
+            "dataType": "int64",
+            "sourceColumn": "item_id"
+          },
+          {
+            "name": "item_name",
+            "dataType": "string",
+            "sourceColumn": "item_name"
+          },
+          {
+            "name": "menu_category",
+            "dataType": "string",
+            "sourceColumn": "menu_category"
+          },
+          {
+            "name": "price",
+            "dataType": "decimal",
+            "sourceColumn": "price"
+          },
+          {
+            "name": "veg_or_non_veg",
+            "dataType": "string",
+            "sourceColumn": "veg_or_non_veg"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "menu_items-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:/Desktop/Projects/PowerBI_DA/data/menu_items.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
         ]
       },
       {
         "name": "delivery_partners",
         "columns": [
-          { "name": "partner_id", "dataType": "int64", "sourceColumn": "partner_id" },
-          { "name": "partner_name", "dataType": "string", "sourceColumn": "partner_name" },
-          { "name": "city", "dataType": "string", "sourceColumn": "city" },
-          { "name": "vehicle_type", "dataType": "string", "sourceColumn": "vehicle_type" },
-          { "name": "rating", "dataType": "decimal", "sourceColumn": "rating" }
+          {
+            "name": "partner_id",
+            "dataType": "int64",
+            "sourceColumn": "partner_id"
+          },
+          {
+            "name": "partner_name",
+            "dataType": "string",
+            "sourceColumn": "partner_name"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city"
+          },
+          {
+            "name": "vehicle_type",
+            "dataType": "string",
+            "sourceColumn": "vehicle_type"
+          },
+          {
+            "name": "rating",
+            "dataType": "decimal",
+            "sourceColumn": "rating"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "delivery_partners-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:/Desktop/Projects/PowerBI_DA/data/delivery_partners.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
         ]
       },
       {
         "name": "order_items",
         "columns": [
-          { "name": "order_item_id", "dataType": "int64", "sourceColumn": "order_item_id" },
-          { "name": "order_id", "dataType": "int64", "sourceColumn": "order_id" },
-          { "name": "item_id", "dataType": "int64", "sourceColumn": "item_id" },
-          { "name": "item_name", "dataType": "string", "sourceColumn": "item_name" },
-          { "name": "price", "dataType": "decimal", "sourceColumn": "price" },
-          { "name": "quantity", "dataType": "int64", "sourceColumn": "quantity" },
-          { "name": "line_total", "dataType": "decimal", "sourceColumn": "line_total" }
+          {
+            "name": "order_item_id",
+            "dataType": "int64",
+            "sourceColumn": "order_item_id"
+          },
+          {
+            "name": "order_id",
+            "dataType": "int64",
+            "sourceColumn": "order_id"
+          },
+          {
+            "name": "item_id",
+            "dataType": "int64",
+            "sourceColumn": "item_id"
+          },
+          {
+            "name": "item_name",
+            "dataType": "string",
+            "sourceColumn": "item_name"
+          },
+          {
+            "name": "price",
+            "dataType": "decimal",
+            "sourceColumn": "price"
+          },
+          {
+            "name": "quantity",
+            "dataType": "int64",
+            "sourceColumn": "quantity"
+          },
+          {
+            "name": "line_total",
+            "dataType": "decimal",
+            "sourceColumn": "line_total"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "order_items-Partition",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"D:/Desktop/Projects/PowerBI_DA/data/order_items.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])",
+                "in",
+                "    #\"Promoted Headers\""
+              ]
+            }
+          }
         ]
       }
     ]
