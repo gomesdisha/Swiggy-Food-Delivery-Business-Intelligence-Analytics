@@ -1,0 +1,64 @@
+table restaurants
+	lineageTag: 3282222f-5230-4adf-ba6e-8d6d38d3eb86
+
+	column restaurant_id
+		dataType: string
+		lineageTag: 7733e1f0-e008-4f65-b469-f72be5ccafce
+		summarizeBy: none
+		sourceColumn: restaurant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column restaurant_name
+		dataType: string
+		lineageTag: e71d74ae-f854-4e12-98b5-da62f5defd5a
+		sourceColumn: restaurant_name
+
+	column city
+		dataType: string
+		lineageTag: 505f6db3-87b1-4989-bd14-2ab09263cfc9
+		sourceColumn: city
+
+	column cuisine
+		dataType: string
+		lineageTag: 74403115-ee83-4caa-96f4-7f743c8e8a8c
+		sourceColumn: cuisine
+
+	column rating
+		dataType: string
+		lineageTag: f9f6379c-a616-4e0e-8986-c1499c84200d
+		summarizeBy: none
+		sourceColumn: rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating_count
+		dataType: string
+		lineageTag: 2fc0e8a6-84b7-4aef-b258-9dbfcb5a57f9
+		summarizeBy: none
+		sourceColumn: rating_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_for_two
+		dataType: string
+		lineageTag: b6ff2047-784b-4ab8-8bf9-6747c26ce383
+		summarizeBy: none
+		sourceColumn: cost_for_two
+
+		annotation SummarizationSetBy = Automatic
+
+	column swiggy_url
+		dataType: string
+		lineageTag: 81618034-78a7-4508-b85e-83438abe21ca
+		sourceColumn: swiggy_url
+
+	partition restaurants-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:/Desktop/Projects/PowerBI_DA/data/restaurants.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+

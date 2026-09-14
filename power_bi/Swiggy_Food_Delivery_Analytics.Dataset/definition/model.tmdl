@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["orders","users","restaurants","menu_items","delivery_partners","order_items"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table orders
+ref table users
+ref table restaurants
+ref table menu_items
+ref table delivery_partners
+ref table order_items
+

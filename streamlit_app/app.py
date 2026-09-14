@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 # -----------------------------------------------------------------------------
-# 1. Page Configuration & High-End Swiggy UI/UX Theme
+# 1. Page Configuration & Custom CSS (Matching HTML BI Dashboard Exactly)
 # -----------------------------------------------------------------------------
 st.set_page_config(
     page_title="Swiggy BI — Executive Analytics & Decision Support",
@@ -15,46 +15,58 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS matching the polished HTML Dashboard styling
+# Custom Styling matching swiggy_bi_dashboard.html
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
     
-    html, body, [class*="css"] {
-        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    * {
+        font-family: 'Plus Jakarta Sans', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     }
     
-    .main {
-        background-color: #F8FAFC;
+    .stApp {
+        background-color: #F3F4F6;
+    }
+    
+    /* Dark Sidebar styling matching HTML Dashboard */
+    [data-testid="stSidebar"] {
+        background-color: #1F2937;
+        color: #F9FAFB;
+    }
+    [data-testid="stSidebar"] .stMarkdown, [data-testid="stSidebar"] label, [data-testid="stSidebar"] span {
+        color: #E5E7EB !important;
+    }
+    [data-testid="stSidebar"] hr {
+        border-color: rgba(255, 255, 255, 0.12) !important;
     }
     
     /* Top Header Bar */
-    .header-container {
+    .header-bar {
+        background: #FFFFFF;
+        border: 1px solid #E5E7EB;
+        border-radius: 10px;
+        padding: 16px 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: #FFFFFF;
-        padding: 16px 24px;
-        border-radius: 12px;
-        border: 1px solid #E2E8F0;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-        margin-bottom: 20px;
     }
-    .header-title {
+    .header-bar h1 {
         font-size: 22px;
         font-weight: 800;
-        color: #0F172A;
+        color: #111827;
         margin: 0;
         display: flex;
         align-items: center;
         gap: 10px;
     }
-    .header-subtitle {
+    .header-bar p {
         font-size: 13px;
-        color: #64748B;
-        margin-top: 4px;
+        color: #6B7280;
+        margin: 4px 0 0 0;
     }
-    .badge-status {
+    .status-badge {
         background: #DEF7EC;
         color: #03543F;
         padding: 6px 14px;
@@ -66,154 +78,135 @@ st.markdown("""
         align-items: center;
         gap: 6px;
     }
-
-    /* KPI Cards */
+    
+    /* 4-KPI Grid matching HTML dashboard */
     .kpi-card {
         background: #FFFFFF;
-        border-radius: 12px;
-        padding: 18px 20px;
-        border: 1px solid #E2E8F0;
-        border-left: 5px solid #FC8019;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        border-radius: 8px;
+        padding: 16px 20px;
+        border: 1px solid #E5E7EB;
+        border-left: 4px solid #FC8019;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     .kpi-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
-    .kpi-header {
+    .kpi-top {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 6px;
     }
     .kpi-title {
-        font-size: 11px;
-        font-weight: 700;
-        color: #64748B;
+        font-size: 11.5px;
         text-transform: uppercase;
-        letter-spacing: 0.6px;
+        font-weight: 700;
+        color: #6B7280;
+        letter-spacing: 0.5px;
     }
     .kpi-icon {
+        color: #FC8019;
         font-size: 18px;
-        opacity: 0.85;
     }
-    .kpi-value {
-        font-size: 26px;
+    .kpi-val {
+        font-size: 25px;
         font-weight: 800;
-        color: #0F172A;
-        margin: 4px 0 8px 0;
+        color: #111827;
+        margin: 2px 0 6px 0;
         letter-spacing: -0.5px;
     }
-    .kpi-footer {
+    .kpi-foot {
         display: flex;
         align-items: center;
         gap: 6px;
         font-size: 11.5px;
     }
-    .pill-green {
+    .badge-pill-green {
         background: #DEF7EC;
         color: #03543F;
         padding: 2px 8px;
         border-radius: 9999px;
         font-weight: 700;
     }
-    .pill-orange {
+    .badge-pill-orange {
         background: #FFF4E8;
         color: #C2410C;
         padding: 2px 8px;
         border-radius: 9999px;
         font-weight: 700;
     }
-    .pill-red {
+    .badge-pill-red {
         background: #FDE8E8;
         color: #9B1C1C;
         padding: 2px 8px;
         border-radius: 9999px;
         font-weight: 700;
     }
-    .pill-muted {
-        color: #64748B;
+    .badge-pill-muted {
+        color: #6B7280;
         font-weight: 500;
     }
-
-    /* Tab Styling */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
-        border-bottom: 2px solid #E2E8F0;
-        padding-bottom: 0px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        font-weight: 700;
-        color: #475569;
-        padding: 10px 20px;
-        font-size: 14px;
-        border-radius: 8px 8px 0 0;
-    }
-    .stTabs [aria-selected="true"] {
-        color: #FC8019 !important;
-        background-color: #FFF4E8 !important;
-        border-bottom: 3px solid #FC8019 !important;
-    }
-
-    /* Section Card Wrappers */
-    .section-box {
+    
+    /* Visual Container Boxes */
+    .visual-box {
         background: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        border-radius: 12px;
+        border: 1px solid #E5E7EB;
+        border-radius: 10px;
         padding: 18px 20px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
-        margin-bottom: 14px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        margin-bottom: 16px;
     }
-    .section-header {
-        font-size: 15px;
+    .visual-header {
+        font-size: 14.5px;
         font-weight: 700;
-        color: #1E293B;
-        margin-bottom: 4px;
+        color: #1F2937;
+        margin-bottom: 2px;
         display: flex;
         align-items: center;
         gap: 8px;
     }
-    .section-caption {
+    .visual-sub {
         font-size: 12px;
-        color: #64748B;
-        margin-bottom: 6px;
+        color: #6B7280;
+        margin-bottom: 12px;
     }
-
-    /* Custom HTML Table */
-    .custom-table {
+    
+    /* HTML Table styling */
+    .pbi-table {
         width: 100%;
         border-collapse: collapse;
         font-size: 12.5px;
         text-align: left;
     }
-    .custom-table th {
-        background: #F8FAFC;
-        color: #475569;
+    .pbi-table th {
+        background: #F9FAFB;
+        color: #4B5563;
         font-weight: 700;
         text-transform: uppercase;
         font-size: 11px;
         letter-spacing: 0.5px;
         padding: 10px 14px;
-        border-bottom: 2px solid #E2E8F0;
+        border-bottom: 2px solid #E5E7EB;
     }
-    .custom-table td {
+    .pbi-table td {
         padding: 10px 14px;
-        border-bottom: 1px solid #F1F5F9;
-        color: #1E293B;
+        border-bottom: 1px solid #F3F4F6;
+        color: #1F2937;
     }
-    .custom-table tr:hover {
-        background-color: #F8FAFC;
+    .pbi-table tr:hover {
+        background-color: #F9FAFB;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # -----------------------------------------------------------------------------
-# 2. Data Loading & Preparation
+# 2. Data Loading & Preparation (Cached)
 # -----------------------------------------------------------------------------
 @st.cache_data
 def load_swiggy_data():
@@ -228,6 +221,7 @@ def load_swiggy_data():
     # Pre-process dates & times
     orders["order_date"] = pd.to_datetime(orders["order_date"])
     orders["month_year"] = orders["order_date"].dt.strftime("%Y-%m")
+    orders["month_name"] = orders["order_date"].dt.strftime("%b")
     orders["hour"] = pd.to_datetime(orders["order_time"], format="%H:%M:%S").dt.hour
     
     # Merge rich relational context
@@ -240,181 +234,183 @@ def load_swiggy_data():
 df_raw = load_swiggy_data()
 
 # -----------------------------------------------------------------------------
-# 3. Interactive Sidebar Slicers & Filters
+# 3. Sidebar Navigation & Slicers (Power BI Dark Theme)
 # -----------------------------------------------------------------------------
 with st.sidebar:
-    st.image("https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Swiggy_logo.svg/1200px-Swiggy_logo.svg.png", width=170)
-    st.markdown("### 🎛️ Executive Slicers")
-    st.caption("Dynamic filtering across 15,000 orders & 7 Indian metro markets.")
+    st.image("https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Swiggy_logo.svg/1200px-Swiggy_logo.svg.png", width=160)
+    st.markdown("<div style='font-size: 11px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 8px;'>Power BI Executive Suite</div>", unsafe_allow_html=True)
+    st.markdown("---")
+    
+    # Page Navigation (matching HTML report switcher)
+    st.markdown("<div style='font-size: 11px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;'>Report Pages</div>", unsafe_allow_html=True)
+    selected_page = st.radio(
+        "Navigation",
+        options=[
+            "📊 Executive Overview",
+            "👑 Swiggy One Loyalty",
+            "⏱️ Delivery & Logistics"
+        ],
+        label_visibility="collapsed"
+    )
+    
+    st.markdown("---")
+    st.markdown("<div style='font-size: 11px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 8px;'>Interactive Slicers</div>", unsafe_allow_html=True)
     
     # City Slicer
     all_cities = sorted(df_raw["city"].dropna().unique().tolist())
     selected_cities = st.multiselect("Select Metro Cities", options=all_cities, default=all_cities)
     
     # Swiggy One Membership Slicer
-    membership_opt = st.radio("Customer Membership Tier", options=["All Customers", "Swiggy One Only", "Regular Users Only"])
+    membership_opt = st.radio("Customer Membership", options=["All Customers", "Swiggy One Members", "Regular Users"])
     
     # Order Status Slicer
-    status_opt = st.selectbox("Order Fulfillment Status", options=["Delivered Orders Only", "All Orders (Delivered + Cancelled)", "Cancelled Only"])
+    status_opt = st.selectbox("Order Fulfillment", options=["Delivered Orders Only", "All Orders (Delivered + Cancelled)", "Cancelled Only"])
     
     # Date Range Slicer
     min_date = df_raw["order_date"].min().date()
     max_date = df_raw["order_date"].max().date()
-    date_range = st.date_input("Date Range (FY 2024)", value=[min_date, max_date], min_value=min_date, max_value=max_date)
+    date_range = st.date_input("Reporting Date Range (FY24)", value=[min_date, max_date], min_value=min_date, max_value=max_date)
     
     st.markdown("---")
-    
-    # Apply Filters Dynamically
-    df_filtered = df_raw.copy()
-    if selected_cities:
-        df_filtered = df_filtered[df_filtered["city"].isin(selected_cities)]
-    if membership_opt == "Swiggy One Only":
-        df_filtered = df_filtered[df_filtered["is_swiggy_one"] == 1]
-    elif membership_opt == "Regular Users Only":
-        df_filtered = df_filtered[df_filtered["is_swiggy_one"] == 0]
-    if status_opt == "Delivered Orders Only":
-        df_filtered = df_filtered[df_filtered["order_status"] == "Delivered"]
-    elif status_opt == "Cancelled Only":
-        df_filtered = df_filtered[df_filtered["order_status"] == "Cancelled"]
-    if len(date_range) == 2:
-        start_d, end_d = date_range
-        df_filtered = df_filtered[(df_filtered["order_date"].dt.date >= start_d) & (df_filtered["order_date"].dt.date <= end_d)]
-        
-    st.info(f"📊 **Filtered View:**\n\n• Orders: **{len(df_filtered):,}** / {len(df_raw):,}\n• Active Cities: **{len(selected_cities)}**\n• Source: **MySQL 8.0 (`swiggy_db`)**")
+    st.markdown("""
+    <div style="font-size: 11.5px; color: #9CA3AF; display: flex; flex-direction: column; gap: 4px;">
+        <div><b>Connected:</b> MySQL 8.0 (<code>swiggy_db</code>)</div>
+        <div><b>Model:</b> Star Schema • 6 Tables</div>
+        <div><b>Author:</b> Disha Gomes</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 # -----------------------------------------------------------------------------
-# 4. Top Header & Real-Time Dynamic KPI Bar
+# 4. Apply Filters Dynamically
 # -----------------------------------------------------------------------------
+df_filtered = df_raw.copy()
+if selected_cities:
+    df_filtered = df_filtered[df_filtered["city"].isin(selected_cities)]
+if membership_opt == "Swiggy One Members":
+    df_filtered = df_filtered[df_filtered["is_swiggy_one"] == 1]
+elif membership_opt == "Regular Users":
+    df_filtered = df_filtered[df_filtered["is_swiggy_one"] == 0]
+if status_opt == "Delivered Orders Only":
+    df_filtered = df_filtered[df_filtered["order_status"] == "Delivered"]
+elif status_opt == "Cancelled Only":
+    df_filtered = df_filtered[df_filtered["order_status"] == "Cancelled"]
+if len(date_range) == 2:
+    start_d, end_d = date_range
+    df_filtered = df_filtered[(df_filtered["order_date"].dt.date >= start_d) & (df_filtered["order_date"].dt.date <= end_d)]
+
+# Calculate Core Metrics
 total_orders = len(df_filtered)
 total_gmv = df_filtered["total_amount"].sum()
 delivered_orders = len(df_filtered[df_filtered["order_status"] == "Delivered"])
+delivered_df = df_filtered[df_filtered["order_status"] == "Delivered"]
 aov = (total_gmv / delivered_orders) if delivered_orders > 0 else 0
 swiggy_one_orders = len(df_filtered[df_filtered["is_swiggy_one"] == 1])
 swiggy_one_share = (swiggy_one_orders / total_orders * 100) if total_orders > 0 else 0
-deliv_times = df_filtered[df_filtered["order_status"] == "Delivered"]["delivery_time_mins"]
+deliv_times = delivered_df["delivery_time_mins"]
 avg_deliv_time = deliv_times.mean() if not deliv_times.empty else 0
 ontime_orders = (deliv_times <= 35).sum()
 ontime_rate = (ontime_orders / len(deliv_times) * 100) if len(deliv_times) > 0 else 0
-
-st.markdown(f"""
-<div class="header-container">
-    <div>
-        <h1 class="header-title">🛵 Swiggy Food Delivery & Marketplace BI</h1>
-        <div class="header-subtitle">Executive Decision-Support Platform • 7 Metro Markets • FY 2024 Analytics</div>
-    </div>
-    <div>
-        <span class="badge-status">
-            <span style="height: 8px; width: 8px; background: #10B981; border-radius: 50%; display: inline-block;"></span>
-            Connected: MySQL 8.0 Live
-        </span>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-# 5 High-Impact KPI Metric Cards
-kpi1, kpi2, kpi3, kpi4, kpi5 = st.columns(5)
-
-with kpi1:
-    st.markdown(f"""
-    <div class="kpi-card">
-        <div class="kpi-header">
-            <span class="kpi-title">Gross Merchandise Value</span>
-            <span class="kpi-icon">💰</span>
-        </div>
-        <div class="kpi-value">₹ {total_gmv/1e7:,.2f} Cr</div>
-        <div class="kpi-footer">
-            <span class="pill-green">↑ +14.8%</span>
-            <span class="pill-muted">vs budget</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with kpi2:
-    st.markdown(f"""
-    <div class="kpi-card">
-        <div class="kpi-header">
-            <span class="kpi-title">Delivered Orders</span>
-            <span class="kpi-icon">📦</span>
-        </div>
-        <div class="kpi-value">{delivered_orders:,}</div>
-        <div class="kpi-footer">
-            <span class="pill-green">{(delivered_orders/total_orders*100 if total_orders else 0):.1f}%</span>
-            <span class="pill-muted">fulfillment rate</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with kpi3:
-    st.markdown(f"""
-    <div class="kpi-card">
-        <div class="kpi-header">
-            <span class="kpi-title">Average Order Value</span>
-            <span class="kpi-icon">🏷️</span>
-        </div>
-        <div class="kpi-value">₹ {aov:.1f}</div>
-        <div class="kpi-footer">
-            <span class="pill-orange">₹ 512</span>
-            <span class="pill-muted">Delhi NCR lead</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with kpi4:
-    st.markdown(f"""
-    <div class="kpi-card">
-        <div class="kpi-header">
-            <span class="kpi-title">Swiggy One Share</span>
-            <span class="kpi-icon">👑</span>
-        </div>
-        <div class="kpi-value">{swiggy_one_share:.1f}%</div>
-        <div class="kpi-footer">
-            <span class="pill-green">2.6x</span>
-            <span class="pill-muted">order frequency</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with kpi5:
-    st.markdown(f"""
-    <div class="kpi-card">
-        <div class="kpi-header">
-            <span class="kpi-title">On-Time SLA Rate</span>
-            <span class="kpi-icon">⚡</span>
-        </div>
-        <div class="kpi-value">{ontime_rate:.1f}%</div>
-        <div class="kpi-footer">
-            <span class="pill-green">≤ 35m</span>
-            <span class="pill-muted">avg: {avg_deliv_time:.1f}m</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
+severe_delays = (deliv_times > 40).sum()
+severe_delay_rate = (severe_delays / len(deliv_times) * 100) if len(deliv_times) > 0 else 0
 
 # -----------------------------------------------------------------------------
-# 5. Multi-Tab Visual Storytelling
+# 5. Page-Specific Rendering
 # -----------------------------------------------------------------------------
-tab1, tab2, tab3 = st.tabs([
-    "📊 Executive Revenue Pulse", 
-    "👑 Swiggy One & Customer Loyalty", 
-    "⏱️ Delivery Logistics & SLA Control Tower"
-])
 
-# -----------------------------------------------------------------------------
-# TAB 1: EXECUTIVE REVENUE PULSE
-# -----------------------------------------------------------------------------
-with tab1:
-    col_t1_left, col_t1_right = st.columns([3, 2])
+# =============================================================================
+# PAGE 1: EXECUTIVE PERFORMANCE OVERVIEW
+# =============================================================================
+if selected_page == "📊 Executive Overview":
+    st.markdown("""
+    <div class="header-bar">
+        <div>
+            <h1>📊 Executive Performance Overview</h1>
+            <p>Marketplace Gross Sales, Average Order Value & City Benchmarks (FY24)</p>
+        </div>
+        <div>
+            <span class="status-badge">
+                <span style="height: 8px; width: 8px; background: #10B981; border-radius: 50%; display: inline-block;"></span>
+                Connected: MySQL 8.0 Live
+            </span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     
-    with col_t1_left:
-        st.markdown("""
-        <div class="section-box">
-            <div class="section-header">📈 Monthly Gross Sales (GMV) Trend & MoM Run-Rate</div>
-            <div class="section-caption">Monthly sales performance in ₹ Lakhs with month-over-month growth trajectory.</div>
+    # 4 Executive KPI Cards
+    k1, k2, k3, k4 = st.columns(4)
+    with k1:
+        st.markdown(f"""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Total GMV (Food Sales)</span>
+                <span class="kpi-icon">₹</span>
+            </div>
+            <div class="kpi-val">₹ {total_gmv/1e7:,.2f} Cr</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-green">↑ +14.8%</span>
+                <span class="badge-pill-muted">vs budget</span>
+            </div>
         </div>
         """, unsafe_allow_html=True)
         
-        monthly_df = df_filtered[df_filtered["order_status"] == "Delivered"].groupby("month_year").agg(
+    with k2:
+        st.markdown(f"""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Delivered Orders</span>
+                <span class="kpi-icon">📦</span>
+            </div>
+            <div class="kpi-val">{delivered_orders:,}</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-green">{(delivered_orders/total_orders*100 if total_orders else 0):.1f}%</span>
+                <span class="badge-pill-muted">fulfillment rate</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with k3:
+        st.markdown(f"""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Average Order Value</span>
+                <span class="kpi-icon">🏷️</span>
+            </div>
+            <div class="kpi-val">₹ {aov:.1f}</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-orange">₹ 512</span>
+                <span class="badge-pill-muted">Delhi NCR lead</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with k4:
+        st.markdown(f"""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Swiggy One Share</span>
+                <span class="kpi-icon">👑</span>
+            </div>
+            <div class="kpi-val">{swiggy_one_share:.1f}%</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-green">2.6x</span>
+                <span class="badge-pill-muted">order frequency</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
+    
+    # Visuals Row 1: Monthly GMV Trend + Payment Method Donut
+    c1, c2 = st.columns([3, 2])
+    with c1:
+        st.markdown("""
+        <div class="visual-box">
+            <div class="visual-header">📈 Monthly Gross Sales (GMV) Trend & Seasonality</div>
+            <div class="visual-sub">Total sales volume in ₹ Lakhs per month across active metro clusters.</div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        monthly_df = delivered_df.groupby("month_year").agg(
             GMV=("total_amount", "sum"),
             Orders=("order_id", "count")
         ).reset_index()
@@ -434,24 +430,22 @@ with tab1:
                 textposition='outside',
                 marker_line_color='#EA580C',
                 marker_line_width=1.5,
-                opacity=0.9
+                opacity=0.92
             )
             fig_monthly.update_layout(
                 template="plotly_white",
                 height=340,
-                margin=dict(l=10, r=10, t=20, b=10),
+                margin=dict(l=10, r=10, t=10, b=10),
                 xaxis=dict(showgrid=False, title=None),
-                yaxis=dict(showgrid=True, gridcolor="#F1F5F9", title="GMV (₹ Lakhs)")
+                yaxis=dict(showgrid=True, gridcolor="#F3F4F6", title="GMV (₹ Lakhs)")
             )
-            st.plotly_chart(fig_monthly, use_container_width=True)
-        else:
-            st.warning("No delivered order data matching current slicer selections.")
+            st.plotly_chart(fig_monthly, use_container_width=True, config={"displayModeBar": False})
             
-    with col_t1_right:
+    with c2:
         st.markdown("""
-        <div class="section-box">
-            <div class="section-header">💳 Payment Channel Distribution</div>
-            <div class="section-caption">Order volume share across digital UPI, cards, and Cash on Delivery.</div>
+        <div class="visual-box">
+            <div class="visual-header">💳 Payment Gateway Channel Share</div>
+            <div class="visual-sub">Order volume distribution across UPI, credit/debit cards, and COD.</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -465,35 +459,27 @@ with tab1:
                 color="payment_method",
                 color_discrete_map={
                     "UPI": "#FC8019",
-                    "Credit Card": "#1E293B",
+                    "Credit Card": "#1F2937",
                     "Debit Card": "#3B82F6",
                     "Net Banking": "#8B5CF6",
                     "Cash on Delivery": "#EF4444"
                 }
             )
             fig_pay.update_traces(textposition='inside', textinfo='percent+label', marker=dict(line=dict(color='#FFFFFF', width=2)))
-            fig_pay.update_layout(
-                template="plotly_white",
-                height=340,
-                showlegend=False,
-                margin=dict(l=10, r=10, t=10, b=10)
-            )
-            st.plotly_chart(fig_pay, use_container_width=True)
+            fig_pay.update_layout(template="plotly_white", height=340, showlegend=False, margin=dict(l=10, r=10, t=10, b=10))
+            st.plotly_chart(fig_pay, use_container_width=True, config={"displayModeBar": False})
 
-    col_t1_b1, col_t1_b2 = st.columns(2)
-    
-    with col_t1_b1:
+    # Visuals Row 2: City Revenue Benchmark + Top Cuisines
+    c3, c4 = st.columns(2)
+    with c3:
         st.markdown("""
-        <div class="section-box">
-            <div class="section-header">🏙️ City Revenue Benchmark (₹ Lakhs)</div>
-            <div class="section-caption">Bangalore, Mumbai, and Delhi lead overall metro market share.</div>
+        <div class="visual-box">
+            <div class="visual-header">🏙️ City Revenue Benchmark (₹ Lakhs)</div>
+            <div class="visual-sub">Bangalore, Mumbai, and Delhi NCR command over 50% of marketplace GMV.</div>
         </div>
         """, unsafe_allow_html=True)
         
-        city_rev = df_filtered[df_filtered["order_status"] == "Delivered"].groupby("city").agg(
-            GMV=("total_amount", "sum")
-        ).reset_index().sort_values(by="GMV", ascending=True)
-        
+        city_rev = delivered_df.groupby("city").agg(GMV=("total_amount", "sum")).reset_index().sort_values(by="GMV", ascending=True)
         if not city_rev.empty:
             city_rev["GMV_Lakhs"] = city_rev["GMV"] / 1e5
             fig_city = px.bar(
@@ -503,7 +489,7 @@ with tab1:
                 orientation="h",
                 text="GMV_Lakhs",
                 color="GMV_Lakhs",
-                color_continuous_scale=[[0, "#94A3B8"], [1, "#FC8019"]],
+                color_continuous_scale=[[0, "#9CA3AF"], [1, "#FC8019"]],
                 labels={"city": "City", "GMV_Lakhs": "GMV (₹ Lakhs)"}
             )
             fig_city.update_traces(texttemplate='₹ %{text:.1f}L', textposition='outside')
@@ -512,23 +498,20 @@ with tab1:
                 height=320,
                 coloraxis_showscale=False,
                 margin=dict(l=10, r=30, t=10, b=10),
-                xaxis=dict(showgrid=True, gridcolor="#F1F5F9", title=None),
+                xaxis=dict(showgrid=True, gridcolor="#F3F4F6", title=None),
                 yaxis=dict(title=None)
             )
-            st.plotly_chart(fig_city, use_container_width=True)
+            st.plotly_chart(fig_city, use_container_width=True, config={"displayModeBar": False})
 
-    with col_t1_b2:
+    with c4:
         st.markdown("""
-        <div class="section-box">
-            <div class="section-header">🍲 Top Cuisines by Order Volume</div>
-            <div class="section-caption">Biryani and North Indian comfort foods dominate weekend and dinner orders.</div>
+        <div class="visual-box">
+            <div class="visual-header">🍲 Top Cuisines by Order Volume</div>
+            <div class="visual-sub">Biryani and North Indian comfort foods dominate weekend demand.</div>
         </div>
         """, unsafe_allow_html=True)
         
-        cuisine_df = df_filtered[df_filtered["order_status"] == "Delivered"].groupby("cuisine").agg(
-            Orders=("order_id", "count")
-        ).reset_index().sort_values(by="Orders", ascending=False).head(7)
-        
+        cuisine_df = delivered_df.groupby("cuisine").agg(Orders=("order_id", "count")).reset_index().sort_values(by="Orders", ascending=False).head(7)
         if not cuisine_df.empty:
             fig_cuis = px.bar(
                 cuisine_df, 
@@ -536,7 +519,7 @@ with tab1:
                 y="cuisine", 
                 orientation="h",
                 text="Orders",
-                color_discrete_sequence=["#1E293B"]
+                color_discrete_sequence=["#1F2937"]
             )
             fig_cuis.update_traces(texttemplate='%{text:,}', textposition='outside')
             fig_cuis.update_layout(
@@ -544,22 +527,100 @@ with tab1:
                 height=320,
                 margin=dict(l=10, r=30, t=10, b=10),
                 yaxis=dict(autorange="reversed", title=None),
-                xaxis=dict(showgrid=True, gridcolor="#F1F5F9", title="Orders Fulfilled")
+                xaxis=dict(showgrid=True, gridcolor="#F3F4F6", title="Orders Fulfilled")
             )
-            st.plotly_chart(fig_cuis, use_container_width=True)
+            st.plotly_chart(fig_cuis, use_container_width=True, config={"displayModeBar": False})
 
-# -----------------------------------------------------------------------------
-# TAB 2: SWIGGY ONE & CUSTOMER LOYALTY
-# -----------------------------------------------------------------------------
-with tab2:
+# =============================================================================
+# PAGE 2: SWIGGY ONE LOYALTY & CUSTOMER RETENTION
+# =============================================================================
+elif selected_page == "👑 Swiggy One Loyalty":
     st.markdown("""
-    <div class="section-box">
-        <div class="section-header">👑 Swiggy One Commercial Impact & Unit Economics</div>
-        <div class="section-caption">Comparative commercial benchmarking between loyalty subscribers and regular marketplace consumers.</div>
+    <div class="header-bar">
+        <div>
+            <h1>👑 Swiggy One Loyalty & Customer Retention</h1>
+            <p>Subscription ROI, Frequency Lift & VIP Customer Segmentation</p>
+        </div>
+        <div>
+            <span class="status-badge">
+                <span style="height: 8px; width: 8px; background: #FC8019; border-radius: 50%; display: inline-block;"></span>
+                Loyalty Tier Active
+            </span>
+        </div>
     </div>
     """, unsafe_allow_html=True)
     
-    delivered_df = df_filtered[df_filtered["order_status"] == "Delivered"]
+    # 4 Loyalty KPI Cards (matching HTML dashboard Page 2)
+    l1, l2, l3, l4 = st.columns(4)
+    with l1:
+        st.markdown("""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Swiggy One Active Members</span>
+                <span class="kpi-icon">👑</span>
+            </div>
+            <div class="kpi-val">420 Users</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-green">42.0%</span>
+                <span class="badge-pill-muted">penetration rate</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with l2:
+        st.markdown(f"""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Member Order Share</span>
+                <span class="kpi-icon">📦</span>
+            </div>
+            <div class="kpi-val">{swiggy_one_share:.1f}%</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-green">8,280</span>
+                <span class="badge-pill-muted">annual orders</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with l3:
+        st.markdown("""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Average Order Value Lift</span>
+                <span class="kpi-icon">📈</span>
+            </div>
+            <div class="kpi-val">+18.2% Lift</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-green">₹ 485</span>
+                <span class="badge-pill-muted">vs ₹ 410 non-member</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with l4:
+        st.markdown("""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Incremental Net Margin/User</span>
+                <span class="kpi-icon">💰</span>
+            </div>
+            <div class="kpi-val">+ ₹ 1,850</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-green">Highly Profitable</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
+    
+    # Commercial Unit Economics Table
+    st.markdown("""
+    <div class="visual-box">
+        <div class="visual-header">👑 Swiggy One vs. Regular Customers: Commercial Unit Economics</div>
+        <div class="visual-sub">Demonstrating that zero-delivery-fee perks are heavily offset by 2.6x higher order frequency.</div>
+    </div>
+    """, unsafe_allow_html=True)
+    
     comp_df = delivered_df.groupby("is_swiggy_one").agg(
         Customers=("user_id", "nunique"),
         Total_Orders=("order_id", "count"),
@@ -568,22 +629,20 @@ with tab2:
         Avg_Discount=("discount_amount", "mean"),
         Avg_Delivery_Fee=("delivery_fee", "mean")
     ).reset_index()
-    
     comp_df["Tier"] = comp_df["is_swiggy_one"].map({1: "Swiggy One Member", 0: "Regular Customer"})
     comp_df["Orders_Per_User"] = comp_df["Total_Orders"] / comp_df["Customers"]
     
-    # Render sleek HTML comparison table
     table_html = """
-    <table class="custom-table">
+    <table class="pbi-table">
         <thead>
             <tr>
                 <th>Customer Tier</th>
-                <th>Active Users</th>
+                <th>Active Customers</th>
                 <th>Total Orders</th>
                 <th>Frequency (Orders/User)</th>
-                <th>Total GMV</th>
+                <th>Total GMV (₹)</th>
                 <th>Average Order Value</th>
-                <th>Avg Discount</th>
+                <th>Avg Discount / Order</th>
                 <th>Delivery Fee Collected</th>
             </tr>
         </thead>
@@ -591,10 +650,10 @@ with tab2:
     """
     for _, r in comp_df.iterrows():
         is_sub = r["Tier"] == "Swiggy One Member"
-        tier_badge = '<span class="pill-green">👑 Swiggy One Member</span>' if is_sub else '<span class="pill-muted">Regular Customer</span>'
+        badge = '<span class="badge-pill-green">👑 Swiggy One Member</span>' if is_sub else '<span class="badge-pill-muted">Regular Customer</span>'
         table_html += f"""
             <tr>
-                <td><b>{tier_badge}</b></td>
+                <td><b>{badge}</b></td>
                 <td>{int(r['Customers']):,}</td>
                 <td><b>{int(r['Total_Orders']):,}</b></td>
                 <td><b style="color: #FC8019;">{r['Orders_Per_User']:.1f}x</b></td>
@@ -606,15 +665,16 @@ with tab2:
         """
     table_html += "</tbody></table>"
     st.markdown(table_html, unsafe_allow_html=True)
+    
     st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
     
-    col_t2_1, col_t2_2 = st.columns([1, 2])
-    
-    with col_t2_1:
+    # Bottom Row: RFM Segmentation + VIP Spenders Table
+    col_l1, col_l2 = st.columns([2, 3])
+    with col_l1:
         st.markdown("""
-        <div class="section-box">
-            <div class="section-header">🎯 RFM Frequency Cohort</div>
-            <div class="section-caption">Gross spend share across consumer frequency tiers.</div>
+        <div class="visual-box">
+            <div class="visual-header">🎯 RFM Frequency Segmentation</div>
+            <div class="visual-sub">Gross food spend share across customer frequency cohorts.</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -647,13 +707,13 @@ with tab2:
         )
         fig_rfm.update_traces(textposition='inside', textinfo='percent+label')
         fig_rfm.update_layout(template="plotly_white", height=320, showlegend=False, margin=dict(l=10, r=10, t=10, b=10))
-        st.plotly_chart(fig_rfm, use_container_width=True)
+        st.plotly_chart(fig_rfm, use_container_width=True, config={"displayModeBar": False})
         
-    with col_t2_2:
+    with col_l2:
         st.markdown("""
-        <div class="section-box">
-            <div class="section-header">🌟 VIP Top 1% Spender Cohort (SQL Query 7: NTILE(20))</div>
-            <div class="section-caption">Top lifetime value accounts driving disproportionate marketplace contribution.</div>
+        <div class="visual-box">
+            <div class="visual-header">🌟 VIP Customer Cohort Snapshot (Query 7: NTILE(20))</div>
+            <div class="visual-sub">Top lifetime spenders generating outsized marketplace Gross Merchandise Value.</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -661,25 +721,25 @@ with tab2:
             Total_Orders=("order_id", "count"),
             Total_Spend=("total_amount", "sum"),
             Avg_Spend=("total_amount", "mean")
-        ).reset_index().sort_values(by="Total_Spend", ascending=False).head(6)
+        ).reset_index().sort_values(by="Total_Spend", ascending=False).head(5)
         
         top_users_html = """
-        <table class="custom-table">
+        <table class="pbi-table">
             <thead>
                 <tr>
                     <th>User ID</th>
                     <th>Customer Name</th>
                     <th>City</th>
                     <th>Swiggy One</th>
-                    <th>Annual Orders</th>
+                    <th>Orders</th>
                     <th>Total Spend (₹)</th>
-                    <th>Avg Ticket (₹)</th>
+                    <th>Avg Ticket</th>
                 </tr>
             </thead>
             <tbody>
         """
         for _, u in top_users.iterrows():
-            badge = '<span class="pill-green">Active</span>' if u['is_swiggy_one'] == 1 else '<span class="pill-red">Non-Member</span>'
+            badge = '<span class="badge-pill-green">Active</span>' if u['is_swiggy_one'] == 1 else '<span class="badge-pill-red">Non-Member</span>'
             top_users_html += f"""
                 <tr>
                     <td><code>#{int(u['user_id'])}</code></td>
@@ -694,102 +754,149 @@ with tab2:
         top_users_html += "</tbody></table>"
         st.markdown(top_users_html, unsafe_allow_html=True)
 
-# -----------------------------------------------------------------------------
-# TAB 3: DELIVERY OPERATIONS & FLEET SLAS (CONTROL TOWER)
-# -----------------------------------------------------------------------------
-with tab3:
+# =============================================================================
+# PAGE 3: DELIVERY LOGISTICS & SLA CONTROL TOWER
+# =============================================================================
+elif selected_page == "⏱️ Delivery & Logistics":
     st.markdown("""
-    <div class="section-box">
-        <div class="section-header">⏱️ Logistics Control Tower & Fleet SLA Intelligence</div>
-        <div class="section-caption">Real-time delivery operations monitoring: peak hour traffic bottlenecks, SLA compliance tiers, and EV transition benchmarking.</div>
+    <div class="header-bar">
+        <div>
+            <h1>⏱️ Delivery Logistics & SLA Control Tower</h1>
+            <p>Fleet Performance, Speed Benchmarks & Electric Vehicle (EV) Analytics</p>
+        </div>
+        <div>
+            <span class="status-badge">
+                <span style="height: 8px; width: 8px; background: #3B82F6; border-radius: 50%; display: inline-block;"></span>
+                Operations Live
+            </span>
+        </div>
     </div>
     """, unsafe_allow_html=True)
     
-    # Row 1: Dual Axis Rush Hour Congestion Curve + SLA Tiers Donut
-    col_log1, col_log2 = st.columns([3, 2])
-    
-    with col_log1:
-        st.markdown("""
-        <div class="section-box">
-            <div class="section-header">🚦 Rush Hour Congestion & 35-Min SLA Breach Curve</div>
-            <div class="section-caption">Average delivery duration (orange line) spikes past the 35-min SLA threshold during the 7 PM - 10 PM dinner rush surge (bars).</div>
+    # 4 Logistics KPI Cards (matching HTML dashboard Page 3)
+    d1, d2, d3, d4 = st.columns(4)
+    with d1:
+        st.markdown(f"""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Average Delivery Duration</span>
+                <span class="kpi-icon">⏱️</span>
+            </div>
+            <div class="kpi-val">{avg_deliv_time:.1f} mins</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-green">⚡ Target: ≤ 35m</span>
+            </div>
         </div>
         """, unsafe_allow_html=True)
         
-        # Calculate hourly stats
+    with d2:
+        st.markdown(f"""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">On-Time Delivery Rate</span>
+                <span class="kpi-icon">🛡️</span>
+            </div>
+            <div class="kpi-val">{ontime_rate:.1f}%</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-muted">≤ 35 mins SLA benchmark</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with d3:
+        st.markdown(f"""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Severe Delays (> 40 Mins)</span>
+                <span class="kpi-icon">⚠️</span>
+            </div>
+            <div class="kpi-val" style="color: #EF4444;">{severe_delay_rate:.1f}%</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-red">+4.8%</span>
+                <span class="badge-pill-muted">during monsoon rush</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with d4:
+        st.markdown("""
+        <div class="kpi-card">
+            <div class="kpi-top">
+                <span class="kpi-title">Electric Vehicle (EV) Adoption</span>
+                <span class="kpi-icon">🌱</span>
+            </div>
+            <div class="kpi-val">15.0%</div>
+            <div class="kpi-foot">
+                <span class="badge-pill-green">32.8 mins avg speed</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
+    
+    # Dual-Axis Congestion Curve + SLA Tiers Donut
+    col_d1, col_d2 = st.columns([3, 2])
+    with col_d1:
+        st.markdown("""
+        <div class="visual-box">
+            <div class="visual-header">🚦 Rush Hour Congestion & 35-Min SLA Breach Curve</div>
+            <div class="visual-sub">Average delivery duration (orange line) spikes to 35.6m during the 7-10 PM dinner rush (bars).</div>
+        </div>
+        """, unsafe_allow_html=True)
+        
         hourly_stats = delivered_df.groupby("hour").agg(
             Orders=("order_id", "count"),
             Avg_Mins=("delivery_time_mins", "mean")
         ).reset_index().sort_values(by="hour")
         
-        # Dual-axis chart: Line for Delivery Time, Bars for Order Demand
         fig_dual = make_subplots(specs=[[{"secondary_y": True}]])
-        
-        # Order volume bars
         fig_dual.add_trace(
             go.Bar(
                 x=hourly_stats["hour"],
                 y=hourly_stats["Orders"],
-                name="Order Demand (Volume)",
-                marker_color="#CBD5E1",
-                opacity=0.7,
+                name="Delivered Order Demand",
+                marker_color="#E5E7EB",
+                opacity=0.75,
                 hoverinfo="x+y"
             ),
             secondary_y=False
         )
-        
-        # Delivery time line
         fig_dual.add_trace(
             go.Scatter(
                 x=hourly_stats["hour"],
                 y=hourly_stats["Avg_Mins"],
-                name="Avg Delivery Time (mins)",
+                name="Avg Delivery Duration (mins)",
                 mode="lines+markers",
                 line=dict(color="#FC8019", width=3.5),
                 marker=dict(size=7, color="#EA580C")
             ),
             secondary_y=True
         )
-        
-        # 35-min SLA reference line
         fig_dual.add_hline(
             y=35, 
             line_dash="dash", 
             line_color="#EF4444", 
             line_width=2,
-            annotation_text="35-Min SLA Benchmark", 
+            annotation_text="35-Min SLA Guarantee", 
             annotation_position="top left",
             secondary_y=True
         )
-        
-        fig_dual.update_xaxes(
-            title_text="Hour of the Day (24-Hour Format)", 
-            tickmode="linear", 
-            tick0=0, 
-            dtick=2,
-            showgrid=False
-        )
+        fig_dual.update_xaxes(title_text="Hour of the Day (24-Hour Clock)", tickmode="linear", tick0=0, dtick=2, showgrid=False)
         fig_dual.update_yaxes(title_text="Delivered Orders Volume", showgrid=False, secondary_y=False)
-        fig_dual.update_yaxes(
-            title_text="Avg Delivery Duration (Minutes)", 
-            showgrid=True, 
-            gridcolor="#F1F5F9", 
-            range=[25, 40],
-            secondary_y=True
-        )
+        fig_dual.update_yaxes(title_text="Avg Delivery (Minutes)", showgrid=True, gridcolor="#F3F4F6", range=[25, 40], secondary_y=True)
         fig_dual.update_layout(
             template="plotly_white",
             height=340,
-            margin=dict(l=10, r=10, t=20, b=10),
+            margin=dict(l=10, r=10, t=10, b=10),
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
-        st.plotly_chart(fig_dual, use_container_width=True)
+        st.plotly_chart(fig_dual, use_container_width=True, config={"displayModeBar": False})
 
-    with col_log2:
+    with col_d2:
         st.markdown("""
-        <div class="section-box">
-            <div class="section-header">🎯 Delivery SLA Fulfillment Tiers</div>
-            <div class="section-caption">Breakdown of orders delivered within target SLA vs. operational delays.</div>
+        <div class="visual-box">
+            <div class="visual-header">🎯 Delivery SLA Compliance Tiers</div>
+            <div class="visual-sub">Breakdown of orders delivered within target SLA vs. operational delays.</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -817,16 +924,15 @@ with tab3:
         )
         fig_sla.update_traces(textposition='inside', textinfo='percent+label', marker=dict(line=dict(color='#FFFFFF', width=2)))
         fig_sla.update_layout(template="plotly_white", height=340, showlegend=False, margin=dict(l=10, r=10, t=10, b=10))
-        st.plotly_chart(fig_sla, use_container_width=True)
+        st.plotly_chart(fig_sla, use_container_width=True, config={"displayModeBar": False})
 
-    # Row 2: City SLA Fulfillment Rate % + Green EV Fleet Benchmark
-    col_log3, col_log4 = st.columns(2)
-    
-    with col_log3:
+    # Bottom Row: City SLA Benchmark + Green Fleet Comparison
+    col_d3, col_d4 = st.columns(2)
+    with col_d3:
         st.markdown("""
-        <div class="section-box">
-            <div class="section-header">🏙️ City On-Time SLA Fulfillment Benchmark (% ≤ 35 min)</div>
-            <div class="section-caption">Kolkata and Delhi NCR lead on-time fulfillment; Bangalore & Hyderabad face traffic delays.</div>
+        <div class="visual-box">
+            <div class="visual-header">🏙️ City On-Time SLA Fulfillment Benchmark (% ≤ 35 min)</div>
+            <div class="visual-sub">Kolkata and Delhi lead on-time rates; Bangalore & Hyderabad face traffic delays.</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -853,16 +959,16 @@ with tab3:
             height=320,
             coloraxis_showscale=False,
             margin=dict(l=10, r=30, t=10, b=10),
-            xaxis=dict(showgrid=True, gridcolor="#F1F5F9", range=[50, 75], title="On-Time Rate (% Orders ≤ 35 Mins)"),
+            xaxis=dict(showgrid=True, gridcolor="#F3F4F6", range=[50, 75], title="On-Time Rate (% Orders ≤ 35 Mins)"),
             yaxis=dict(title=None)
         )
-        st.plotly_chart(fig_city_sla, use_container_width=True)
+        st.plotly_chart(fig_city_sla, use_container_width=True, config={"displayModeBar": False})
         
-    with col_log4:
+    with col_d4:
         st.markdown("""
-        <div class="section-box">
-            <div class="section-header">🌱 Green Fleet Transition: Electric Vehicles (EV) vs. Petrol</div>
-            <div class="section-caption">EV riders achieve higher customer ratings (4.34 ★) and reduce ₹14.2 Lakhs in fuel subsidies.</div>
+        <div class="visual-box">
+            <div class="visual-header">🌱 Green Fleet Transition: Electric Vehicles (EV) vs. Petrol</div>
+            <div class="visual-sub">EV riders achieve higher customer ratings (4.34 ★) and reduce fuel subsidies.</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -873,13 +979,13 @@ with tab3:
         ).reset_index()
         
         fleet_html = """
-        <table class="custom-table">
+        <table class="pbi-table">
             <thead>
                 <tr>
-                    <th>Vehicle Fleet Type</th>
+                    <th>Vehicle Fleet</th>
                     <th>Deliveries</th>
                     <th>Share %</th>
-                    <th>Avg Delivery Speed</th>
+                    <th>Avg Duration</th>
                     <th>Rider Rating</th>
                     <th>ESG Status</th>
                 </tr>
@@ -889,7 +995,7 @@ with tab3:
         total_fleet_deliv = fleet_df["Deliveries"].sum()
         for _, f_row in fleet_df.iterrows():
             is_ev = "Electric" in f_row["vehicle_type"]
-            badge = '<span class="pill-green">🌱 Net Zero Pioneer</span>' if is_ev else '<span class="pill-muted">Standard Fleet</span>'
+            badge = '<span class="badge-pill-green">🌱 Net Zero Pioneer</span>' if is_ev else '<span class="badge-pill-muted">Standard Fleet</span>'
             fleet_html += f"""
                 <tr>
                     <td><b>{f_row['vehicle_type']}</b></td>
@@ -903,22 +1009,21 @@ with tab3:
         fleet_html += "</tbody></table>"
         st.markdown(fleet_html, unsafe_allow_html=True)
         
-        # Mini sustainability callout
         st.markdown("""
-        <div style="background: #DEF7EC; border: 1px solid #BCF0DA; border-radius: 8px; padding: 12px 16px; margin-top: 14px; font-size: 12px; color: #03543F; display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 20px;">🔋</span>
+        <div style="background: #DEF7EC; border: 1px solid #BCF0DA; border-radius: 8px; padding: 10px 14px; margin-top: 14px; font-size: 12px; color: #03543F; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 18px;">🔋</span>
             <div>
-                <b>Swiggy Green Mile Impact:</b> 1,905 zero-emission deliveries completed in FY24, preventing an estimated <b>28.4 tonnes of CO2 emissions</b> across metro corridors.
+                <b>Swiggy Green Mile:</b> 1,905 zero-emission deliveries completed in FY24, preventing an estimated <b>28.4 tonnes of CO2 emissions</b>.
             </div>
         </div>
         """, unsafe_allow_html=True)
 
-    # Row 3: Quality Risk Operational Alerts
+    # Operational Alerts Table
     st.markdown("<div style='margin-top: 16px;'></div>", unsafe_allow_html=True)
     st.markdown("""
-    <div class="section-box">
-        <div class="section-header">⚠️ Quality Risk Monitoring: High Volume / Low Rating (< 4.0 ★) Kitchens</div>
-        <div class="section-caption">Restaurants with 50+ fulfilled orders but low customer satisfaction requiring operational intervention (SQL Query 12).</div>
+    <div class="visual-box">
+        <div class="visual-header">⚠️ Quality Risk Alert: High Volume / Low Rating (< 4.0 ★) Kitchens (SQL Query 12)</div>
+        <div class="visual-sub">Immediate operational review required for kitchens with high fulfillment volume but lagging customer ratings.</div>
     </div>
     """, unsafe_allow_html=True)
     
@@ -927,22 +1032,21 @@ with tab3:
         Total_GMV=("total_amount", "sum"),
         Avg_Delivery=("delivery_time_mins", "mean")
     ).reset_index()
-    
     risk_alert = rest_risk[(rest_risk["Orders_Fulfilled"] >= 50) & (rest_risk["rating_rest"] < 4.0)].sort_values(by="Orders_Fulfilled", ascending=False)
     
     if not risk_alert.empty:
         risk_html = """
-        <table class="custom-table">
+        <table class="pbi-table">
             <thead>
                 <tr>
                     <th>Restaurant Partner</th>
                     <th>City</th>
                     <th>Cuisine</th>
-                    <th>Partner Rating</th>
+                    <th>Rating</th>
                     <th>Fulfilled Orders</th>
                     <th>Total GMV</th>
-                    <th>Avg Delivery (Mins)</th>
-                    <th>Recommended Operational Action</th>
+                    <th>Avg Speed</th>
+                    <th>Operational Recommendation</th>
                 </tr>
             </thead>
             <tbody>
@@ -954,7 +1058,7 @@ with tab3:
                     <td><b>{r_row['restaurant_name']}</b></td>
                     <td>{r_row['city']}</td>
                     <td>{r_row['cuisine']}</td>
-                    <td><span class="pill-red">{r_row['rating_rest']:.1f} ★</span></td>
+                    <td><span class="badge-pill-red">{r_row['rating_rest']:.1f} ★</span></td>
                     <td><b>{int(r_row['Orders_Fulfilled'])}</b></td>
                     <td>₹ {r_row['Total_GMV']:,.0f}</td>
                     <td>{r_row['Avg_Delivery']:.1f} mins</td>

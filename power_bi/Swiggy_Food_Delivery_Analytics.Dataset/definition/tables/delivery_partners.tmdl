@@ -1,0 +1,43 @@
+table delivery_partners
+	lineageTag: ced85d55-0e73-4f6b-87dc-070c4c05b643
+
+	column partner_id
+		dataType: string
+		lineageTag: 7469372b-48b1-4b43-b8c5-ebb29f56d67a
+		summarizeBy: none
+		sourceColumn: partner_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column partner_name
+		dataType: string
+		lineageTag: ed226657-0a12-4a8d-bdc7-f4696cd7b916
+		sourceColumn: partner_name
+
+	column city
+		dataType: string
+		lineageTag: 1f39fbee-1f6a-4d55-bbce-21440a986c0f
+		sourceColumn: city
+
+	column vehicle_type
+		dataType: string
+		lineageTag: fdcaa8eb-9749-4f16-b01a-34cfd523a903
+		sourceColumn: vehicle_type
+
+	column rating
+		dataType: string
+		lineageTag: 679e2b11-1c08-4487-966f-35b377ac62c0
+		summarizeBy: none
+		sourceColumn: rating
+
+		annotation SummarizationSetBy = Automatic
+
+	partition delivery_partners-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:/Desktop/Projects/PowerBI_DA/data/delivery_partners.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+

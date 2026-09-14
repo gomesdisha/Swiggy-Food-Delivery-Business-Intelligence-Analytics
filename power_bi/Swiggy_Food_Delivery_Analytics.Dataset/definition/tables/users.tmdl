@@ -1,0 +1,59 @@
+table users
+	lineageTag: a00ad51b-06db-4d60-aafb-7e5001ca1e2e
+
+	column user_id
+		dataType: string
+		lineageTag: 13d760a5-385c-43e5-b9c4-1d2ab348376b
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 06299757-94f2-4ed9-9aa7-49d0bfaa740c
+		sourceColumn: name
+
+	column gender
+		dataType: string
+		lineageTag: c98293c0-dd0a-46e9-9592-a01fa392bb2c
+		sourceColumn: gender
+
+	column age
+		dataType: string
+		lineageTag: da46a955-6453-424e-9dee-3c1ce5bb5d73
+		summarizeBy: none
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: a9d2e116-3a9c-473c-bc6a-b9c21ca0914a
+		sourceColumn: city
+
+	column signup_date
+		dataType: string
+		lineageTag: 69f8e427-5109-4f12-917a-63603189527f
+		summarizeBy: none
+		sourceColumn: signup_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_swiggy_one
+		dataType: string
+		lineageTag: 182075d5-0812-44b0-bd6e-d69df8e0d27b
+		summarizeBy: none
+		sourceColumn: is_swiggy_one
+
+		annotation SummarizationSetBy = Automatic
+
+	partition users-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:/Desktop/Projects/PowerBI_DA/data/users.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+

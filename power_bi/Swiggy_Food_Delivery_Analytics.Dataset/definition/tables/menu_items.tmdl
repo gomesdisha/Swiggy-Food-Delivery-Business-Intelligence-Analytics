@@ -1,0 +1,43 @@
+table menu_items
+	lineageTag: 4eb7fa70-14f8-40c4-be7c-73a100f166cc
+
+	column item_id
+		dataType: string
+		lineageTag: 600e6554-7a30-4371-95bd-369a6744d0f4
+		summarizeBy: none
+		sourceColumn: item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_name
+		dataType: string
+		lineageTag: 0016e92c-7d85-4fd6-8eec-9e8283d014df
+		sourceColumn: item_name
+
+	column menu_category
+		dataType: string
+		lineageTag: 049f04d5-50fa-4c69-9541-5832d30d9c67
+		sourceColumn: menu_category
+
+	column price
+		dataType: string
+		lineageTag: 2ac229da-36dd-4697-b838-1dfcb3b678ae
+		summarizeBy: none
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+	column veg_or_non_veg
+		dataType: string
+		lineageTag: 3096b25e-4c52-437b-b6ab-dff169836a1a
+		sourceColumn: veg_or_non_veg
+
+	partition menu_items-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:/Desktop/Projects/PowerBI_DA/data/menu_items.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+

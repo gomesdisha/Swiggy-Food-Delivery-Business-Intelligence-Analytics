@@ -1,0 +1,65 @@
+table order_items
+	lineageTag: 9a81b624-87fc-413b-b17b-6deff5d9aa78
+
+	column order_item_id
+		dataType: string
+		lineageTag: d2cbabeb-43b1-41f7-8df2-b623724dae65
+		summarizeBy: none
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		lineageTag: 9472943d-ccc2-4678-9a63-1d1ab192b28e
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_id
+		dataType: string
+		lineageTag: 3785805c-f6e3-4d85-b748-e51d9c5e6488
+		summarizeBy: none
+		sourceColumn: item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column item_name
+		dataType: string
+		lineageTag: 0b85d831-333d-499b-9618-0a708470deed
+		sourceColumn: item_name
+
+	column price
+		dataType: string
+		lineageTag: 6e03ed04-a3cc-4052-a6ed-6638cfff6fdc
+		summarizeBy: none
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: string
+		lineageTag: 2903d288-c07a-46fe-ad12-7d434e0b3d43
+		summarizeBy: none
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column line_total
+		dataType: string
+		lineageTag: 1fa655da-f95c-4ca0-a1cb-8eeed7780c2a
+		summarizeBy: none
+		sourceColumn: line_total
+
+		annotation SummarizationSetBy = Automatic
+
+	partition order_items-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:/Desktop/Projects/PowerBI_DA/data/order_items.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+

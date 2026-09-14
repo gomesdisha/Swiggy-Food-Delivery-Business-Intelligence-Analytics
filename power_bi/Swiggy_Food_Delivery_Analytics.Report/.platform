@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Swiggy_Food_Delivery_Analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "09af17bf-16d7-454d-9388-7211a715cb73"
+  }
+}

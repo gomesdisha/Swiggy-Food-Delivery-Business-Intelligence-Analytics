@@ -1,0 +1,139 @@
+table orders
+	lineageTag: 79801e97-a1c6-4d9e-9a90-e067320a4463
+
+	measure 'Total Orders' = CALCULATE(COUNTROWS('orders'), 'orders'[order_status] = "Delivered")
+		formatString: #,##0
+		lineageTag: dafe7737-5d87-418f-b777-b11f585b5314
+
+	measure 'Total GMV' = CALCULATE(SUM('orders'[total_amount]), 'orders'[order_status] = "Delivered")
+		formatString: ₹ #,##0
+		lineageTag: b773d39a-778d-413f-9833-b73c1cb6b8c9
+
+	measure 'Average Order Value' = DIVIDE([Total GMV], [Total Orders], 0)
+		formatString: ₹ #,##0.0
+		lineageTag: 95374bee-6c17-44cb-80e0-651bbbff312e
+
+	measure 'Swiggy Commission Revenue' = [Total GMV] * 0.21
+		formatString: ₹ #,##0
+		lineageTag: 9a8c7496-e725-42cc-878c-4008834a22f2
+
+	measure 'Swiggy One Orders' = CALCULATE([Total Orders], 'users'[is_swiggy_one] = 1)
+		formatString: #,##0
+		lineageTag: 40020bc3-5c4b-4998-b09b-0206119cc40f
+
+	measure 'Swiggy One Order Share %' = DIVIDE([Swiggy One Orders], [Total Orders], 0)
+		formatString: 0.0%
+		lineageTag: 5a06e467-0fe9-4a84-90d6-ca66a58021b0
+
+	measure 'Average Delivery Time' = CALCULATE(AVERAGE('orders'[delivery_time_mins]), 'orders'[order_status] = "Delivered")
+		formatString: 0.0
+		lineageTag: 6acbb112-784c-44aa-8d46-f6278e53ea31
+
+	measure 'On-Time Delivery Rate %' = DIVIDE(CALCULATE([Total Orders], 'orders'[delivery_time_mins] <= 35), [Total Orders], 0)
+		formatString: 0.0%
+		lineageTag: e99f0cb4-79f5-43da-960c-a3e26026b0b7
+
+	measure 'SLA Breach Rate %' = DIVIDE(CALCULATE([Total Orders], 'orders'[delivery_time_mins] > 40), [Total Orders], 0)
+		formatString: 0.0%
+		lineageTag: ef1b4f5a-f694-45da-a0c3-1140b15d2eb3
+
+	measure 'Cancellation Rate %' = DIVIDE(CALCULATE(COUNTROWS('orders'), 'orders'[order_status] = "Cancelled"), COUNTROWS('orders'), 0)
+		formatString: 0.0%
+		lineageTag: abd88755-0e95-4abe-ab87-3f479ee88b93
+
+	column order_id
+		dataType: string
+		lineageTag: f1fe3eec-f43d-47a2-af19-0ccbe71b31ef
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		lineageTag: 720c9bea-e046-4d7c-b83b-64d9ed36176f
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column restaurant_id
+		dataType: string
+		lineageTag: ff44c21d-8832-4215-8022-c33355ccbccd
+		summarizeBy: none
+		sourceColumn: restaurant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column partner_id
+		dataType: string
+		lineageTag: f8b51984-1dda-4f75-95a8-9af0f4aa33b0
+		summarizeBy: none
+		sourceColumn: partner_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: string
+		lineageTag: c13e9ee7-4def-4b2b-b256-dd6ca6acca26
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_time
+		dataType: string
+		lineageTag: 7a1affe9-3e0c-4e34-80aa-b618117ceb04
+		sourceColumn: order_time
+
+	column order_status
+		dataType: string
+		lineageTag: 15b369d1-844a-4f5d-9137-22390cdbee21
+		sourceColumn: order_status
+
+	column total_amount
+		dataType: string
+		lineageTag: a930e63c-602b-4551-8b11-33311558d349
+		summarizeBy: none
+		sourceColumn: total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_amount
+		dataType: string
+		lineageTag: 71108662-2abe-447b-9935-368667778bd5
+		summarizeBy: none
+		sourceColumn: discount_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_fee
+		dataType: string
+		lineageTag: e4d7cc59-3889-4713-8394-b3d327f95cb6
+		summarizeBy: none
+		sourceColumn: delivery_fee
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_time_mins
+		dataType: string
+		lineageTag: 72b9254f-54f6-4ed5-9118-e5177f9b4d4a
+		summarizeBy: none
+		sourceColumn: delivery_time_mins
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: string
+		lineageTag: 25a74b4c-6807-441c-a7d4-14791f11a46e
+		sourceColumn: payment_method
+
+	partition orders-Partition = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:/Desktop/Projects/PowerBI_DA/data/orders.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+

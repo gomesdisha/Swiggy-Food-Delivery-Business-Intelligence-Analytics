@@ -1,0 +1,20 @@
+relationship orders_users_fk
+	fromColumn: orders.user_id
+	toColumn: users.user_id
+
+relationship orders_restaurants_fk
+	fromColumn: orders.restaurant_id
+	toColumn: restaurants.restaurant_id
+
+relationship orders_delivery_partners_fk
+	fromColumn: orders.partner_id
+	toColumn: delivery_partners.partner_id
+
+relationship order_items_orders_fk
+	fromColumn: order_items.order_id
+	toColumn: orders.order_id
+
+relationship order_items_menu_items_fk
+	fromColumn: order_items.item_id
+	toColumn: menu_items.item_id
+

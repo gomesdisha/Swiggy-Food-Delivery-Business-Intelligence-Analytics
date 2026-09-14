@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "Fluent2-CY26SU08",
+      "reportVersionAtImport": {
+        "visual": "2.12.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Swiggy18452282617386995.json",
+      "reportVersionAtImport": {
+        "visual": "2.12.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "resourcePackages": [
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Swiggy18452282617386995.json",
+          "path": "Swiggy18452282617386995.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "swiggy7501233996894203.png",
+          "path": "swiggy7501233996894203.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ]
+}

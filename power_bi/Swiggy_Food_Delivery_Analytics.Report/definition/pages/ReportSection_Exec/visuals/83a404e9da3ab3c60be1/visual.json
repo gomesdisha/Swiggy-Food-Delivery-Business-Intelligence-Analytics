@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "83a404e9da3ab3c60be1",
+  "position": {
+    "x": 171.11111111111111,
+    "y": 40,
+    "z": 1000,
+    "height": 34.444444444444443,
+    "width": 567.77777777777771,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "SWIGGY EXECUTIVE BUSINESS INTELLIGENCE    ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Consolas, Courier New, monospace",
+                      "fontSize": "20pt",
+                      "color": "#eeffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F46906'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
