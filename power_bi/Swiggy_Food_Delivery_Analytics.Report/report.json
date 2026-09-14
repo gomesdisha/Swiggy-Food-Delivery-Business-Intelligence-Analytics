@@ -1,4 +1,36 @@
 {
   "config": "{\"version\": \"5.48\", \"themeCollection\": {\"baseTheme\": {\"name\": \"CY23SU06\", \"version\": \"5.48\", \"type\": 2}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true}",
-  "layoutOptimization": 0
+  "layoutOptimization": 0,
+  "sections": [
+    {
+      "name": "ReportSection_Exec",
+      "displayName": "Executive Performance Overview",
+      "filters": "[]",
+      "ordinal": 0,
+      "visualContainers": [],
+      "config": "{\"name\": \"ReportSection_Exec\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 0, \"z\": 0, \"width\": 1280, \"height\": 720}}]}",
+      "width": 1280.0,
+      "height": 720.0
+    },
+    {
+      "name": "ReportSection_Loyalty",
+      "displayName": "Swiggy One Loyalty",
+      "filters": "[]",
+      "ordinal": 1,
+      "visualContainers": [],
+      "config": "{\"name\": \"ReportSection_Loyalty\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 0, \"z\": 0, \"width\": 1280, \"height\": 720}}]}",
+      "width": 1280.0,
+      "height": 720.0
+    },
+    {
+      "name": "ReportSection_Logistics",
+      "displayName": "Delivery & Logistics",
+      "filters": "[]",
+      "ordinal": 2,
+      "visualContainers": [],
+      "config": "{\"name\": \"ReportSection_Logistics\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 0, \"y\": 0, \"z\": 0, \"width\": 1280, \"height\": 720}}]}",
+      "width": 1280.0,
+      "height": 720.0
+    }
+  ]
 }
