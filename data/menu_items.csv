@@ -1,0 +1,1201 @@
+item_id,item_name,menu_category,price,veg_or_non_veg
+1,Cinco Formaggio Pizza [five Cheese Pizza],Recommended,210,Veg
+2,McCafe Americano (S).,Guilt Free,159,Veg
+3,Boneless Chicken Pulao (400 Gms),Indian,29,Non-veg
+4,Kori Roti,Chicken And Mutton,375,Veg
+5,Fruit Salad,Desserts,200,Veg
+6,Paneer Pasanda,Main Course,230,Veg
+7,The Meat Feast,Pizza,600,Non-veg
+8,Veg Garlic Hakka Noodles,Main Course,239,Veg
+9,Pepsi (250 Ml),Beverages,40,Veg
+10,Sweet Boondhi,Ghee Sweets,100,Veg
+11,Mineral Water [500 Ml,Beverages,29,Veg
+12,Combo Dinner (3),Combo Dinner,175,Veg
+13,Free Treet Combo,Combos,499,Veg
+14,Mutton Spicy Andhara Biryani,Biryani,440,Non-veg
+15,Dahikebab,Starters,339,Veg
+16,Ghee South Indian Flavoured Rice,Rice/noodles,235,Veg
+17,Bread Butter Jam Grilled Sandwich,Sandwiches,50,Veg
+18,Executive Mushroom Biryani [500 Ml],Executive Biryani Starting @99,128,Veg
+19,Dutch Truffle Cake (700 gm),Celebration Cake,618,Veg
+20,Gobi Paratha [2 Pieces],Parathe Di Gali,150,Veg
+21,Shahi Gulab Pudding,Pudding,91,Veg
+22,Pine Apple Juice,Beverages,100,Veg
+23,Krunchy Almond,20% FLAT OFF DOUGHNUTS,88,Veg
+24,Egg Bhurjee,Main Course,100,Non-veg
+25,Chicken Chinese Chop Suey (Bland),Main Course,265,Non-veg
+26,Aloo 65,Starters,48,Veg
+27,Fried Chicken Nuggets (6 Pcs),Side Orders,190,Non-veg
+28,Nutty Belgian Dark Chocolate 800 ML,Loose Ice Cream,28,Veg
+29,Crispy Vegetables In Chilli Plum Sauce,Starters,265,Veg
+30,Prawns Zingy Bowl With Rice And Vegetables In Schezwan Sauce,Zingy Bowl,299,Non-veg
+31,Fruit Exotica (51 ml),Recommended,140,Veg
+32,Moroccan Mint Green Tea,Coffee and Tea,180,Veg
+33,Pan Fried Barbecued Fish,Appetizer,675,Non-veg
+34,Hearty Black Forest Cake,Recommended,399,Veg
+35,Mangalorean Style - White Pomfret Fish Curry [1pc],"Fish Curry [bengali, Mangalorean, Goan,mustard]",399,Non-veg
+36,Salt Matri 250Gm,Packed Sweets And Savouries,95,Veg
+37,Make your own Veg Tacos at home (Serves 3),House Party Packs,499,Veg
+38,Veg Biryani Half,Recommended,259,Veg
+39,Coated Crispy Treats - Caramel 50g,Chocolates,131,Veg
+40,Fresh Pork Naga Dal,Pork Main Course,360,Non-veg
+41,Kitkat Shake,Beverages,180,Veg
+42,Subz Shikari Masala,Indian,30,Veg
+43,Honey Chilli Chicken,Appetizer,349,Non-veg
+44,Sugarfree Pinaberry Passion Ice Cream,Sugar Free Icecreams No Added Sugar,68,Veg
+45,Samak Meshwi,Arabian Specialties,580,Non-veg
+46,Dragon Vegetables,Starters,195,Veg
+47,Mexican Garlic Breadstix,Appetizer,139,Veg
+48,Chocolate Truffle Gateaux - M,Celebration Cakes - M [Medium],429,Non-veg
+49,Combo 3 (Rava Masala Sada Dosa),Combos,51,Veg
+50,360 Paneer Biryani Combo,Family Binge Combo,845,Veg
+51,Paneer Biryani Regular,Recommended,359,Veg
+52,Super Green (200 Ml),Cold Pressed Juice,125,Veg
+53,Chicken Pakora,Starters,349,Non-veg
+54,Lychee Sundae,Recommended,185,Veg
+55,Mustard/sorshe Style - Tilapia [jilapi] Fish Curry [1 Pc],"Fish Curry [bengali, Mangalorean, Goan,mustard]",199,Non-veg
+56,Szechuan Chicken Noodles,Noodles,199,Non-veg
+57,Corn & Pepper Lasagne + Coke,Super Saver Cheesy Meals,279,Veg
+58,Plain Curd (300ml),Breakfast & Snacks,49,Veg
+59,Bangda Fish Curry,Mangalorean Main Course,250,Non-veg
+60,Curd Vada (Tuesday),Evening Specials,95,Veg
+61,Upma Mix (500 Gms),Savouries,85,Veg
+62,Malai Gilori (2 Pcs),Desserts,76,Veg
+63,Chilli Garlic Mixed Noodles,Noodles,225,Non-veg
+64,Chilly Chicken Andhra Style,Starters,289,Non-veg
+65,Grilled Mushroom & Caramelized Onion Sourdough Toasty,Sourdough Toasties,300,Veg
+66,Banana Bhaji (4 Pcs),Snacks,50,Veg
+67,Tea,Hot Beverages,90,Veg
+68,Gobi Jeera Dry,Starters,188,Veg
+69,Chicken Roast,Recommended,289,Non-veg
+70,Combo Lunch (3),Combo Lunch,160,Veg
+71,Ari Fish,Main Course,280,Non-veg
+72,Berry Iced Tea [300 Ml],Recommended,75,Veg
+73,Murgh Biryani Boneless,Rice 'n' Biryanis,30,Non-veg
+74,Walnut Brownie,Desserts & Jar Cakes,99,Veg
+75,Chinese Spring Dosa,Chinese Fusion Dosa,330,Veg
+76,Ven Pongal (1 Kg) (serves 3-4),Family Pack,320,Veg
+77,Seer Fish Fry,Indian,280,Non-veg
+78,Kulcha Curry,Meals or Thali,97,Veg
+79,Custard Fruit Bowl (250ml),Fruit Bowls,56,Veg
+80,Shrikhand,Desserts,45,Veg
+81,Mango Ras 1kg,Mango Ras,400,Veg
+82,Bhatti Ka Murgh Half,Indian,460,Non-veg
+83,Dahiwala Khaman,Savouries,81,Veg
+84,Honey Butter Mini Pancakes (8 pieces),Mini Pancakes,89,Veg
+85,Hut Treat Meal for 2 - Non Veg,Meals & Deals (Save Upto 51% - No Coupon Required),36,Non-veg
+86,Cheese Tomato Capsicum Toast,Tasty Toasties,90,Veg
+87,Zingy Prawns Black Pepper + Udon Noodles,Zingy Bowl,299,Non-veg
+88,6' Jain Pizza,Pizza,75,Veg
+89,Lemon Ice Chai - 300ml,Chilled,150,Veg
+90,Classic Chicken Veniziana,Grilled Mains,545,Non-veg
+91,Sugarcane Juice - Ginger,Adiga's Summer Festival,61,Veg
+92,Dutch Truffle (500 Gms),Cake,475,Veg
+93,Chooza 69 [6Pcs],Recommended,330,Non-veg
+94,Vegetable Fried Rice,Main Course,200,Veg
+95,Ukarpendi,Heavy Brunch,119,Veg
+96,Sannas With Pineapple Gassi And Coconut Chutney,Main Course,335,Veg
+97,Cheese Vadapav Jain,Jain Vadapav,70,Veg
+98,Crispy Veg Double Patty Burger,Burgers & Wraps,80,Veg
+99,Hawaiian Chicken Treat Pizza,American/Italian Pizza,379,Non-veg
+100,Prawns Pepper,Lip Smacking Starters,29,Non-veg
+101,The Chocolate Room Mousse,Waffles,199,Veg
+102,Keep Cake & Celebrate + 1 Free Delight,Recommended,581,Veg
+103,Crispy Brown Onion Chicken Fried Rice,Rice,210,Non-veg
+104,Kappa Fish Curry [Ayala],Specials Kerala Style,250,Non-veg
+105,Murgh Hara Pyaaz,Main Course,290,Non-veg
+106,Lakhnavi Pulav,Rice & Dal,315,Veg
+107,Hyderabad Spl Chicken,Main Course,299,Non-veg
+108,Cheese Veg Oats,Healthy Oats,109,Veg
+109,Pomplet Pulimunchi,Pulimunchi,500,Non-veg
+110,Schezwan Chicken Noodles + Coke (300 Ml ),Beverage Combos,280,Non-veg
+111,Veg Crispy Salt & Pepper,Chinese,220,Veg
+112,Monster Mango Loco (350 ml),Beverages,105,Veg
+113,Walnut,Dry Fruits,314,Veg
+114,Keema Bread Omelette,Magic With Eggs,140,Non-veg
+115,Chettinad Fish Curry Meals [serves 2 - 3],Anjappar Spl Meals,629,Non-veg
+116,Buff Sukuti Sandheko,Nepali Appetizer NonVeg,250,Non-veg
+117,Garlic Loaf,Recommended,66,Veg
+118,Tropical Fruit Pastry[80 Gm],Ice Cream Pastry,129,Veg
+119,Mix Veg Roast,Veg Main Course,175,Veg
+120,Biriyani Rice [hyderabadi],Rice And Biryani,48,Non-veg
+121,Chicken Lolipop (4 Pc)+ Spl Shawarma (1 Pc)+ Cold Drink 200ml,Combos,29,Non-veg
+122,Cheeky Monkey,Smoothies,200,Veg
+123,Murg E Pathani Full,Chicken Starter,415,Non-veg
+124,Puri,Quick Bites,60,Veg
+125,Pesto Paneer,Mains (limited Time),380,Veg
+126,Gosht Lababdar,Indian,625,Non-veg
+127,Mixed Vegetable Paratha PD,Purani Dilli Main Course,150,Veg
+128,"Kadhai Paneer , 2 Plain Paratha , Boondi Raita, Salad.",Meal Box,48,Veg
+129,Naadan Mutton Curry,Main Course,350,Non-veg
+130,Prawns In Chilli Basil Sauce,Main Course,545,Non-veg
+131,Methi Para (250G),Namkeens,90,Veg
+132,67% Less Sugar Belgian Chocolate Dark Waff-wich,Waff-wich,165,Veg
+133,Plain Dosa (single),Dosa And Appams,30,Veg
+134,Boiled Egg (2 Pcs),Egg,65,Non-veg
+135,Schezwan Puff,Puff,70,Veg
+136,Paper Sada Dosa,Dosa,260,Veg
+137,Veg Biryani Full,Recommended,349,Veg
+138,Bites,Recommended,245,Veg
+139,Prawns Rava Fry,Recommended,300,Non-veg
+140,Day Spl Chicken,Starters,200,Non-veg
+141,Kadai Paneer Rice Bowl,Rice Bowls (one Person Meal),149,Veg
+142,Cheese Shots + Desi Chai Serves 2,All Day Breakfast Combo,260,Veg
+143,Dan Dan Mein Non Veg,Big Eats (meal In Itself) Noodle Bowls,330,Non-veg
+144,Sweet Corn Veg,Soups Veg,150,Veg
+145,Grilled Chicken Burrito Bowl + Churros,Combos,650,Non-veg
+146,Kakori Kebab,Starters,550,Non-veg
+147,Baby Donut [Dark Chocolate],Dry Cakes,29,Veg
+148,Mocha Thick Shake,Thick Shakes,185,Veg
+149,Italian Wafer Sandwich - Vanilla,Recommended,48,Veg
+150,Puffy Pizza,Pizza And Pasta,100,Veg
+151,Gujarati Thali (Serves 2-3),Family Combos,538,Veg
+152,Grilled Chicken With Thyme Sauce,Steaks - Main Course,350,Non-veg
+153,Vegetable Puff Regular,Puff,45,Veg
+154,Ginger Chicken Gravy (6 Pcs),Chinese,150,Non-veg
+155,Chicken Lasagna Combo,Combos (Serves 1),465,Non-veg
+156,Murgh Khurchan,Indian,245,Non-veg
+157,Assorted Sweets [250 Gms],Sweets,186,Veg
+158,Veg Hot Pot,Rendezvous Specialities,279,Veg
+159,Masala Thums Up [250 Ml],Beverages,175,Veg
+160,Nutella Cheese Cake [ SLICE ],Recommended,225,Veg
+161,Chicken Lollipop (8 Pcs),Recommended,350,Non-veg
+162,Brown Rice + Wrap (Serves 1),Recommended,340,Veg
+163,Malai Kofta (sweet) (400 -500 Grm),Main Course,279,Veg
+164,Milk Chocolate Spl,Chocolates,25,Veg
+165,Kaju Draksh [loose Tub 500ml],Hocco Ice Cream Tub,125,Veg
+166,Chilly Gobi,Veg Starter,245,Veg
+167,Max Tandoori Chicken Kasuri,Starters,300,Non-veg
+168,Chemmeen Fry (Prawns),Indian,265,Non-veg
+169,Chilli Garlic Prawn,Starters,30,Non-veg
+170,Onion Salad,Salads,90,Veg
+171,Punjabi Fix Lunch,Recommended,265,Veg
+172,Humty Dumty [ 350 Gm ],Biggi Platter,495,Veg
+173,Kushka,Indian,155,Non-veg
+174,Tangdi Kabab,Tandoori&kabab,169,Non-veg
+175,Mexican Babycorn,All Time Favourites,280,Veg
+176,Cuttlet [Chicken],Snaks,30,Non-veg
+177,Kara Lassi,Beverages,60,Veg
+178,Chola Chawal Combo,Combos,125,Veg
+179,Lasooni Palak,Main Course,51,Veg
+180,"Rock Corn Veggie Pizza [thick, 10 Inch]",Pizza,400,Veg
+181,Chicken garlic kebab (6 pcs),Starters,315,Non-veg
+182,Alfredo Pasta,Pasta,249,Veg
+183,Hot & Spicy Chinese Pasta,Chinese Pasta,205,Veg
+184,Boondi Jaljeera,Beverages,100,Veg
+185,Butter tandoori roti,Main Course,40,Veg
+186,Cheese Fondue,Waffles,349,Veg
+187,Quinoa et chocolate noir,Dessert,200,Non-veg
+188,Gunpowder Idli Bowl,Breakfast Bowls,99,Veg
+189,Desi Ghee Aloo Tikki,All Day Snacks,109,Veg
+190,Mamek-mee Goreng Veg,Big Eats (meal In Itself) Noodle Bowls,260,Veg
+191,Soy Fed Chilli Chicken Roll,Soy Fed Chicken Special Menu,189,Non-veg
+192,The Chocolate Room Muffin,Waffles,199,Veg
+193,Kids Combo,Combos,149,Veg
+194,Packed Lunch Box,Packed Lunch Box,199,Veg
+195,Achari Paneer Tikka,Starters,285,Veg
+196,Wheat Pav With Sprout Bhaji,All Day Breakfast,250,Veg
+197,"Carrot, Coconut & Ginger Soup (vegan)",Soup,255,Veg
+198,Almond Carnival 80gm,Hocco Ice Cream,75,Veg
+199,Brandy Steak Beef Tenderloin Infused With Rosemary,Chefs Reccomended,420,Non-veg
+200,Chipotle Cheese Potato Roll,Pocket Friendly Rolls,139,Veg
+201,Braised Pork Grilled Tacos,Mains,375,Non-veg
+202,Egg Bhurji Sandwich,Toasties & Sandwiches,140,Non-veg
+203,Classic Tiramisu,Desserts,139,Non-veg
+204,Pineapple Delight,Desserts And Beverages,51,Veg
+205,Crispy Lamb,Chinese,300,Non-veg
+206,Dahi Mamari Masala (250G),Namkeens,90,Veg
+207,Natural Strawberry Scoop,Recommended,80,Veg
+208,Peri Peri Fries,Snacks And Chaat,90,Veg
+209,Kodubale 200Gms,Packed Sweets And Savouries,95,Veg
+210,Hazelnut Hot Chocolate,Recommended,132,Veg
+211,"2 Naan, Paneer Butter Masala, Gobi Manchurian",Empire Special Combo Meals,169,Veg
+212,Baked Cheese Dragon [290 Gm],Pasta,415,Veg
+213,Ghee Chapathi,Parottas,30,Veg
+214,Chickstar Meal,Meals for 1 (starting at 199),375,Non-veg
+215,Chicken Biryani With Bone  [1pc],Recommended,359,Non-veg
+216,Veg Penne Pasta (200 gms),Pasta,80,Veg
+217,Asian Pickled Pepperd Chicken,Appetizer,71,Non-veg
+218,Chilli Beef,Starters,279,Non-veg
+219,Chicken Biryani [500gms] Served With Mixveg Raita,Rice & Biryani's,249,Non-veg
+220,Chilli Paneer Rice Bowl,Bowls,299,Veg
+221,Paneer Burger Combo,Hot Combos,247,Veg
+222,Neelkamal Special Toast [1 Toast],Snacks,169,Veg
+223,Signature Combo (300 Ml) X 4,Party Combos,849,Veg
+224,Dahiwala Bhuna Kukkad,Main Course,350,Non-veg
+225,Coke zero can,Beverages,57,Veg
+226,Burnt Garlic Mushroom Rice,Chinese,280,Veg
+227,Missi Chef,Bread - North Indian,65,Veg
+228,Extra Coconut Chatny 500ml,Idli Items,87,Veg
+229,Mexican Bowl Chicken,Meal In A Bowl,455,Non-veg
+230,Dhaba Aloo Pyaaz,Combos And Platters,269,Veg
+231,Jalebi 250gm,Dassera,195,Veg
+232,Veg Caesar's Salad Wrap,Wraps,152,Veg
+233,Basil Pesto (300 Gm),Hot From Oven,180,Veg
+234,Ginger Thokku [400 Gm],Rice Mixes,299,Veg
+235,Baby Corn Manchurian Gravy,Chinese Special,257,Veg
+236,Kaima Parotta (Tuesday),Evening Specials,128,Veg
+237,Pineapple Single Blends,Beverages,155,Veg
+238,Idli [three],South Indian,104,Veg
+239,Punjabi Salted Lassi,Breakfast & Snacks,99,Veg
+240,Chicken In Oyster Scallop Sauce,Main Course Non Veg,595,Non-veg
+241,Jain Dal Fry And Jeera Rice Combo,Jain Special,160,Veg
+242,Chat-pata Dhaba Chilli Cauliflower,Starters,345,Veg
+243,Vegetable Gulabi,Main Course,290,Veg
+244,Choco Berry Shake,BK Caf?,209,Veg
+245,Kashmiri Grilled Prawns,Sea Food Starters,350,Non-veg
+246,Mattar of Paneer,Main Course,140,Veg
+247,Cheese Chutney Maska Bun,Maska Bun,95,Veg
+248,Grains & Grilled Vegetable Salad,Salads,445,Veg
+249,Shanghai Honey Chilli Chicken,Appetizers,340,Non-veg
+250,Tawa Gobhi Paratha (2 Pcs),Breakfast & Snacks,149,Veg
+251,Toor Dal With Sabji - Roti - Rice - Sweet Combo,Healthy Full Meal Meals,141,Veg
+252,Hummus (Medium),Arabian,48,Veg
+253,Veg Shahi Korma,Indian,260,Veg
+254,Murg Bhune Platter,Platters,525,Non-veg
+255,Full Carrier Meals [for 3-4 Persons],Parcel Meals,390,Veg
+256,Mr Bombay Club Sandwich,Eggless Veggie Sandwiches,180,Veg
+257,Paneer Tikka Dry,Veg Dry,110,Veg
+258,Mushroom Masala Rice Bowl,Rice Bowls (one Person Meal),149,Veg
+259,Arabian Grape Juice,Recommended,70,Veg
+260,Chilli Chicken- Andhra Style,Chicken Starters,290,Non-veg
+261,Anda Nihari,Gravy Portion,48,Non-veg
+262,Cheezy Choley Bhature,Breakfast & Snacks,249,Veg
+263,Mutton Fried,Starters,340,Non-veg
+264,Vegetable Noodles,Main Course,200,Veg
+265,Whopper Fridays - Chicken Shake meal,Recommended,457,Non-veg
+266,Vanilla Cake[ Egg],Recommended,369,Non-veg
+267,Hawaiian Paneer Wrap,Recommended,249,Veg
+268,Sooji Rusk,Indian Bakery,76,Veg
+269,Vegetable Balls In Hot Garlic Sauce,Main Course,300,Veg
+270,Bettadakhan Estate- 250gm,Ground Coffee Packs,429,Veg
+271,Veg Roll With Falafel Kebab Combo,Roll Special Combos,279,Veg
+272,Mocha Jar + Hazelnut Brownie Combo,Bestseller Combos,249,Veg
+273,Butter Phulka,Indian Breads,25,Veg
+274,Pathiri 4pi &chicken Varattiyathu,All Day Breakfast,210,Non-veg
+275,Paneer Paratha [pc 1],Stuffed Paratha,220,Veg
+276,Soupy Egg Maggi,Maggi Maniac,48,Non-veg
+277,Plain Naan (1 Pc),Roti,27,Veg
+278,Chicken Fried Rice (300 Gms),Chinese,415,Non-veg
+279,Khowsey,Soups,329,Veg
+280,Chicken Mughlai,Main Course,233,Non-veg
+281,Pack of 2 Egg Namkeen Butter Gravy,Family Binge Combos,640,Non-veg
+282,Patiala Veg Punjabi Thali,Bathinda Junction Exclusives Combos,319,Veg
+283,Mini Bhindi Masala Dry ( 4 Roti ),Mini Combos,209,Veg
+284,Mixed Zinger Doubles,Recommended,350,Non-veg
+285,Hyderabadi Paneer (Spicy),Veg Main Course,200,Veg
+286,Jhoori Aloo Bhaja,Veg Items,80,Veg
+287,Non Veg Bowl + Chocolate Dessert,Chocolate Day Combos,309,Non-veg
+288,Chickoo Thick Shakes,Juice Shop,99,Veg
+289,Zingy Veg  Mild Chili Oyster + Ramen Noodles,Zingy Bowl,260,Veg
+290,Doda Burfi,Sweets,188,Veg
+291,Paneer Biryani .,Biriyani Festival,119,Veg
+292,[v] Italiano Cheese Momo,Recommended,199,Veg
+293,Pudina Stuffed Naan,Indian,48,Veg
+294,Fish Autumn Rice  (Szechuan Style),Rice,360,Non-veg
+295,Tofu And Mushroom SandwIch,Sandwiches (grilled),220,Veg
+296,Bun Tikki Cheese Slider,All Day Snacks,109,Veg
+297,50-50 Paratha,Parathas,89,Veg
+298,Fruit Fondue,Waffles,349,Veg
+299,Paneer Hare Masale Ki Phaal,Gravy Portion,51,Veg
+300,Chicken Maximus,Recommended,739,Non-veg
+301,Gulab Jamun [2 Pcs],Desserts,85,Veg
+302,Kit Kat Milkshake,Recommended,195,Veg
+303,Tuscan Tiramisu Dessert Jar,Cheesecake & Dessert Jars,119,Non-veg
+304,Subzi Aur Quinoa Tikki (signature Dish),Starters,395,Veg
+305,New Udupi Grand Special Soup,Soups,90,Veg
+306,Litchi Rabdi,Bengali Sweets,77,Veg
+307,"Vanilla Cafe Latte Mini Flask (500ml, Serves 3 to 4)",Flask,369,Veg
+308,Ghee Roast Masala Dosa,South Indian Breakfast,51,Veg
+309,Rose Lassi,Beverages (drinks),99,Veg
+310,Exotic Green Salad,Salads,240,Veg
+311,Popcorn Nachos,Recommended,199,Non-veg
+312,Jain Paneer Handi Combo,Jain Special,178,Veg
+313,2 Fries (R),Sharing Combos,100,Veg
+314,Mix Fried Rice,Main Course,220,Non-veg
+315,Peri Peri Paneer (30 CM),Recommended,749,Veg
+316,Paneer Tikka Masala + coke 200 ml can,Recommended,200,Veg
+317,Original Pancake & Waffle Premix,The BWC Store,190,Veg
+318,Masala Sprite,Desserts and Beverages,60,Veg
+319,7' Garden Fresh Pizza,Pizzas,139,Veg
+320,Lamb Bolognese  Wrap,Healthy Tortilla Wraps,350,Non-veg
+321,Rubiyan Faa,Arabian Specialties,600,Non-veg
+322,Honey Lemon Ginger Tea,Hot Beverages,110,Veg
+323,Doodh Peda,Sweets,152,Veg
+324,Paneer Noodels,Noodels,185,Veg
+325,Chicken Pepper Dry ( 6 Pcs ),Starters,180,Non-veg
+326,Chicken Achari Tikka,Starters,420,Non-veg
+327,Black Currant,Milk Shakes,80,Veg
+328,Bhel puri,Chaats,70,Veg
+329,Green Garden Fresh Vegetable Soup,Soups,240,Veg
+330,Chicken Roasted Garlic Noodles,Rice And Noodles,245,Non-veg
+331,Kappa Meen Vathichathu,Recommended,199,Non-veg
+332,Honey Butter Waffle + Maple Butter Pancake Mini Pancake,BWC Specials,198,Veg
+333,Gulab E Jamun,Desserts,110,Veg
+334,Parotta 2 Pi &chicken Curry,All Day Breakfast,190,Non-veg
+335,North Executive Thali + Watermelon Juice,Beverage Combos,220,Veg
+336,Schezwan Cheese Masala Dosa,Adigas Dosa Festival,114,Veg
+337,Hawaian Veg (11 Inch),Pizza And Pasta,294,Veg
+338,Gol Matri,Teatime Bites,116,Veg
+339,Rajesh Special Omelette,Recommended,210,Non-veg
+340,Salted Caramel Ice Cream Scoop (100 g),Ice Cream Scoops,109,Veg
+341,Chinese Chopsuey,Rice & Noodles Veg,300,Veg
+342,Spanish Delight Ice cream,Desserts,160,Veg
+343,Mango Ras 500 Gms,Mango Ras,200,Veg
+344,Crispy Fried Calamari & Sea Prawns,Starters,495,Non-veg
+345,Stuffed Aloo,North Special Gravy,150,Veg
+346,Classic Lemonade,Refreshing Quenchers,199,Veg
+347,Belgian Dark,Espressi,238,Veg
+348,Pizza Margherita,Handmade Sourdough Pizzas,465,Veg
+349,Stuffed Paneer Paratha,Indian,95,Veg
+350,12' Hot N Spicy Pizza,Pizzas,499,Veg
+351,McSpicy Paneer with Whole Wheat Bun,Guilt Free,182,Veg
+352,Chocolate Milk Shake,Beverages,48,Veg
+353,Schezwan Paneer Grilled Sandwich,Sandwiches,230,Veg
+354,Double Chocolate Cake,20% FLAT OFF DOUGHNUTS,88,Veg
+355,Dulce De Leche Ice Cream - 450 Grams,Family Packs,869,Non-veg
+356,Idli Manchurian,Udupi Palace Special Items,107,Veg
+357,Chilli Paneer Grill,Chats/Short Eats,165,Veg
+358,Swiss Cake 800 ML,Loose Ice Cream,315,Veg
+359,Malai Slice,Kulfilicious Traditional Indian Kulfis,85,Veg
+360,Arabian Dry Fruit,Juice Shop,165,Veg
+361,Choco Truffle(Slice),Pastries & Cakes,61,Veg
+362,Mexican Brownie with Vanilla Ice Cream,Recommended,89,Veg
+363,Zafrani Badami Veg Shorba,Indian Shorbas,110,Veg
+364,Fruit Biscuit,Cookies,114,Veg
+365,Strawberry Cheesecake  Ice Cream - 450 Grams,Family Packs,869,Non-veg
+366,Bread Butter Sandwich,2 Layer Sandwiches,50,Veg
+367,Abhijeet Eggstra Special Omelette,Double Egg Omelettes,240,Non-veg
+368,General Taos Chicken,Main Course,655,Non-veg
+369,McCafe Americano (R),Coffee and Tea,181,Veg
+370,Pork Sausage Fry,Recommended,300,Non-veg
+371,Paneer Cheese Veg Frankie (1 Pc),Frankies,210,Veg
+372,Anda Biryani,Main Course,300,Non-veg
+373,Matar Paratha ( 1 Pc ),Tawa Stuffed Paratha,139,Veg
+374,"Bahaar-E-Afghani Murgh ( Biryani with 50% Extra Creamy Chicken, Serves 1)",Guilt Free,419,Non-veg
+375,Cheese Chutney Slice,Slices,45,Veg
+376,King Egg with Cheese,Burgers & Wraps,80,Non-veg
+377,Black Current Candy,Candy.,70,Veg
+378,Singapore Noodles,Rice & Noodles Veg,285,Veg
+379,Baghara Bhat Fried Rice,Main Course,220,Veg
+380,Simply Nachos,Starters,250,Veg
+381,Kai Ga Prao,Non Veg Starters,260,Non-veg
+382,Chicken Kasa With Kerala Paratha 2 Pieces  (Maida Based),Non Veg Combo,300,Non-veg
+383,Three in One Sandwich,Grilled Sanswich,90,Veg
+384,Mutton Biryani Party Pack,Party Packs,860,Non-veg
+385,Veg Parcel,Recommended,45,Veg
+386,Elaichi Chai (3 chai pack),Economy Chai Pack,80,Veg
+387,Vegetable Momo / Steamed Dimsum,Veg Dimsum,215,Veg
+388,Kara Ghee Podi Dosa,Dosa,105,Veg
+389,Dry Fruits 300 Gm Pack,Gift Packs,379,Veg
+390,Veg Fried Rice And Gravy,Main Course,285,Veg
+391,Paratha Combo,Combos,48,Veg
+392,Veg Double Cheese Paneer Frankie (1 Pc),Frankies,230,Veg
+393,Dilliwala Masala Chaas,Thandai / Beverages,100,Veg
+394,La Vie En Rose Cappuccino-Iced,Beverages,241,Veg
+395,Caramel Sauce Jar (200 ml Jar),Sauce Jars,179,Veg
+396,Maxican Fried Rice,Main Course,269,Veg
+397,Apple Milk Shake,Beverages,51,Veg
+398,French Fries With Dip  (125 Gm),From The Fryer,159,Veg
+399,Fried Idli,South Indian,110,Veg
+400,Cupcakes Combo 6pc,Cupcakes,99,Veg
+401,Tender Coconut Water - No Added Sugar [200 ml],Seasonal Picks,70,Veg
+402,Veg Cream Mushroom Soup,Soups,140,Veg
+403,Pudina Plain Dosa,South Indian,90,Veg
+404,Paneer Veg Mix With Paratha,Indian,199,Veg
+405,Triple Chocolate Mini Pancakes (8 pieces),Mini Pancakes,146,Veg
+406,Manchow Noodles,Chinese,110,Veg
+407,Manchurian Noodles Mayonnaise Schezwan [300 Grams],Franco,160,Veg
+408,Chicken Tikka Whole Wheat Multigrain Sandwich,Guilt Free,205,Non-veg
+409,Crispy Brown Onion Egg Fried Rice,Rice,195,Non-veg
+410,Jain Italian Pizza 6',Pizza,125,Veg
+411,"Cheese, Capsicum and Onion Shakshouka",Shakshoukas,230,Veg
+412,Mini Dal Makhni Combo (4 Roti),Mini Combos,199,Veg
+413,Rava Dosa (Breakfast) ( 1 Pc ),Breakfast,118,Veg
+414,Dum gosht handi,Main Course,345,Non-veg
+415,Pav Bhaji Family Pack,Snacks & Street Food,389,Veg
+416,Butter Shake,Milkshakes,90,Veg
+417,Rava Idli Mix 200Gm,Instant/Ready Mix,75,Veg
+418,Upma + Coffee Serves 2,All Day Breakfast Combo,110,Veg
+419,Chocolate Truffle Heart Cake - Eggless,Anniversary Special,629,Veg
+420,Mutton Mushroom Soup,Soups,150,Non-veg
+421,Jeera Pulao (jeera Rice),Main Course,179,Veg
+422,Punjabi Lassi,Beverages,48,Veg
+423,Paneer 65 Masala,Indian,110,Veg
+424,Roti Combo - Veg,Make Your Combo- Indian,289,Veg
+425,Lesun Tadka Khichdi,Khichdi,48,Veg
+426,Waffles With Ice Cream,Waffles,230,Non-veg
+427,Kane Gassi,Indian,350,Non-veg
+428,Malpua (2 Pcs),Desserts,50,Veg
+429,Butter Vada Pav,Quick Bites,85,Veg
+430,Gulab Jamun - 2 Piece,Desserts,60,Veg
+431,Lunch Box,Office Meals,149,Non-veg
+432,Payam Nirachad [banana Fil],Snaks,40,Veg
+433,Paneer Tikka Dry Malai [8 Pieces],Starters,299,Veg
+434,Chicken Whopper + Chicken Whopper,Recommended,398,Non-veg
+435,Kid's Treat,Frozen Dessert Deals (Save Upto 36% - No Coupon Required),179,Veg
+436,Mandarin Water Chestnut,Around The World,335,Veg
+437,Pan Fried Barbecued Fish + Noodles,Appetizers Combo,395,Non-veg
+438,Chocolate Tremor,Knockout Sundaes,145,Veg
+439,Sauteed Mushrooms,Side Orders,220,Veg
+440,Maharaja Veg Semizza [Half Pizza][Serves 1],Recommended,329,Veg
+441,Chicken Garlic Chilli,Stir Fry - Side Dish,335,Non-veg
+442,Vegetable Pulao (Amul Butter),Main Course,169,Veg
+443,Veg Hunan (gravy)(chinese),Main Course,260,Veg
+444,Chini Mini [ 400 Gm ],Biggi Platter,395,Veg
+445,"Do Gosht ki Dum Biryani (Mutton & Chicken Dum Biryani, Serves 2)",Recommended,819,Non-veg
+446,Tandoori Chicken (Full),Non Veg Tandoori Starters,640,Non-veg
+447,Mushroom Pepper Kurma,Veg Main Course,190,Veg
+448,Quinoa Vegetable Pliaf,Salads,370,Veg
+449,Zingy Prawns Kung Pao + Rice,Zingy Bowl,299,Non-veg
+450,Veg Biryani (300 Gms),Indian,290,Veg
+451,Almond Glaze,Special Desserts,143,Non-veg
+452,Spaghetti Burrata Pasta (13 G),Pastas,27,Veg
+453,Makai Methi Malai,Veg Curry,250,Veg
+454,Prawns Chinese Chop Suey,Main Course,300,Non-veg
+455,Arabial Pulpy Grape Juice,Fresh Juices,80,Veg
+456,Lamb Kebab,Recommended,490,Non-veg
+457,Chicken Sholay Kabab (B/L),Chicken Starters,319,Non-veg
+458,Dry  Fruit Shake,Recommended,280,Veg
+459,Mixed Vegetable Combo,Meals and Combos,178,Veg
+460,KitKat Cheesecake,Cheesecakes (1 To 2 Serves),179,Veg
+461,Zingy Fish Hot Chili Garlic + Ramen Noodles,Zingy Bowl,299,Non-veg
+462,Mango & Raspberry  Ice Cream,Ice Cream,215,Non-veg
+463,Butter Dal Fry,Indian,110,Veg
+464,Prawn Manchurian Garvy,Chinese Special,373,Non-veg
+465,Veg Zinger,Recommended,179,Veg
+466,Veg Fixed Thali,Quick Bites,250,Veg
+467,Zingy Veg  Kung Pao + Udon Noodles,Zingy Bowl,260,Veg
+468,Schezwan Chaap,Dilli Soya Chaap,280,Veg
+469,Papad Rosted,Accompaniments,35,Veg
+470,Baby Corn in Manchurian Sauce,Main Course,250,Veg
+471,Summer Vegetables With Yogurt Pesto,Salads,215,Veg
+472,Boneless Mutton Keema Hyderabadi,Indian Starters And Main Course,450,Non-veg
+473,Murg Sheek Kebab,Starters,155,Non-veg
+474,Honey Noodles With Roasted Almonds,Dessert,205,Non-veg
+475,Chiku Milk Shake,Beverages,100,Veg
+476,Navratan Mixure ( 200 Grms ),Breakfast,114,Veg
+477,Tomato Raita,Indian,80,Veg
+478,Tomato & Cheese Soup,Soups,150,Veg
+479,Chocolate Ice cream Scoop,Ice cream Scoops,50,Veg
+480,Kaju Badam Karachi Halwa,Sweets,183,Veg
+481,Zestful Black Forest Cake,Recommended,599,Veg
+482,Chicken Biryani Regular,Recommended,339,Non-veg
+483,Chicken Mexican Dejaj Kebab,Arabian,460,Non-veg
+484,Boneless Biryani Combo,Combos and Thalis,349,Non-veg
+485,Plain veg cheese sandwich,Quick Bites,48,Veg
+486,Sausage McMuffin 2 pc Meal,McBreakfast Meals,27,Non-veg
+487,Chicken Fried Rice (Basmati),Chinese,210,Non-veg
+488,Chilli Cheese Maggie,Maggie,60,Veg
+489,Gulab Jamun - 4 Pc,Recommended,72,Veg
+490,Coriander Fish,Starters,330,Non-veg
+491,Veg Plain Sandwich,Sandwiches,50,Veg
+492,Paneer Tawa Bun Kebab,Bun Kebabs (desi Burger),355,Veg
+493,Vada Pav (15 Pcs),Get - Together Orders,750,Veg
+494,Grilled Chicken Tandoor Sandwich,Burgers And Sandwiches,162,Non-veg
+495,Hot Chocolate Sauce Jar (200 ml Jar),Sauce Jars,179,Veg
+496,Butter Chicken- Dal- Roti,Indian Combos And Bowls,249,Non-veg
+497,Malacca Fried Rice Nonveg,Staples,255,Non-veg
+498,Fish Corinder,Starters,350,Non-veg
+499,Brownie With Choclate Sauce,Desserts And Accompaniments,51,Veg
+500,Cheese Spring Dosa,Chinese Fusion Dosa,340,Veg
+501,Cheese Sandwich Regular,Sandwich,100,Veg
+502,Falahari Chevda - Tikha ( 200 Grms ),Breakfast,57,Veg
+503,Macaco Banana,Ice creams,180,Veg
+504,Veg Penne Pasta in Choice of Sauce,Pastas,240,Veg
+505,Diet Coke (300 ml),Beverages,80,Veg
+506,Corn Chowder Soup,Soups,230,Veg
+507,Gobi Chilli Gravy,Chinese,100,Veg
+508,Punjabi Dal Combo,Executive Thalis,240,Veg
+509,Triple Schezwan Fried Rice Veg,Staples,235,Veg
+510,Chicken Stir Fried Combo,Chinese,645,Non-veg
+511,Honey Butter Waffle,WAFFLES!,48,Veg
+512,Bharwan Tandoori Aloo,Starters,249,Veg
+513,Egg Liver Roll,Quick Bites,95,Non-veg
+514,Kesar Elaichi Chai (4 chai pack),Recommended,115,Veg
+515,Veg Lollipop (6 Pcs) (440 gms),Chinese,280,Veg
+516,Cheese Dahi Puri,Chatpata Snacks,75,Veg
+517,Schezwan Noodles (400 gms),Chinese,240,Veg
+518,Prawn Chilly Dry,Non Veg Starter,250,Non-veg
+519,Mushroom Baby Corn,Chinese Curry,260,Veg
+520,Badam Milk Ready Mix [200gm],Savouries,119,Veg
+521,Choco-overload Combo (Box of 4),Mega Saver Combos (upto 35% savings),449,Veg
+522,Zap Veggie Burger,Recommended,102,Veg
+523,Roasted Chicken Pizza,Non Veg Pizza,195,Non-veg
+524,Prawn Sukka,Prawn And Crab Shell Squid,495,Non-veg
+525,Mocha Brownie,#Mor2Go,847,Veg
+526,Khajur Bonanza,Recommended,347,Veg
+527,Sweet Lime Soda,Juice,55,Veg
+528,Three Layered,Recommended,209,Veg
+529,Chicken Spring Roll + Coke (300 Ml ),Beverage Combos,330,Non-veg
+530,Cold Filter Coffee (Normal Milk),Chilled,175,Veg
+531,Naga Dal,Veg Main Course,160,Veg
+532,Monte Carlo Vanilla Mocktail,Mocktails,95,Veg
+533,Zingy Chicken Spicy Hunan + Rice,Zingy Bowl,280,Non-veg
+534,Veg Manchow Soup,Soups,95,Veg
+535,Chocolate Overload milk Mini Pancakes (8 pieces),Mini Pancakes,136,Veg
+536,Cheese Sandwich Grill,Sandwich,140,Veg
+537,Bhatti Chicken,Tandooor,240,Non-veg
+538,Kung Pao Tofu,Main Course,299,Veg
+539,Prawn Curry/ Masala,Prawn Preparation,280,Non-veg
+540,Chilli Idli (Tuesday),Evening Specials,128,Veg
+541,Soya Keema Masala,Indian On The Go- Main Course ( Indian ),360,Veg
+542,Newyork Hazelnut Cheesecake -600 Gms (4 To 6 Serves),Cheesecakes (4 To 6 Serves),759,Non-veg
+543,Desi Slice Combo,Kulfi Combos.,260,Veg
+544,Thandai (Pack of 2),Recommended,208,Veg
+545,Traditional Legume Pesto,Main Course,430,Veg
+546,Dabeli Butter,Dabeli,45,Veg
+547,Cookies Honey N Oats Tin 150 Gm,Cookies,150,Veg
+548,Medhu Vadai,South Indian,50,Veg
+549,Zingy Prawns Black Pepper + Rice,Zingy Bowl,299,Non-veg
+550,Filler Cheezy Paneer Pizza,Pizza,156,Veg
+551,True Bar Himalayan Pink Salt with Milk Chocolate,Chocolates,203,Veg
+552,Gobi Pyaz Paratha,Tandoori Parathas,115,Veg
+553,Murgh Koobideh (Chicken Tikki Kebab),Recommended,185,Non-veg
+554,Hawker's Chilli Chicken Bowl,Bowls,299,Non-veg
+555,Mango Smoothie,Beverages,110,Veg
+556,Navarathna Kuruma,North Indian,205,Veg
+557,Veg Hyderabadi Biryani Bowl,Biryani Bowls (one Person Meal),129,Veg
+558,Non Veg Punjabi Thali,Bathinda Junction Exclusives Combos,319,Non-veg
+559,Egg Omelette (2 Eggs),Snacks,110,Non-veg
+560,Stuffed Chicken Steak,Steak On Plate,399,Non-veg
+561,Plain Nan,Indian,25,Veg
+562,Hoi Sean Soup,Soup,225,Non-veg
+563,Garden Fresh (20 CM),Recommended,379,Veg
+564,French Fries (Salted),Sides,85,Veg
+565,Arabian Leham Macaroni,Arabian Specialties,340,Non-veg
+566,Aaloo Capsicum Masala,Veg Indian Gravy,250,Veg
+567,Indonesian Mushroom,Starters,250,Veg
+568,Mushroom Chilly.,Chinese,299,Veg
+569,Crispy Babycorn Manchurian,Starters Veg,450,Veg
+570,Mutton Garlic,Starters,300,Non-veg
+571,Snacker Paneer Tikka Combo,Combos,200,Veg
+572,Kappa Biryani (Poth),Main Course,160,Non-veg
+573,Oriental Mustard Fish,Appetizers,27,Non-veg
+574,Veg Grilled Cheese Sandwich,Quick Bites,48,Veg
+575,Cheese Chutney Bun Butter,Quick Bites,35,Veg
+576,JS Value Meal,Complete Shawarma Meal Combo,252,Non-veg
+577,Kesar Badam (200 ml),Beverages,60,Veg
+578,Chicken Manchurian Sauce (400 Gms),Chinese,470,Non-veg
+579,Kungpao Veg With Rice,Big Eats (meal In Itself) Rice Bowls,285,Veg
+580,Anar Juice,Beverages,51,Veg
+581,Half Boiled Egg,Quick Bites,29,Non-veg
+582,Fungi Formage Pizza,Pizzas,490,Veg
+583,Baby Corn Kadai,Veg Main Course,95,Veg
+584,French Fries With Choice Of Seasoning,Super Starters,185,Veg
+585,Egg Schezwan Fried Rice,"Rice, Noodles & Chopsuey",220,Non-veg
+586,Hot and Sour Chicken,Starters,280,Non-veg
+587,Garlic Cheese Kulcha,Indian Breads And Rice,48,Veg
+588,Pista Malai 800 ML,Loose Ice Cream,137,Veg
+589,Potato (Gravy) - Choice of Sauce,Delights Dishes,285,Veg
+590,Flax Shon Papdi [250 Gms],Sweets,143,Veg
+591,Flamed Platter 3 (Seafood Platter),Starters,750,Non-veg
+592,Baked Beans,Eggless Sidey Orders,48,Veg
+593,Prawn Fry,Starters,250,Non-veg
+594,Whole Wheat Base Mushroom Roll,Guilt Free Options,48,Non-veg
+595,Veg Pulao (250 Gms),Main Course,48,Veg
+596,Vegan Soyrizo Burrito (Spicy),Healthy,340,Veg
+597,Watermelon Iced Tea,Beverages,200,Veg
+598,Chandini Tikka,Indian,205,Non-veg
+599,Spicy  Sriracha Paneer Wrap,Wraps  ( 350 Gm ) Served With Salad,230,Veg
+600,Panner 65,Starter,180,Veg
+601,Butterscotch Bites,Recommended,333,Veg
+602,Strawberry Thick Shake(330ml),Recommended,199,Veg
+603,12 Piece Butter Naan,Combo Menu,250,Veg
+604,Bounty Peda 1 Kg,Desserts,600,Veg
+605,Shahi Delight Large Scoop (300 ML),Scoops,129,Veg
+606,Fish Biryani,Main Course,329,Non-veg
+607,Samosa Chole Chaat (200 gms),Chaats,90,Veg
+608,Zingy Chicken Black Pepper + Rice,Zingy Bowl,280,Non-veg
+609,Changezi Paneer,Todays Special,355,Veg
+610,Fiery Basa Fish Fillet,Empire Special Tawa Dishes,355,Non-veg
+611,Jalapeno Franco [200 Grams],Franco,100,Veg
+612,Janak Janak Payal Dosa,Fancy Chula Dosa,350,Non-veg
+613,Grilled Chicken Grilled Tacos,Mains,340,Non-veg
+614,Hariyali Prawn Tikka,Starters,620,Non-veg
+615,Cheese And Corn Pizza,Standard Flavour Pizza,179,Veg
+616,Baked Beans On Toast With Chilli And Cheese,Eggless Breakfast,150,Veg
+617,Chilli Garlic Egg Noodles,Noodles,190,Non-veg
+618,Golden Fried Baby corn,Chinese,205,Veg
+619,Hummus Medium,Soups & Sauce And Salads,51,Veg
+620,Any Sandwich and Any Mocha Frappe,All Day Breakfast Combos,476,Non-veg
+621,4'' Mushroom Pizza,Pizzas,51,Veg
+622,Thai Green Curry With Rice (Fish),Oriental,76,Non-veg
+623,Choco Nut Sundae,Ice cream,135,Veg
+624,Chips Masala 80Gm,Packed Sweets And Savouries,65,Veg
+625,Onion Plain Dosa,South Indian,95,Veg
+626,Egg In Choice Of Sauce,Egg Main Course,165,Non-veg
+627,Silky Smooth Kitkat Cake,Recommended,699,Veg
+628,Fried Rice Bowl- Chicken,Make Your Bowl - Chinese,320,Non-veg
+629,Roots Special Hara Murgh Biryani,Main Course,339,Non-veg
+630,Pepper Idli,Special Idly Varities,110,Veg
+631,Mix Veg Garlic Cheese,Rk Da Paratha,250,Veg
+632,Dhokar Dalna,Veg Items,48,Veg
+633,Grilled Fish Salsa Verde,Fish,449,Non-veg
+634,Doda Barfi 1 Kg,Desserts,660,Veg
+635,Raw Pressery Alphonso Mango Juice,Recommended,63,Veg
+636,Fudge Brownie,Recommended,139,Veg
+637,Chicken Mushroom,Starters,235,Non-veg
+638,Keto Pick-Me Up Juice,Keto Smoothies,200,Veg
+639,Babycorn 65,Starter,150,Veg
+640,Schezwan Masala Khichdi,Khichdi,250,Veg
+641,Makahana Mint,Makhana,125,Veg
+642,Raja-Rani Dosa + Maxican Dosa + Idly(2 Pc) +Butter Milk (200 Ml),Family Binge Combos,399,Veg
+643,Egg Uttapam with Veg Gravy,Quick Bites,70,Non-veg
+644,"North Indian Meals (Soup, sweet, 3pc chapati, 2 cups curry, pulao, curd rice, papad.)",Meals,165,Veg
+645,Classic Falafel Wrap + Classic Hummus + Fudge Brownie (egg) + Coke (250 Ml),Jumbo Combo,445,Non-veg
+646,Royal Chicken Rice Bowl (Jumbo),Rice Bowls,329,Non-veg
+647,Hot Brownie with Ice cream,Recommended,169,Veg
+648,Red Velvet Kulfi Thickshake,Shakes,251,Veg
+649,Blue-berry Muffin,Pastries & Cheesecakes,99,Veg
+650,Double Toppings (17.5 Cm),Great Value Pizzas,139,Veg
+651,Chilli Paratha,Parotta Items,51,Veg
+652,Averekallu Gujju With Akki Roti,South Combo,220,Veg
+653,Lychee Juice,Beverages,160,Veg
+654,Paneer Do Payaza (8 pcs),Veg Dishes,180,Veg
+655,Crispy Schezwan Vegetable,Appetizer,299,Veg
+656,Tomato Rice,Lunch Special,85,Veg
+657,Paneer Cutlet (1 Pc) (50 gms),Indian Snacks,38,Veg
+658,Vada ( 1 Pc ),Breakfast,64,Veg
+659,Boiled Eggs (2 Pcs),Starters,30,Non-veg
+660,Pattaya Crunchy Soup [new],Soup,245,Veg
+661,Paneer Tikka Lababdar (400-gm),Indian,240,Veg
+662,Curly Potato,Appetizers,285,Veg
+663,Prawns Schezwan Noodle,Chinese,285,Non-veg
+664,Sev Tomato,Recommended,220,Veg
+665,Murgh Reshmi Seekh Kebab,Starters,315,Non-veg
+666,Carnitas Pork Nachos,Appetizers,450,Non-veg
+667,Yellow Pad Thai Noodles,"Pan Asian Rice, Noodles & Curries",279,Veg
+668,Crab Manchurian,Main Course,220,Non-veg
+669,Nawabi Paneer Lababdar with Matar Pulao,Recommended,209,Veg
+670,Tandoori Aloo,Starters,300,Veg
+671,Shev Bhaji ( Served With 3 Fulkas),Main Course,339,Veg
+672,Malabar Lachha Paratha [150 Grams],Breads,95,Veg
+673,Aloo Matter With Jeera Rice,Meals,160,Veg
+674,Pan-Seared Prawns Soft Tacos,Mains,390,Non-veg
+675,Fruit Sundae with Ice,Desserts,110,Veg
+676,Garlic Bread (6 Pcs),Nibbles,126,Veg
+677,Butter Scotch(Slice),Pastries & Cakes,66,Veg
+678,Ferrero Rocher Fudge Sundae,Desserts,229,Non-veg
+679,Beef Varattiyathu + Coke 250 ml pet Bottle,Recommended,245,Non-veg
+680,Chicken Semizza Combo,Combos (Serves 1-2),269,Non-veg
+681,Avarekalu 100Gm,Packed Sweets And Savouries,48,Veg
+682,Smoked Tandoori Makai And Paneer Biryani,Monsoon Festival,459,Veg
+683,Cool Snack Combo,Frozen Dessert Deals (Save Upto 36% - No Coupon Required),159,Veg
+684,Chocolate Twelve Cupcakes,Cupcake Combos,36,Veg
+685,Pour Over-Hot,Beverages,171,Veg
+686,Chilly Cheese S/W,Chats/Short Eats,110,Veg
+687,Baked Mughlai Paneer,Main Course,215,Veg
+688,Buy 4 & Get 2 Free Original Glazed,BOX DEALS 4+2,360,Veg
+689,Darjeeling Muscatel Black,Beverages,189,Veg
+690,Pepper Chicken Barbeque (Quarter Piece),Arabian,110,Non-veg
+691,Chicken MAXX Value Meal,Complete Shawarma Meal Combo,413,Non-veg
+692,Mr Holes Eggless Breakfast,Eggless Breakfast,210,Veg
+693,Veg,American Chopsuey,165,Veg
+694,Ribbon Pakoda,Teatime Bites,116,Veg
+695,Mamek-mee Goreng Non Veg,Big Eats (meal In Itself) Noodle Bowls,330,Non-veg
+696,Chicken Kabab 5pi+ Sprit 600 Ml Pet Bottle,Beverage Combos,259,Non-veg
+697,Chocolate Mint Fresh Batch Ice Cream Tub - 1 L,1 L Ice Cream Tubs,571,Veg
+698,Roti (1 pc) & Curry,Combos,90,Veg
+699,American Lo Mein,Bowls,269,Veg
+700,Tiramisu Cake - 600 Gms,Specialty Cakes,759,Non-veg
+701,Tiramisu  Ice Cream - 450 Grams,Family Packs,869,Non-veg
+702,Pindi Chole,Sabji Main Course,140,Veg
+703,Gobi 65,Starters,185,Veg
+704,Hasi Menasinakai Saagu,Karnatic Delicacies,250,Veg
+705,Dry Fruit Shake,Milk Shakes,110,Veg
+706,Chicken Hong Kong Style Sauce,Main Course,299,Non-veg
+707,Mutton Dum Biryani  [1pc],Recommended,590,Non-veg
+708,Veg Schezwan Soup,Soups,80,Veg
+709,Tikka Masala Burrito Meal - Non Veg,Meals for 1 (starting at 199),359,Non-veg
+710,Green Chilli Dry,Chinese,208,Veg
+711,Schezuan Chicken Pizza,Recommended,230,Non-veg
+712,Assamese Style Ghuguni,September Special,110,Veg
+713,Mango Jar Cake,Dessert Jars,169,Veg
+714,Potato Bhaji (4 Pcs),Snacks,50,Veg
+715,Manchow Veg,Soups,150,Veg
+716,Palak Aloo,North Indian,246,Veg
+717,Mushroom Chilly Dry,Veg Starter,110,Veg
+718,Veg Franco [200 Grams],Franco,80,Veg
+719,Kiki And Oreo Cream Waffle Cake (Double Layer),Waffle Cakes,581,Veg
+720,Boneless Chicken Nagarjuna Roast,Starters,355,Non-veg
+721,Jager Steak Pork Chops With Demi Glaze,Chefs Reccomended,510,Non-veg
+722,Figs - Almonds (badam - Anjeer) 125 Ml Mini Tub,Recommended,129,Veg
+723,Cheese Pulao (250 Gms),Main Course,51,Veg
+724,Malvani Chicken Curry,Main Course,280,Non-veg
+725,Veg Special Gravy,Main Course,195,Veg
+726,Imperial Mix Mutton Parotta,Indian Breads,190,Non-veg
+727,Mutton Liver Masala,Main Course,230,Non-veg
+728,Punjabi Lunch And Dinner,Punjabi,160,Veg
+729,Hyderabad Chicken Biryani,Main Course,190,Non-veg
+730,1 Veg and 1 Non-Veg Half Pizzas [Medium],Recommended,399,Non-veg
+731,Caramel Nut Crunch (Double Scoop),Double Scoop,140,Veg
+732,Whole Wheat Cheese Paratha,Whole Wheat,260,Veg
+733,Paneer Shikari,Veg Kebab's,370,Veg
+734,Guacamole,Dips,70,Veg
+735,Crispy Mushroom Tacos (1 pc),Tasty Tacos,89,Veg
+736,Mutton Raan,Empire Special Mutton (Dry),610,Non-veg
+737,Fulwadi,Recommended,95,Veg
+738,Mysore Cheese Dosa,Adigas Dosa Festival,158,Veg
+739,New Kabir Special Veg (400 -500 Grm),Main Course,289,Veg
+740,Veggie Spicy Samosa + Coffee Serves 2,All Day Breakfast Combo,180,Veg
+741,Whey Protein,Protein,135,Veg
+742,Kit Kat Thick Shake,Juice Shop,138,Veg
+743,Chicken Khao Phad Kapro,Thai Cuisine,269,Non-veg
+744,Turkey & Chicken Slice Signature Wraps,Signature Wraps,300,Non-veg
+745,Barbeque Chicken Burger,Burgers,265,Non-veg
+746,Sweet corn Veg Soup,Soups,85,Veg
+747,Black Currant Small Scoop (150 ML),Scoops,77,Veg
+748,Falooda,Recommended,89,Veg
+749,Lamb Keema Fries,Fries,185,Non-veg
+750,Grilled Onion & Capsicum Taco (1 pc),Tasty Tacos,89,Veg
+751,Double Cheese McMuffin 3 Pc Meal with Cappuccino (S),McBreakfast Meals,355,Veg
+752,Ginger Fish Sauce,Main Course,330,Non-veg
+753,Chiku Shake (actual Fruit),Farali Special,109,Veg
+754,Atta Laddu,Sweets,200,Veg
+755,Lamb Burger,Burger,210,Non-veg
+756,Chicken Special Boneless Biryani [family Pack],Recommended,725,Non-veg
+757,Beef Chukka (serves 1),Indian,225,Non-veg
+758,American Cheese Balls,Starters,210,Veg
+759,Khasta Mixture Pack,Namkeens,116,Veg
+760,Cheese Balti (400-gm),Indian,250,Veg
+761,Pasta Arrabita(red Sauce),Continental,250,Veg
+762,Methi Matar Kaju Makhana,Sabji Main Course,210,Veg
+763,Paneer Tikka (5pcs),Tandoori&kabab,199,Veg
+764,Rocky Road Pizza,Waffles,329,Veg
+765,Cherupayar Curry,Specials Kerala Style,85,Veg
+766,Garam Jalebi,Desserts,143,Veg
+767,Snacks Platter (20 Pcs),Quick Bites,569,Veg
+768,Almond Croissant,Recommended,251,Non-veg
+769,Chikoo Fruit Shake,Beverages,99,Veg
+770,Caribbean Sunshine,Beverages,180,Veg
+771,Patthar Gosht,Recommended,200,Non-veg
+772,Paneer Paratha Roll,Recommended,100,Veg
+773,Chicken Egyptian Barbeque (Full)(8 Pcs),Arabian,510,Non-veg
+774,Hard Base Pizza 6',Breads,97,Veg
+775,Chicken Penne Arrabbiata in Red Sauce,Pasta & Spaghetti,375,Non-veg
+776,Veggie Delite Signature Wraps,Signature Wraps,271,Veg
+777,Single Idli Vada,Breakfast,80,Veg
+778,Black Forest Pastry 1 Pc,Cake  &  Pastry,80,Veg
+779,Meatball and BBQ Chicken Pizza [Medium],Recommended,579,Non-veg
+780,Bharwan Kulcha Cheese (1 Pc),Main Course,109,Veg
+781,Punjabi Egg Curry [250 Gm],Main Course,110,Non-veg
+782,Chicken Sahan Shawarma Full Meat,Shawarma Specialties (4.pm Onwards),230,Non-veg
+783,Choorme Na Ladoo,Farali Fast Special,150,Veg
+784,Mocha Delite coffee,Beverages,110,Veg
+785,Aloo Palak (400 Gms),Indian,215,Veg
+786,Mirinda Can 330 ml,Recommended,57,Veg
+787,Fried Tuna Roll,Sushi,545,Non-veg
+788,Chinese Chop suey (400 gms),Chinese,230,Veg
+789,Popular Combo,Kulfi Combos.,160,Veg
+790,Thai Chicken Green Curry,Thai Cuisine,27,Non-veg
+791,Vanilla Muffin,Muffin,50,Veg
+792,Lemongrass Chicken,Appetizers Non Vegetarian,525,Non-veg
+793,Stir Fried Chicken With Fresh Basil,Appetizer,655,Non-veg
+794,Achari Matki Subzi,Main Course,240,Veg
+795,Black Forest Cake (250 Gms),Cake,249,Veg
+796,Lasuni Soya Chaap [300 Grams],Tandoori Starters,30,Veg
+797,Kadai Chicken Frankie Roll,Recommended,189,Non-veg
+798,Chicken Kolhapuri,Main Course,249,Non-veg
+799,Thai Curry Bowl,Recommended,32,Veg
+800,Mattar Mashroom + 4 Phulka,Combos,169,Veg
+801,Assamese Non-veg Thali 299,Gams Delicacy (economy) Veg &non Veg Thali,329,Non-veg
+802,Sweet Fresh Lime Water [300 Ml],Recommended,75,Veg
+803,Cheese Sandwich,Chat,100,Veg
+804,Asian Sea Bass In Roasted Garlic Sauce (Calcutta Bhetki),Main Course,675,Non-veg
+805,Sichuan Veg Fried Rice,Rice,190,Veg
+806,Soya Matar Keema,Curries,195,Veg
+807,Andhra Style Chilli Chicken,Mughal Treat Special,300,Non-veg
+808,Cheese Dip (30 Gm),Dips,49,Veg
+809,Devils Prawn,Steaks - Main Course,380,Non-veg
+810,Layer Cake (48Gms),Recommended,260,Non-veg
+811,Pepsi Black Can,Recommended,57,Veg
+812,Squid Pepper Fry,Indian,390,Non-veg
+813,Chicken BBQ Blast Exotica,Non - Veg Pizza,369,Non-veg
+814,Farmhouse,Recommended,529,Veg
+815,Jeera Aloo (350 gms),Indian,245,Veg
+816,Egg Curry Roti,Thalis,95,Non-veg
+817,Melting Moments Biscuit,Cookies,114,Veg
+818,Beetroot Carrot Apple Healthy Juice,Healthy Juice,99,Veg
+819,Mosaranna,Karnatic Delicacies,190,Veg
+820,American Cheese Supreme - Veg,Burgers & Wraps,139,Veg
+821,English Veg Cheese Grill S/W Melange,Sandwich/Fries/Wraps,138,Veg
+822,Baby Corn Chilli Fried Rice,Main Course,255,Veg
+823,Veg Tawa Style,Main Course,370,Veg
+824,Baklava Ice Cream,Recommended,129,Veg
+825,French Truffle Cake,Cakes,499,Veg
+826,Veg Pulao,"Fried Rice,noodles & Rice",246,Veg
+827,Paratha Sabzi Combo,Combos,140,Veg
+828,Chicken Sheek Kebab,Starters,210,Non-veg
+829,Prawn Malai Curry,Prawn Preparation,280,Non-veg
+830,Supreme Lunch [new],Fixed Lunch,255,Veg
+831,Atta Noodles + Desi Chai Serves 2,All Day Breakfast Combo,190,Veg
+832,Super Masala Chai (6 Chai Pack ),Cutting Chai - Coffee Packs,149,Veg
+833,Tomato & Mozzarella Caprese,Salads,395,Veg
+834,Chicken Tikka Wheat Roll,Healthy Wheat Rolls,199,Non-veg
+835,Veg Hot & Sour,Soups Veg,150,Veg
+836,Dal Lasuni Tadka,Veg Main Course,240,Veg
+837,Chatpata Chilli Sandwich Sandwich,Jumbo Wheat Grilled,48,Veg
+838,Badam Ghee Biscuits 250 Gms- Cookies,Bakery,174,Veg
+839,Thai Fried Prawns,Starters,350,Non-veg
+840,Zingy Veg  Hot Chili Garlic + Ramen Noodles,Zingy Bowl,260,Veg
+841,Paneer Chilly Dry(6pcs),Recommended,175,Veg
+842,Mangalorean Masala Fry - White Pomfret Fish Fry - 1pc,Fish Fry -tawa/rava/masala Fry/steamed/pollichathu,399,Non-veg
+843,Original Veggie Momos [5 Pieces],Recommended,99,Veg
+844,Butterscotch Fudge with Oreo (Homepacks),BR Summer Party,349,Veg
+845,Double tawa panner roll,Quick Bites,139,Veg
+846,Tandoori Corn And Paneer Sandwich,Grilled Sandwiches,105,Veg
+847,Masaledar Thanda Jal Jeera ( 250 Ml ),Beverages,40,Veg
+848,Exotic Vegetables In Spicy Bean Sauce,Main Course,645,Veg
+849,Shing Chutney,Radhika's Food Products,40,Veg
+850,Chicken Red Thai Curry,Meals,260,Non-veg
+851,Desi Style Mutton Curry,Non Veg Main Course Curries,560,Non-veg
+852,Butter Chicken Frankie Roll,Recommended,189,Non-veg
+853,Iced Lime Tea,Drinks,165,Veg
+854,Veg Hakka Noodles,Recommended,175,Veg
+855,1 Pack Gathiya + 2 Cutting Chai,Gathiya Chai Combo,99,Veg
+856,Chicken Only Shawarma Plate,Quick Bites,260,Non-veg
+857,Paneer Jamoon,Sweets,181,Veg
+858,Peas Biryani,Indian,140,Veg
+859,Chocolate Blackout Cake(500 gms),Cakes,540,Veg
+860,Garlic Bread With Cheese  Melange,Fusion/Pasta/Mooms,175,Veg
+861,Jalebi - 100 G,Recommended,78,Veg
+862,Veg Manchow Soup (250 ml),Soups,175,Veg
+863,Kadhi Pakoda,Main Course,199,Veg
+864,Cream Chicken,Main Course,329,Non-veg
+865,Spaghetti Aglio Olio,Pasta & Risotto,405,Veg
+866,Four Seasonal Pizza,Pizza,330,Veg
+867,White Choco Nutella Brownie Sandwich,Recommended,129,Non-veg
+868,Iced Tea Peach,Beverages,125,Veg
+869,McSpicy Fried Chicken,Mcspicy Fried Chicken,119,Non-veg
+870,Vegetable Seekh Kebab,Starters,300,Veg
+871,Paneer Makhani (half Portion),Curries,265,Veg
+872,Chicken Sekuwa,Nepali Appetizer NonVeg,220,Non-veg
+873,Pudina Masala Dosa,South Indian,105,Veg
+874,Veggie Delight Pizza (11 Inch),Pizza And Pasta,294,Non-veg
+875,Dachen Chicken,Starters,299,Non-veg
+876,Sugarless Ginger Lemon Chai - Uniflask (Serves 1-2),Guilt Free,115,Veg
+877,Veg Jaipuri Rice Bowl,Rice Combo's & Rice Bowls,199,Veg
+878,Anda Khurma,Gravy Portion,48,Non-veg
+879,Chicken Handi Biryani [1kg][served in handi and mix veg raita],Rice & Biryani's,529,Non-veg
+880,Veg Hot & Sour Soup,Soups,95,Veg
+881,Vermicelli Kheer (100 gms),Recommended,79,Veg
+882,3 Pack Gathiya + 6 Cutting Chai,Gathiya Chai Combo,299,Veg
+883,Paneer Tikka (8 Pcs),Indian,215,Veg
+884,"Dum Gosht Bahaar (Biryani with 50% extra Mutton, serves 1)",Recommended,575,Non-veg
+885,Chunky Chicken Bhuna Wrap (50% More Filling),Recommended,215,Non-veg
+886,Sundried Potato Chips,Chips,71,Veg
+887,Aloo Mattar Dry,Main Course,95,Veg
+888,Veg Dumpling In Hot Garlic Sauce,Gravy,215,Veg
+889,Easy Coffee Box of 5 - Wake me up Blend,Easy Coffee Bags,190,Veg
+890,Baby corn Manchurian Dry,Starters,199,Veg
+891,Puttu veg Stew & kadala curry combo,All Day Puttu Combo,139,Veg
+892,Alu Gobi Masala,Main Course,224,Veg
+893,Mexican Grilled Sandwich,Grilled Sanswich,95,Veg
+894,Biryani Rice (non-veg),Biryanis,160,Non-veg
+895,Chicken boti kebab (6 pcs),Starters,315,Non-veg
+896,Tawa Jhinga,Main Course,469,Non-veg
+897,Papad (Tandoor),Salad,65,Veg
+898,Chicken Dry Pepper,Starters,190,Non-veg
+899,Cheese Corno Fiesta Wheat Grilled Sandwich,Wheat Grilled Sandwiches,80,Veg
+900,Classic Chicken Burger,Special,289,Non-veg
+901,Veg Whopper+ Med Fries + Med Pepsi + Chocolava cup,King Deals ( Save Rs 74),278,Veg
+902,Mocha Brownie Fudge [loose Tub 500 Ml],Hocco Ice Cream Tub,200,Veg
+903,Chole Chawal,2 in 1 Meal,139,Veg
+904,Gatta Masala,Main Course,180,Veg
+905,Prawn (shrimps) Butter Garlic Sauce With Rice / Noodles,Combos Oriental,279,Non-veg
+906,Spicy Harissa (jain Not Available),Puff Pastry (4 Pc),189,Veg
+907,Fish Burger Combo,Hot Combos,267,Non-veg
+908,Sing Chikki,Dry Fruit Sweets,112,Veg
+909,New York Cheesecake,Desserts,209,Non-veg
+910,Babycorn Chilly Dry,Veg Dry,100,Veg
+911,Kara Boonthi,Savouries,141,Veg
+912,Mushroom Biryani .,Biriyani Festival,119,Veg
+913,Paneer Kulcha,Purani Dilli Main Course,90,Veg
+914,Harabara Kabab,Veg Tandoori,240,Veg
+915,Chocolate Milkshake,Dessert And Beverages,192,Veg
+916,Mushroom Tikka Dry,Starters,210,Veg
+917,Egg Schezwan Curry,Main Course,210,Non-veg
+918,Paneer-Bhurji-Whole-Wheat-Sandwich,Better Bites,169,Veg
+919,Magic Veg,Veg Menu,85,Veg
+920,"Dal Makhni Combo ( 3 Roti, Rice )",Combos & Snacks,329,Veg
+921,Low Fat Roasted Cauliflower & Chickpeas Burrito Bowl,Healthy,340,Veg
+922,Manthal Fry,Indian,260,Non-veg
+923,Pesto Paneer Bowl,Healthy Options,330,Veg
+924,Triple Sichuan Veg,Big Eats (meal In Itself) Rice Bowls,285,Veg
+925,Chocolate Almond Smoothie Bowl,Smoothie Bowls,349,Veg
+926,Kerala Parotta,Parottas,36,Veg
+927,Red Velvet Cookie,Thick Shakes,179,Veg
+928,Egg with Double Chicken Roll,Rolls,91,Non-veg
+929,Veg Chilli Garlic Noodles,Main Course,210,Veg
+930,Smokey Butter Chicken Wrap.. (Newly Launched),Recommended,259,Non-veg
+931,Hash Browns(4pcs),Quick Bites,160,Veg
+932,Eight Treasure Sweet Corn Soup Seafood,Soups,215,Non-veg
+933,Beef Steak Tornade,Steaks,390,Non-veg
+934,Curd (250 gms),Indian,125,Veg
+935,Egg Bhurji With Paratha,Fatafatt Lunch & Dinner,220,Non-veg
+936,Sizzling Salad,Salads,375,Veg
+937,Poonam Sandwich,2 Layer Sandwiches,51,Veg
+938,Gobi Manchurian dry,Chinese,260,Veg
+939,Mutton Khurma,Mutton Indian Gravy,440,Non-veg
+940,Dry Fruit Ice Cream Milkshake,Ice Cream Milkshakes,48,Veg
+941,Paneer Butter Masala & Jeera Rice Bowl,Desi Bowls,259,Veg
+942,Neerdosa Sukka Combo,Meal Combos,340,Non-veg
+943,Veg Hyderabadi (400-gm),Indian,220,Veg
+944,Sunny Side Up Classic,All Day Breakfast,165,Non-veg
+945,Minute Maid Pulpy Orange (330 ml),Beverages,70,Veg
+946,Mango Pickle - 250Gms,Accompaniments,99,Veg
+947,Chicken Lababdar B/L,Indian Non Veg Curry,320,Non-veg
+948,Pav Bhaji (2 Pcs),Quick Bites,119,Veg
+949,Thums Up Tin 330 ML,Beverages,57,Veg
+950,Fresh Mango ( Seasonal ) Fresh Batch Ice Cream Tub - 1 L,1 L Ice Cream Tubs,476,Veg
+951,Oreo Tahiti Thickshake/ Slow Sipper,Milkshakes - Thickshakes,119,Veg
+952,Fig & Honey,Juice Shop,66,Veg
+953,Kitkat Milkshake,Beverages,87,Veg
+954,Mooli Paratha (1 Pc),Main Course,55,Veg
+955,Parotta 2pc+ Chicken Curry,Combos,200,Non-veg
+956,Chicken Wantons Steamed,Baos And Dimsums,320,Non-veg
+957,Peri Peri Dusted Wedges,Fries & Wedges,162,Veg
+958,Dry Fruits-450 Gms Pack,Gift Packs,576,Veg
+959,Tukda Kebab,Tandoori & Kababs,290,Non-veg
+960,Mangalore Fish Curry [seer},Malabar And Mangalore Specials,550,Non-veg
+961,Big Spicy Chicken Wrap,Burgers & Wraps,215,Non-veg
+962,Classic Zinger,Recommended,190,Non-veg
+963,Veg Kebab Sharing Platter(serves 2),Tandoori Grills,695,Veg
+964,Chicken Sukka,Chicken And Mutton,340,Non-veg
+965,Prawn Nam Prik Pao,Starters,399,Non-veg
+966,Sweet Corn Soup Seafood,Food,375,Non-veg
+967,Chocolate Maska Bun,Maska Bun,65,Veg
+968,Tokhm-E-Biryani ( Classic Egg Dum Biryani - Serves 1),Recommended,309,Non-veg
+969,Coconut Burfy,Milk/Khoya Sweets,182,Veg
+970,Veg Burger,Burger,148,Veg
+971,Chicken Shanghai (Dry),Starters,320,Non-veg
+972,Rajwadi Dalmoth And Sing Bhujia Combo,Match Day Special Combos,446,Veg
+973,Chicken Kung Pow (gravy) (chinese),Main Course,320,Non-veg
+974,Coffee Powder 200 Gm,Authentic Filter Coffee Powders & Jaggery Powder,114,Veg
+975,Grilled Vegetable,Main Course,252,Veg
+976,Zingy Chicken Black Bean + Rice,Zingy Bowl,280,Non-veg
+977,Fish N Chips,Continental,315,Non-veg
+978,Desi Delight Mini (51 ml),Recommended,125,Veg
+979,Chicken-Scalloppine,Grilled Mains,635,Non-veg
+980,No Onion No Garlic Pindi Chole,No Garlic No Onion - Sabji And Dal,135,Veg
+981,Muttabal,Recommended,290,Non-veg
+982,5-in-1 Uttappam,Uttappam,340,Veg
+983,Mushroom Fried Rice (Basmati),Chinese,210,Veg
+984,Chocolate Rocher Sundae,Waffles,449,Veg
+985,Crispy Till Baby Corn,Chinese,251,Veg
+986,Rasgulla Tin Pack,Canned Sweets,119,Veg
+987,Kada Fry Masala[quali],Quail[kada].duck[tharavu],185,Non-veg
+988,Idly [2 Nos],Recommended,55,Veg
+989,Dark Fantasy Sundae- Karamel Kiss Dessert Jar,"Premium Thickshakes, Dessert Jars and Sundae",230,Veg
+990,Solkadi,Beverages,169,Veg
+991,Tutti Fruiti  Candy,Candy.,70,Veg
+992,Blueberry Mojito (500ml),Recommended,220,Veg
+993,Prawn Chengdu Chowmien,Noodles,300,Non-veg
+994,Achari Mutton,Mutton,415,Non-veg
+995,Super Over Combo (Chicken),Recommended,640,Non-veg
+996,Fixed Lunch Wednesday,Thalis,280,Veg
+997,Veg Cheese Roll [8 Pc],Starter,360,Veg
+998,Lung Fung Vegetable Soup,Soups,315,Veg
+999,Fragrant Rice Vegetable,Rice,71,Veg
+1000,Vegetable Sandwich,Magic On Breads,195,Veg
+1001,Paneer Mumtaj,Main Course,259,Veg
+1002,330ML Can Pepsi,Desserts and Beverage,57,Veg
+1003,Gobi Chilly,Starters,330,Veg
+1004,Kerala Mutton Curry,Indian,330,Non-veg
+1005,Fig & Honey Ice Cream Scoop,Ice Cream Scoops,60,Veg
+1006,Kaju Draksh Large Scoop (300 ML),Scoops,106,Veg
+1007,Veg Home Food Combo,Combos,300,Veg
+1008,Murgh Reshmi Sheek,Appetizers,300,Non-veg
+1009,Anjal King,Sweets,405,Veg
+1010,Paneer Chilli Dry (500 gms),Chinese,290,Veg
+1011,Caramel Splash,Juice Shop,121,Veg
+1012,Prawn Lat Lo Chowmien,Noodles,215,Non-veg
+1013,Chocolatey Pleasure,Recommended,132,Veg
+1014,Butter Mixed Veg Uttapam,South Indian,51,Veg
+1015,Mixed American Chopsuey,Chopsuey,370,Non-veg
+1016,Tikki Filler Burger,Recommended,65,Veg
+1017,Veg Makhanwala (400-gm),Indian,220,Veg
+1018,Italian Cheese Baked Pizza 6',Pizza,150,Veg
+1019,Palak Dal,Main Course,140,Veg
+1020,Wok Tossed Chilli Fish,SEAFOOD STARTERS,590,Non-veg
+1021,1 Prawns Curry With 1 Rice,Rice Curry Combo,268,Non-veg
+1022,Chicken tangri masala (4 pcs),Main Course,415,Non-veg
+1023,Meaty Double Chicken Cheese Burger [chicken Salami + Fried Egg],Burgers In The Hole,370,Non-veg
+1024,Seasoned Nachos & Salsa,Sides,109,Veg
+1025,Teriyaki Chicken Noodle Bowl,Recommended,299,Non-veg
+1026,Kadhi Gole,Main Course,309,Veg
+1027,Lindt and Sprungli Mocktail,Mocktails,105,Veg
+1028,Malpua With Rabadi,Desserts,189,Veg
+1029,Chicken Mole,Mains,415,Non-veg
+1030,Bacon Wrapped Shrimp in Lemon Garlic Butter,Entre,319,Non-veg
+1031,Chicken Manchow Soup (200 ml),Soups,220,Non-veg
+1032,Rooh Afza Milk Shake,Shakes & Coolers,100,Veg
+1033,2 pc Smoky Red,Recommended,250,Non-veg
+1034,Braised Cottage Cheese In Ginger Coriander Sauce,Main Course,645,Veg
+1035,Sandwiches Combo,Family Binge Combos,399,Veg
+1036,Social Mutton Seekh Masala,Social Meals [Serves 1],450,Non-veg
+1037,San Francisco Style Hut Treat Meal for 4 Veg @ 859,What’s New : San Francisco Style,859,Veg
+1038,The Chicken Hole 9 Yards Hash,Breakfast,340,Non-veg
+1039,Chicken Seekh,Tandooor,225,Non-veg
+1040,Mutton Keema Semi Gravy,Empire Special Mutton (Gravy),150,Non-veg
+1041,Gems Cakes,Cakes,499,Veg
+1042,Happy father,Father's day special,450,Veg
+1043,Minty Minced Chicken Momos [5 Pieces],Recommended,209,Non-veg
+1044,Fujian Rice Chicken,Big Eats (meal In Itself) Rice Bowls,330,Non-veg
+1045,Cheese Sandwich ( Grilled ),Breakfast,210,Veg
+1046,Kesari Bhath Dosa,Adigas Dosa Festival,119,Veg
+1047,Fujian Prawns,Seafood,32,Non-veg
+1048,Double Egg With Double Chicken Roll,Rolls,125,Non-veg
+1049,Pretty Paris Thickshake,Shakes,260,Veg
+1050,Bruschetta [150 Grams],Garlic Breads,375,Veg
+1051,Chocolate Brownie & Ice cream Jar,Dessert Jars,179,Non-veg
+1052,Guntur Mutton,Andhra / Indian Cuisine,340,Non-veg
+1053,Curryleaf Chicken,Starters,269,Non-veg
+1054,Guntur Wings,D House Pizza,185,Non-veg
+1055,Parotta2pi& Beef Curry,All Day Breakfast,225,Non-veg
+1056,Haryali Paneer Kabab,Starters,250,Veg
+1057,Basil Lemonade,Beverage,89,Veg
+1058,Veg Chinese Chop Suey Soft Noodles (Bland),Main Course,250,Veg
+1059,Chef's Spl Chicken Steak,Steaks,379,Non-veg
+1060,Butter Naan (1 Pc),Indian Breads,65,Veg
+1061,Corn Seekh Kebab,Andhra / Indian Cuisine,260,Veg
+1062,Egg Sizzler,R.K. Specials,380,Non-veg
+1063,Bengan Bhartha,Recommended,220,Veg
+1064,Stuffed Malai Chaap Tikka,Special Soya Chaaps (100% Veg),299,Veg
+1065,Choco Dripping Snowy Cake,Recommended,599,Veg
+1066,Hokomein Nooldes Seafood,Noodles Non Veg,495,Non-veg
+1067,Chicken Arabian Lollipop (8 PCS),Recommended,375,Non-veg
+1068,Steamed rice (Raita),Main Course,135,Veg
+1069,Non Veg Combo,Combos,160,Non-veg
+1070,Zingy Veg  Black Bean + Wheat Flat Noodles,Zingy Bowl,260,Veg
+1071,Chatpata Tandoori Aloo,Starters,260,Veg
+1072,Korean Fried Chicken Bowl,Bowls,299,Non-veg
+1073,Manchow Fried Rice,Chinese,51,Veg
+1074,Paratha Sabji Combo 4,Meals and Combos,240,Veg
+1075,Aloo Tikki Hotdog,Burger And Hotdog,99,Veg
+1076,Ice Tea (Lemon / Peach),Mocktails,135,Veg
+1077,Cheese Onion Rava Sada Dosa,South Indian,140,Veg
+1078,Mickey Burger (150 Gm),Recommended,125,Veg
+1079,All American Lamb Burger,Burger,286,Non-veg
+1080,Meatburst Mac N Cheese Pasta,Recommended,315,Non-veg
+1081,Chocolate Taco (40 Gm),Recommended,100,Veg
+1082,Jain Masala Maggi,Maggi,79,Veg
+1083,Ebi Tempura,Starters,620,Non-veg
+1084,Hummus Pita,Recommended,290,Veg
+1085,Paneer Butter Masala Thali,Thalis,289,Veg
+1086,Prawns Max Dum Pukht Biryani,Main Course,600,Non-veg
+1087,Bavarian Chocolate Ice cream,Scoops,109,Veg
+1088,Chicken N Fries Spicy,Fish & Fries Specials,260,Non-veg
+1089,Low Fat Spinach & Caramelized Onions Burrito Bowl,Healthy,340,Veg
+1090,Mutton Sheek Roll,Rolls,160,Non-veg
+1091,Pan Fried Chicken,Small Eats,330,Non-veg
+1092,Cheese Corn Puff,Puffs,89,Veg
+1093,Mongolian Chicken Rice,Big Eats (meal In Itself) Rice Bowls,330,Non-veg
+1094,Peppered Chicken,Grilled Mains,635,Non-veg
+1095,Satay Chicken,Small Eats,330,Non-veg
+1096,Delhi Style Falooda,Falooda,95,Veg
+1097,Boneless 2 Persons Chicken Biryani,Chicken Biryani Pack,760,Non-veg
+1098,Cheese Melted Grilled Mutton Burger,Burgers And Sandwiches,201,Non-veg
+1099,Paspuccio,Cappuccino,167,Veg
+1100,Orange,Beverages,70,Veg
+1101,Sichuan Veg And Peanut Noodles,Big Eats (meal In Itself) Noodle Bowls,285,Veg
+1102,Subz Pulao Combo,Combos (one Person Meal),149,Veg
+1103,Belgian Chocolate Milk XOverload Waffle,WAFFLES!,165,Veg
+1104,6 Seconds Filter Coffee Decoction(pack Of 5 Sachets),6 Seconds Merchandise(filter Coffee Decoction & Immunity Boosters),42,Veg
+1105,Tripple Chocolate Scoop,Ice cream Scoops,48,Veg
+1106,Green Pepper Chilli  B/L,Chicken Starters,319,Non-veg
+1107,Murgh Methi Hyderabadi,Recommended,235,Non-veg
+1108,Falafel e Khas Combo,Recommended,109,Veg
+1109,Tomato Onion Uttappam,Uttappam Varieties,48,Veg
+1110,(Serves 1) Super Saver Baked Veg Pizza Wrap Meal + Dessert,Recommended,349,Veg
+1111,Lemon Chicken Dry Boneless,Super Hit Non Veg Starters,289,Non-veg
+1112,Steamed Fish - Catla Fish - 2 Pcs,Fish Fry -tawa/rava/masala Fry/steamed/pollichathu,165,Non-veg
+1113,Whole Wheat Chapathi - Phulka (Pack Of 4),A La Carte,59,Veg
+1114,Choco Vanilla (Slice),Pastries & Cakes,61,Veg
+1115,Bonless Chicken Dum Biryani,Biryani,350,Non-veg
+1116,Chicken Mapo Tofu,Delights Dishes,335,Non-veg
+1117,Dal Punjabi,Main Course,95,Veg
+1118,R.K. Special Masala Toast,Recommended,220,Veg
+1119,Veg Biryani With Curd,Meals and Combos,160,Veg
+1120,Veg Wonton Soup,Soups,179,Veg
+1121,Chicken Lemon Coriander Soup,Soups,99,Non-veg
+1122,Milk Cake,Sweets,51,Veg
+1123,Jain Club Sandwich,Jain Sandwich,110,Veg
+1124,Tender Coconut Shake,Recommended,100,Veg
+1125,Chilli Chicken (B/L),Chicken Starters,319,Non-veg
+1126,Chicken Pulao,Main Course,244,Non-veg
+1127,Kiwi Milkshake,Specials,99,Veg
+1128,Mushroom Stew,Recommended,190,Veg
+1129,Death by Chocolate Jar (Serves 2),Whats New,249,Veg
+1130,Chicken Dry + (2) Chicken Biryani,Family Binge Combos,550,Non-veg
+1131,Sweet Pongal,South Indian,80,Veg
+1132,Zap Double Chicken Fillet Burger,Recommended,267,Non-veg
+1133,Bangada Neket Fry (Mecral),Starters,180,Non-veg
+1134,Namprik Prawns,Starters,330,Non-veg
+1135,Chole Paratha Combo,Combos,198,Veg
+1136,Hyderabadi Bhurji Rice [400 Gm],Fried Rice & Biryani,210,Non-veg
+1137,Veg Curry,Veg Special Gravy,48,Veg
+1138,Chicken Fresco Pizza [9 Inches],Non Veg Pizzas,465,Non-veg
+1139,Veg Paratha,Main Course,70,Veg
+1140,4'' Italian Pizza,Pizzas,119,Veg
+1141,Beef Liver Fry,Indian,225,Non-veg
+1142,Extra Butterscotch Sauce,Extra Items,50,Veg
+1143,Smoked Pork,Starters,360,Non-veg
+1144,Meghana Chicken Spl Pcs,Extra,185,Non-veg
+1145,Fixed Lunch Sunday,Thalis,280,Veg
+1146,Badam Milk,Beverages,28,Veg
+1147,Sabzi Diwani Handi,Andhra / Indian Cuisine,230,Veg
+1148,Murgh Dum Biryani,Rice And Biryani,260,Non-veg
+1149,Blueberry Muffin,Pastries,135,Non-veg
+1150,Pesto Mushroom Pizza,Pizzas,330,Veg
+1151,Banana Split Icrcream,Ice Creams,147,Veg
+1152,Puttu and Chicken curry,Breakfast,190,Non-veg
+1153,Mirinda (500ml),Recommended,57,Veg
+1154,Mutton Chap [4 Pcs],Non-veg Kebab's,595,Non-veg
+1155,Dahi Kachori,Chat,95,Veg
+1156,Vegetable Tempura With Oriental Spices,Appetizer,405,Veg
+1157,Red Velvet  Pastry (1 PC),Pastries,105,Veg
+1158,Kaima Idli (Tuesday),Evening Specials,128,Veg
+1159,Fries (L),Sides and Dips,48,Veg
+1160,Chicken Hyderabadi Dum Biriyani (2) + Chicken Starter,Combos,519,Non-veg
+1161,Donne Chicken Lollipop Biriyani,Biryanis,235,Non-veg
+1162,Paneer Khurchan Combo,Swiggy Exclusive Combos  (  Indian ),395,Veg
+1163,Nutella Shake,Drinks / Milkshakes,150,Veg
+1164,Chicken Biryani Boneless Full,Recommended,449,Non-veg
+1165,Aloo Tikki Sandwich,Quick Bites,70,Veg
+1166,Chicken Tikka Momo,Recommended,199,Non-veg
+1167,Jeera Aloo( Served With 3 Fulkas),Main Course,239,Veg
+1168,Club Kachori With Aloo Sabji,Chatore,100,Veg
+1169,Paneer Tikka Achari,Starters,279,Veg
+1170,Veg Khada Masala,Indian Veg,249,Veg
+1171,Sweet Khoya Kaju,Main Course,160,Veg
+1172,"Mexican Patty Sub ( 15 Cm,  6 Inch )",Sandwiches,233,Veg
+1173,Murgh Bemisal,Main Course,449,Non-veg
+1174,Samosa Aloo Parantha,Indian Breads,51,Veg
+1175,Sambhar,Radhika's Food Products,60,Veg
+1176,Italian Vegetable Pizza 6',Pizza,125,Veg
+1177,Double mix veg roll,Quick Bites,100,Veg
+1178,Black Peppered Chicken Noodles,Noodles,210,Non-veg
+1179,Piano Club Sandwich,Breakfast,250,Veg
+1180,Iced Nutella Latte,Iced Blended,210,Veg
+1181,Hakku Choyila,Nepali Appetizer NonVeg,250,Non-veg
+1182,Rocky Road Mini Pancakes (8 pieces),Mini Pancakes,166,Veg
+1183,Ferrero Rocher Jar Cake,Dessert Jars,169,Veg
+1184,Fish Curry Rice Bowl,Rice Bowls (one Person Meal),209,Non-veg
+1185,Chicken Reshmi Kabab,Starters,249,Non-veg
+1186,Jaljira With A Twist,Beverage,89,Veg
+1187,Gobi Chinese Chilli Gravy,Main Course,330,Veg
+1188,Hyd. Mutton Biriyani (fry Pieces),Rice And Biryani,280,Non-veg
+1189,Stuffed capsicum,Main Course,160,Veg
+1190,Fish Curry Combo,Combos (one Person Meal),239,Non-veg
+1191,Blueberry Cheese Waffle,WAFFLES!,110,Veg
+1192,Tandoori Kebab (6 Pcs),Non Veg Starters New,190,Non-veg
+1193,Chicken Pepper Dry [boneless],Starters And Appetizers,255,Non-veg
+1194,Wok Tossed Fried Wontons,All Time Favourites,235,Veg
+1195,Chicken Pesto Pasta,Meals,260,Non-veg
+1196,Make your own Veg Burritos at home (Serves 3),House Party Packs,499,Veg
+1197,Sev Masala Bun,Maska Bun,70,Veg
+1198,Spinach 'N' Corn Sandwich + Fresh Lime Juice,Beverage Combos,152,Veg
+1199,Cappuccino-Iced,Beverages,190,Veg
+1200,Tandoori Zinger Burger,Recommended,199,Non-veg

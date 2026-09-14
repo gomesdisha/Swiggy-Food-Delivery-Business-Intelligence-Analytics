@@ -1,0 +1,121 @@
+partner_id,partner_name,city,vehicle_type,rating
+501,Karthik Patel,Bangalore,Motorcycle,4.1
+502,Vikram Chopra,Mumbai,Electric Vehicle (EV),4.5
+503,Tanmay Sharma,Delhi,Motorcycle,4.6
+504,Vikram Chopra,Delhi,Motorcycle,4.7
+505,Rahul Joshi,Mumbai,Motorcycle,4.8
+506,Suresh Malhotra,Kolkata,Motorcycle,4.5
+507,Tanmay Nambiar,Chennai,Motorcycle,4.6
+508,Harsh Malhotra,Chennai,Motorcycle,4.4
+509,Anand Iyer,Chennai,Motorcycle,4.7
+510,Suresh Chopra,Delhi,Electric Vehicle (EV),4.7
+511,Amit Iyer,Delhi,Motorcycle,4.9
+512,Rakesh Reddy,Kolkata,Motorcycle,4.2
+513,Kunal Choudhury,Kolkata,Electric Vehicle (EV),4.8
+514,Kunal Nair,Bangalore,Motorcycle,4.3
+515,Vikram Deshmukh,Delhi,Motorcycle,4.2
+516,Harsh Verma,Kolkata,Motorcycle,4.3
+517,Nikhil Deshmukh,Pune,Electric Vehicle (EV),4.5
+518,Aditya Sharma,Hyderabad,Electric Vehicle (EV),4.7
+519,Manish Singh,Mumbai,Motorcycle,4.7
+520,Siddharth Singh,Kolkata,Scooter,4.5
+521,Karthik Sen,Kolkata,Motorcycle,4.5
+522,Manish Singh,Kolkata,Motorcycle,4.5
+523,Amit Iyer,Kolkata,Scooter,4.3
+524,Pranav Bhat,Chennai,Motorcycle,4.3
+525,Deepak Verma,Pune,Scooter,4.6
+526,Suresh Mehta,Mumbai,Motorcycle,4.5
+527,Manish Pillai,Kolkata,Electric Vehicle (EV),4.9
+528,Pranav Rao,Hyderabad,Motorcycle,4.6
+529,Amit Pillai,Delhi,Motorcycle,4.7
+530,Varun Das,Hyderabad,Motorcycle,4.3
+531,Nikhil Joshi,Hyderabad,Electric Vehicle (EV),4.1
+532,Mayank Deshmukh,Kolkata,Electric Vehicle (EV),4.8
+533,Karthik Reddy,Chennai,Scooter,4.9
+534,Mayank Kulkarni,Mumbai,Scooter,4.6
+535,Vikram Rao,Delhi,Motorcycle,4.8
+536,Deepak Patel,Pune,Scooter,4.1
+537,Varun Nambiar,Delhi,Motorcycle,4.5
+538,Harsh Sen,Chennai,Electric Vehicle (EV),4.2
+539,Pranav Joshi,Pune,Motorcycle,4.8
+540,Karthik Sen,Delhi,Motorcycle,4.7
+541,Suresh Sharma,Chennai,Motorcycle,4.2
+542,Tanmay Nambiar,Hyderabad,Motorcycle,4.6
+543,Karthik Kulkarni,Mumbai,Motorcycle,4.7
+544,Suresh Sharma,Bangalore,Scooter,4.5
+545,Rohan Bhat,Kolkata,Motorcycle,4.5
+546,Varun Mehta,Kolkata,Scooter,4.9
+547,Aditya Das,Pune,Scooter,4.0
+548,Arjun Reddy,Pune,Motorcycle,4.3
+549,Harsh Iyer,Delhi,Motorcycle,4.3
+550,Varun Nambiar,Delhi,Motorcycle,4.3
+551,Tanmay Patel,Pune,Motorcycle,4.6
+552,Aditya Bhat,Chennai,Motorcycle,4.3
+553,Deepak Pillai,Chennai,Motorcycle,4.7
+554,Harsh Das,Bangalore,Motorcycle,4.3
+555,Vikram Sharma,Mumbai,Motorcycle,4.4
+556,Gaurav Kulkarni,Delhi,Electric Vehicle (EV),4.2
+557,Abhishek Iyer,Pune,Motorcycle,4.2
+558,Vishal Bhat,Kolkata,Scooter,4.5
+559,Vishal Choudhury,Pune,Scooter,4.8
+560,Varun Deshmukh,Bangalore,Motorcycle,4.1
+561,Rahul Chopra,Delhi,Motorcycle,4.3
+562,Manish Bhat,Pune,Scooter,4.3
+563,Harsh Joshi,Bangalore,Scooter,4.1
+564,Vikram Choudhury,Mumbai,Scooter,4.3
+565,Abhishek Iyer,Bangalore,Motorcycle,4.7
+566,Aditya Patel,Bangalore,Scooter,4.7
+567,Amit Rao,Bangalore,Motorcycle,4.6
+568,Anand Verma,Hyderabad,Motorcycle,4.2
+569,Rohan Joshi,Kolkata,Motorcycle,4.1
+570,Aditya Bhat,Mumbai,Scooter,4.2
+571,Ayush Das,Bangalore,Motorcycle,4.8
+572,Arjun Sen,Delhi,Motorcycle,4.8
+573,Mayank Bhat,Mumbai,Motorcycle,4.1
+574,Anand Sharma,Pune,Motorcycle,4.2
+575,Karthik Reddy,Chennai,Motorcycle,4.9
+576,Aditya Rao,Pune,Electric Vehicle (EV),4.5
+577,Harsh Sen,Mumbai,Motorcycle,4.9
+578,Kunal Das,Hyderabad,Motorcycle,4.5
+579,Varun Gupta,Chennai,Electric Vehicle (EV),4.1
+580,Aditya Malhotra,Mumbai,Motorcycle,4.3
+581,Karthik Mukherjee,Kolkata,Motorcycle,4.3
+582,Aditya Bose,Delhi,Motorcycle,4.7
+583,Ayush Deshmukh,Mumbai,Scooter,4.3
+584,Varun Rao,Chennai,Motorcycle,4.8
+585,Gaurav Pillai,Delhi,Motorcycle,4.9
+586,Gaurav Pillai,Bangalore,Motorcycle,4.5
+587,Ayush Patel,Bangalore,Motorcycle,4.4
+588,Anand Gupta,Kolkata,Electric Vehicle (EV),4.9
+589,Rohan Das,Mumbai,Motorcycle,4.6
+590,Pranav Gupta,Mumbai,Scooter,4.7
+591,Arjun Choudhury,Chennai,Scooter,4.3
+592,Tanmay Bose,Delhi,Motorcycle,4.6
+593,Pranav Chopra,Pune,Motorcycle,4.7
+594,Aditya Gupta,Delhi,Motorcycle,4.2
+595,Vikram Sharma,Bangalore,Scooter,4.8
+596,Gaurav Pillai,Bangalore,Electric Vehicle (EV),4.4
+597,Ayush Singh,Mumbai,Motorcycle,4.6
+598,Rohan Pillai,Chennai,Motorcycle,4.5
+599,Manish Rao,Delhi,Scooter,4.5
+600,Arjun Mukherjee,Delhi,Scooter,4.5
+601,Rahul Verma,Hyderabad,Electric Vehicle (EV),4.1
+602,Manish Singh,Chennai,Motorcycle,4.4
+603,Amit Reddy,Pune,Scooter,4.7
+604,Harsh Reddy,Hyderabad,Motorcycle,4.3
+605,Pranav Chopra,Chennai,Motorcycle,4.6
+606,Ayush Mukherjee,Kolkata,Motorcycle,4.4
+607,Vishal Reddy,Pune,Motorcycle,4.3
+608,Anand Bose,Pune,Scooter,4.7
+609,Karthik Singh,Bangalore,Motorcycle,4.0
+610,Nikhil Das,Chennai,Scooter,4.0
+611,Tanmay Singh,Hyderabad,Motorcycle,4.3
+612,Nikhil Kulkarni,Delhi,Motorcycle,4.2
+613,Suresh Nambiar,Delhi,Scooter,4.9
+614,Rohan Joshi,Bangalore,Motorcycle,4.0
+615,Deepak Verma,Hyderabad,Scooter,4.4
+616,Siddharth Kulkarni,Delhi,Motorcycle,4.4
+617,Rahul Singh,Hyderabad,Scooter,4.3
+618,Aditya Chopra,Bangalore,Scooter,4.2
+619,Gaurav Malhotra,Chennai,Scooter,4.3
+620,Rakesh Joshi,Delhi,Electric Vehicle (EV),4.2

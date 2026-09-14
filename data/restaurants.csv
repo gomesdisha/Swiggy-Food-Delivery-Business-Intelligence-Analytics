@@ -1,0 +1,176 @@
+restaurant_id,restaurant_name,city,cuisine,rating,rating_count,cost_for_two,swiggy_url
+101,Frooze,Bangalore,Ice Cream,5.0,20,250,https://www.swiggy.com/restaurants/frooze-indiranagar-bangalore-549352
+102,Tandoori Zaika,Bangalore,Chinese,5.0,20,250,https://www.swiggy.com/restaurants/tandoori-zaika-indirapuram-mahadevpura-bangalore-447160
+103,The Chinese Connection,Bangalore,Chinese,5.0,20,250,https://www.swiggy.com/restaurants/the-chinese-connection-indirapuram-mahadevpura-bangalore-447104
+104,Oh Bangla,Bangalore,Chinese,5.0,20,250,https://www.swiggy.com/restaurants/oh-bangla-indirapuram-mahadevpura-bangalore-447909
+105,Provenance Deli and Desserts,Bangalore,Desserts,5.0,20,700,https://www.swiggy.com/restaurants/provenance-deli-and-desserts-ashok-nagar-bangalore-213832
+106,Fabelle Chocolates - ITC Gardenia,Bangalore,Bakery,5.0,20,600,https://www.swiggy.com/restaurants/fabelle-chocolates-itc-gardenia-bengaluru-ashok-nagar-bangalore-304580
+107,KELVIN SCALE,Bangalore,Indian,5.0,20,150,https://www.swiggy.com/restaurants/kelvin-scale-kadubeesanahalli-marathahalli-bangalore-261047
+108,Creams and Bites,Bangalore,Ice Cream,5.0,20,250,https://www.swiggy.com/restaurants/creams-and-bites-koramangala-bangalore-528286
+109,The Lassi Pub,Bangalore,Juices,5.0,20,100,https://www.swiggy.com/restaurants/the-lassi-pub-hal-2nd-stage-indiranagar-bangalore-169355
+110,Shawarma Indiah,Bangalore,Arabian,5.0,20,400,https://www.swiggy.com/restaurants/shawarma-indiah-indiranagar-bangalore-567694
+111,HRX by Eatfit,Bangalore,Healthy Food,5.0,20,270,https://www.swiggy.com/restaurants/hrx-by-eatfit-stage-2-btm-layout-bangalore-558760
+112,Fresh crunch pizza,Bangalore,Pizzas,5.0,20,400,https://www.swiggy.com/restaurants/fresh-crunch-pizza-indiranagar-bangalore-559737
+113,JUST CREAMERY - Artisanal Healthy Ice Cream,Bangalore,Ice Cream,5.0,20,200,https://www.swiggy.com/restaurants/just-creamery-artisanal-healthy-ice-cream-jp-nagar-bangalore-557976
+114,Minus 30,Bangalore,Ice Cream,5.0,20,250,https://www.swiggy.com/restaurants/minus-30-indiranagar-bangalore-549127
+115,Hot Chillies Fast  Food,Bangalore,Chinese,5.0,20,250,https://www.swiggy.com/restaurants/hot-chillies-fast-food-btm-bangalore-579824
+116,Petfull Paratha  2X Fillings,Bangalore,North Indian,5.0,20,250,https://www.swiggy.com/restaurants/petfull-paratha-2x-fillings-electronic-city-bangalore-569202
+117,Mamaji PavBhaji,Bangalore,Street Food,5.0,20,250,https://www.swiggy.com/restaurants/mamaji-pavbhaji-electronic-city-bangalore-569185
+118,ESCOBAR PANINI s,Bangalore,Fast Food,5.0,20,350,https://www.swiggy.com/restaurants/escobar-panini-s-btm-bangalore-569697
+119,HUNGER TREATS,Bangalore,Burgers,5.0,50,300,https://www.swiggy.com/restaurants/hunger-treats-arekere-bangalore-560433
+120,PEDRO DE GOA,Bangalore,American,5.0,20,350,https://www.swiggy.com/restaurants/pedro-de-goa-btm-layout-bangalore-564341
+121,Snack Ride,Bangalore,Snacks,5.0,20,250,https://www.swiggy.com/restaurants/snack-ride-arekere-bangalore-536573
+122,Joao's Croissant Fusion,Bangalore,Fast Food,5.0,20,350,https://www.swiggy.com/restaurants/joaos-croissant-fusion-btm-bangalore-566742
+123,Mels SubHub,Bangalore,Fast Food,5.0,20,350,https://www.swiggy.com/restaurants/mels-subhub-btm-bangalore-569695
+124,Pizza Junction,Bangalore,Pizzas,5.0,20,250,https://www.swiggy.com/restaurants/pizza-junction-btm-bangalore-576827
+125,THE INDIAN SAMOSA,Bangalore,Snacks,5.0,20,250,https://www.swiggy.com/restaurants/the-indian-samosa-indiranagar-bangalore-574561
+126,Kurries & krolls,Mumbai,North Indian,5.0,20,250,https://www.swiggy.com/restaurants/kurries-and-krolls-powai-mumbai-579021
+127,Rollie Rollie,Mumbai,Street Food,5.0,20,400,https://www.swiggy.com/restaurants/rollie-rollie-bandra-west-mumbai-577418
+128,Cafe Pesto,Mumbai,Italian,5.0,20,500,https://www.swiggy.com/restaurants/cafe-pesto-mulund-mumbai-575920
+129,Instawich,Mumbai,Snacks,5.0,20,300,https://www.swiggy.com/restaurants/instawich-opp-swati-snacks-tardeo-near-bhatia-hospital-mumbai-573370
+130,Apna Food Court,Mumbai,Chinese,5.0,20,450,https://www.swiggy.com/restaurants/apna-food-court-powai-mumbai-528848
+131,Huber And Holly,Mumbai,Ice Cream,5.0,20,200,https://www.swiggy.com/restaurants/huber-and-holly-scruz-bandra-east-bkc-mumbai-570459
+132,AMORE GELATO,Mumbai,Ice Cream,5.0,20,400,https://www.swiggy.com/restaurants/amore-gelato-vashi-mumbai-532875
+133,Brakefree Cafe,Mumbai,Beverages,5.0,20,320,https://www.swiggy.com/restaurants/brakefree-cafe-bandra-west-mumbai-463541
+134,AP's Kitchen,Mumbai,Biryani,5.0,20,500,https://www.swiggy.com/restaurants/aps-kitchen-vashi-mumbai-573171
+135,La Meilleur Patisserie,Mumbai,Desserts,5.0,20,500,https://www.swiggy.com/restaurants/la-meilleur-patisserie-powai-mumbai-499462
+136,Rollz Karvaan,Mumbai,Snacks,5.0,20,300,https://www.swiggy.com/restaurants/rollz-karvaan-powai-mumbai-549634
+137,Nawab'z Kitchen,Mumbai,North Indian,5.0,20,450,https://www.swiggy.com/restaurants/nawabz-kitchen-airoli-mumbai-498502
+138,SWEET COUNTY,Mumbai,Bakery,5.0,20,500,https://www.swiggy.com/restaurants/sweet-county-powai-mumbai-564691
+139,Street Food Karvaan,Mumbai,Street Food,5.0,20,300,https://www.swiggy.com/restaurants/street-food-karvaan-powai-mumbai-551002
+140,Millettude,Mumbai,Healthy Food,5.0,20,700,https://www.swiggy.com/restaurants/millettude-bandra-west-mumbai-569672
+141,Joshh Kulfi,Mumbai,Desserts,4.9,20,200,https://www.swiggy.com/restaurants/joshh-kulfi-kala-ghoda-mumbai-508224
+142,SNAXX,Mumbai,Snacks,4.9,20,500,https://www.swiggy.com/restaurants/snaxx-bkc-mumbai-50343
+143,Blue Tokai Coffee Roasters,Mumbai,Healthy Food,4.9,100,800,https://www.swiggy.com/restaurants/blue-tokai-coffee-roasters-bandra-area-scruz-bandra-east-mumbai-57231
+144,House Of The Fried,Mumbai,Snacks,4.9,20,400,https://www.swiggy.com/restaurants/house-of-the-fried-scruz-bandra-east-mumbai-492169
+145,Seesaw,Mumbai,Continental,4.9,20,1200,https://www.swiggy.com/restaurants/seesaw-scruz-bandra-east-mumbai-467007
+146,Sudhir Milk Suppliers,Mumbai,Beverages,4.9,20,150,https://www.swiggy.com/restaurants/sudhir-milk-suppliers-tardeo-mumbai-163667
+147,HOME MADE TAKE AWAY,Mumbai,Chinese,4.9,20,250,https://www.swiggy.com/restaurants/home-made-take-away-nala-sopara-mumbai-456318
+148,HRX by Eatfit,Mumbai,Healthy Food,4.9,20,270,https://www.swiggy.com/restaurants/hrx-by-eatfit-cst-road-santacruz-east-mumbai-558805
+149,Samosa Factory,Mumbai,Snacks,4.8,20,150,https://www.swiggy.com/restaurants/samosa-factory-mulund-sion-mumbai-343781
+150,Cafe Kokomo,Mumbai,Beverages,4.8,50,400,https://www.swiggy.com/restaurants/cafe-kokomo-scruz-bandra-east-mumbai-431996
+151,Delhi Chicken Company,Delhi,North Indian,5.0,20,250,https://www.swiggy.com/restaurants/delhi-chicken-company-rajouri-garden-delhi-572412
+152,PIZZA DI ROMA,Delhi,Pizzas,5.0,20,500,https://www.swiggy.com/restaurants/pizza-di-roma-lajpat-nagar-delhi-573859
+153,Cheese N Craft,Delhi,Pizzas,5.0,20,400,https://www.swiggy.com/restaurants/cheese-n-craft-saket-delhi-563848
+154,Veg Khana Hindustani,Delhi,Indian,5.0,20,250,https://www.swiggy.com/restaurants/veg-khana-hindustani-indirapuram-noida-1-560259
+155,Begums Khansama,Delhi,Mughlai,5.0,20,400,https://www.swiggy.com/restaurants/begums-khansama-chattarpur-delhi-576162
+156,Regalo Delights,Delhi,Bakery,5.0,20,300,https://www.swiggy.com/restaurants/regalo-delights-ashok-vihar-wazirpur-industrial-area-delhi-538640
+157,Meerut Ki Chaat,Delhi,Fast Food,5.0,20,200,https://www.swiggy.com/restaurants/meerut-ki-chaat-indirapuram-noida-1-538412
+158,Emoi Artisanal Ice Creams & Gelato,Delhi,Ice Cream,5.0,20,300,https://www.swiggy.com/restaurants/emoi-artisanal-ice-creams-and-gelato-aero-city-delhi-539991
+159,Brulee Bake Boutique,Delhi,Bakery,5.0,20,450,https://www.swiggy.com/restaurants/brulee-bake-boutique-kirti-nagar-delhi-539034
+160,Grazie Italia,Delhi,Pizzas,5.0,20,800,https://www.swiggy.com/restaurants/grazie-italia-south-extension-malviya-nagar-delhi-533013
+161,EMOI- ARTISANAL ICE CREAMS & GELATO,Delhi,Ice Cream,5.0,20,200,https://www.swiggy.com/restaurants/emoi-artisanal-ice-creams-and-gelato-jasola-delhi-305147
+162,Mighty Nights,Delhi,Fast Food,5.0,20,300,https://www.swiggy.com/restaurants/mighty-nights-rajouri-garden-delhi-530061
+163,Fabelle Chocolates - ITC Maurya,Delhi,Bakery,5.0,20,600,https://www.swiggy.com/restaurants/fabelle-chocolates-itc-maurya-south-campus-chanakyapuri-delhi-304587
+164,Veer G Punjabi Swag,Delhi,North Indian,5.0,20,300,https://www.swiggy.com/restaurants/veer-g-punjabi-swag-rajouri-garden-delhi-524447
+165,Street Food Karvaan,Delhi,Street Food,5.0,20,300,https://www.swiggy.com/restaurants/street-food-karvaan-khirki-extension-delhi-520036
+166,Teo,Delhi,North Indian,5.0,20,400,https://www.swiggy.com/restaurants/teo-punjabi-bagh-delhi-576337
+167,HRX by Eatfit,Delhi,Healthy Food,5.0,20,250,https://www.swiggy.com/restaurants/hrx-by-eatfit-sector-7-rohini-delhi-558789
+168,Dessert Studio by Third Wave,Delhi,Desserts,5.0,20,400,https://www.swiggy.com/restaurants/dessert-studio-by-third-wave-greater-kailash-2-delhi-552497
+169,Think Biryani,Delhi,Biryani,5.0,20,500,https://www.swiggy.com/restaurants/think-biryani-greater-kailash-2-delhi-512367
+170,Just Dig In,Delhi,Healthy Food,5.0,20,600,https://www.swiggy.com/restaurants/just-dig-in-greater-kailash-2-delhi-507227
+171,Asia Kitchen by Mainland China,Delhi,Asian,5.0,20,1000,https://www.swiggy.com/restaurants/asia-kitchen-by-mainland-china-local-shopping-centre-greater-kailash-2-delhi-510238
+172,Ambersari Kukkad,Delhi,Indian,5.0,20,200,https://www.swiggy.com/restaurants/ambersari-kukkad-vasant-kunj-delhi-337367
+173,Simply Sushi,Delhi,Sushi,5.0,20,700,https://www.swiggy.com/restaurants/simply-sushi-vasant-kunj-delhi-469971
+174,Big Plate - For Your Every Mood,Delhi,North Indian,5.0,20,500,https://www.swiggy.com/restaurants/big-plate-for-your-every-mood-dwarka-delhi-392694
+175,Rainbow Pan,Delhi,Paan,5.0,20,150,https://www.swiggy.com/restaurants/rainbow-pan-dwarka-delhi-395491
+176,Bento It,Hyderabad,Asian,5.0,50,500,https://www.swiggy.com/restaurants/bento-it-gachibowli-hyderabad-532251
+177,The Hunger stories,Hyderabad,Pizzas,5.0,20,300,https://www.swiggy.com/restaurants/the-hunger-stories-shri-laxmi-balaji-womens-hostel-near-shri-laxmi-balaji-womens-hostel-hyderabad-476102
+178,SAARANGI RESTAURANT,Hyderabad,South Indian,5.0,20,350,https://www.swiggy.com/restaurants/saarangi-restaurant-uppal-hyderabad-457870
+179,Momo Street,Hyderabad,Asian,5.0,20,300,https://www.swiggy.com/restaurants/momo-street-himayath-nagar-abids-hyderabad-560855
+180,Full Meal Factory by Dg,Hyderabad,Indian,5.0,20,300,https://www.swiggy.com/restaurants/full-meal-factory-by-dg-manikonda-hyderabad-473216
+181,Vittles,Hyderabad,Snacks,5.0,20,250,https://www.swiggy.com/restaurants/vittles-santoshnagar-and-saidabad-hyderabad-509735
+182,GULLY  RESTO,Hyderabad,Ice Cream,5.0,20,400,https://www.swiggy.com/restaurants/gully-resto-gachibowli-hyderabad-518545
+183,Sitopia by YelloLife,Hyderabad,Healthy Food,5.0,20,600,https://www.swiggy.com/restaurants/sitopia-by-yellolife-jubilee-hills-hyderabad-577790
+184,Ikka Dukka,Hyderabad,North Indian,4.9,20,600,https://www.swiggy.com/restaurants/ikka-dukka-madhapur-hyderabad-548827
+185,Urban Singh,Hyderabad,North Indian,4.9,20,400,https://www.swiggy.com/restaurants/urban-singh-banjara-hills-hyderabad-457399
+186,Pa se Pizza,Hyderabad,Pizzas,4.9,50,600,https://www.swiggy.com/restaurants/pa-se-pizza-kukatpally-hyderabad-556183
+187,Aruba Cafe,Hyderabad,Fast Food,4.9,20,300,https://www.swiggy.com/restaurants/aruba-cafe-mehdipatnam-hyderabad-509065
+188,Shakes n Treats,Hyderabad,Beverages,4.9,20,150,https://www.swiggy.com/restaurants/shakes-n-treats-kondapur-hyderabad-532069
+189,Crave Bowls,Hyderabad,Chinese,4.8,50,300,https://www.swiggy.com/restaurants/crave-bowls-gachibowli-hyderabad-543034
+190,Breakfast in a Bottle,Hyderabad,Healthy Food,4.8,20,300,https://www.swiggy.com/restaurants/breakfast-in-a-bottle-kukatpally-hyderabad-382199
+191,SRI RAMI REDDY PURE GHEE SWEETS,Hyderabad,Continental,4.8,20,500,https://www.swiggy.com/restaurants/sri-rami-reddy-pure-ghee-sweets-secunderabad-chilakalguda-hyderabad-367442
+192,HRX by Eatfit,Hyderabad,Healthy Food,4.8,20,270,https://www.swiggy.com/restaurants/hrx-by-eatfit-pizza-hut-building-jubilee-hils-hyderabad-558776
+193,A1 NAAN MAHAL,Hyderabad,North Indian,4.8,100,50,https://www.swiggy.com/restaurants/a1-naan-mahal-tolichowki-hyderabad-478227
+194,DONT TELL AUNTIE,Hyderabad,Biryani,4.8,20,500,https://www.swiggy.com/restaurants/dont-tell-auntie-miyapur-icrisat-colony-hyderabad-367529
+195,The Momo Concept,Hyderabad,Chinese,4.8,20,200,https://www.swiggy.com/restaurants/the-momo-concept-kondapur-hyderabad-510180
+196,Nature's Spirit,Hyderabad,Beverages,4.8,20,250,https://www.swiggy.com/restaurants/natures-spirit-attapur-hyderabad-313923
+197,Dragon house,Hyderabad,Snacks,4.8,20,250,https://www.swiggy.com/restaurants/dragon-house-madhapur-hyderabad-530401
+198,Govi's Organic Foods,Hyderabad,Sweets,4.8,100,300,https://www.swiggy.com/restaurants/govis-organic-foods-khairtabad-banjara-hills-hyderabad-259810
+199,Cake Adict,Hyderabad,Bakery,4.8,20,200,https://www.swiggy.com/restaurants/cake-adict-lingampally-and-nalagandla-hyderabad-561084
+200,HEALTHY CANE JUICE BAR,Hyderabad,Beverages,4.8,20,100,https://www.swiggy.com/restaurants/healthy-cane-juice-bar-manikonda-hyderabad-502821
+201,Smoodies & Juices: Your Fruitfully,Pune,Beverages,5.0,20,140,https://www.swiggy.com/restaurants/smoodies-and-juices-your-fruitfully-viman-nagar-pune-534283
+202,Roll Over Biryani,Pune,Snacks,5.0,20,250,https://www.swiggy.com/restaurants/roll-over-biryani-kharadi-pune-578374
+203,HRX by Eatfit,Pune,Healthy Food,5.0,20,270,https://www.swiggy.com/restaurants/hrx-by-eatfit-wakad-road-nr-h-p-gas-hinjawadi-pune-558827
+204,The Samosa Man,Pune,North Indian,5.0,20,250,https://www.swiggy.com/restaurants/the-samosa-man-koregaon-park-pune-533842
+205,Northie,Pune,North Indian,5.0,20,250,https://www.swiggy.com/restaurants/northie-baner-pune-553050
+206,Miss Gelato,Pune,Ice Cream,5.0,20,200,https://www.swiggy.com/restaurants/miss-gelato-kharadi-koregaon-park-pune-523905
+207,Kushta by Semporo,Pune,North Indian,5.0,20,800,https://www.swiggy.com/restaurants/kushta-by-semporo-kalyani-nagar-pune-556079
+208,Naughty Cravings,Pune,Desserts,4.9,20,300,https://www.swiggy.com/restaurants/naughty-cravings-wakad-pimple-nilakh-pune-504160
+209,The Fresh Press,Pune,Beverages,4.9,20,300,https://www.swiggy.com/restaurants/the-fresh-press-kalyani-nagar-pune-573666
+210,NIHARI HOUSE,Pune,North Indian,4.9,20,550,https://www.swiggy.com/restaurants/nihari-house-baner-pune-477431
+211,The Janata Project,Pune,North Indian,4.9,20,250,https://www.swiggy.com/restaurants/the-janata-project-koregaon-park-pune-533822
+212,Momo Zone  The Momo Company,Pune,Chinese,4.9,20,200,https://www.swiggy.com/restaurants/momo-zone-the-momo-company-baner-pune-555073
+213,GSB Kitchen,Pune,Goan,4.9,20,100,https://www.swiggy.com/restaurants/gsb-kitchen-swargate-pune-400630
+214,GGB - Green Grain Bowl,Pune,Healthy Food,4.8,50,700,https://www.swiggy.com/restaurants/ggb-green-grain-bowl-aundh-pune-495935
+215,Mohan ice cream,Pune,Ice Cream,4.8,20,100,https://www.swiggy.com/restaurants/mohan-ice-cream-kondhwa-pune-450853
+216,CONRAD PUNE,Pune,Continental,4.8,20,2000,https://www.swiggy.com/restaurants/conrad-pune-koregaon-park-sangamvadi-pune-272388
+217,Feast Cafe and Lounge Spree Hotel,Pune,North Indian,4.8,20,499,https://www.swiggy.com/restaurants/feast-cafe-and-lounge-spree-hotel-opposite-morwadi-court-pimpri-colony-pune-17016
+218,Gulp,Pune,Beverages,4.8,20,200,https://www.swiggy.com/restaurants/gulp-shivaji-nagar-shivajinagar-pune-188190
+219,Kings Shawarma,Pune,Fast Food,4.8,20,250,https://www.swiggy.com/restaurants/kings-shawarma-wagholi-kharadi-pune-233708
+220,Feel Food,Pune,North Indian,4.8,20,300,https://www.swiggy.com/restaurants/feel-food-baner-pune-531284
+221,GOWHEY- HEALTHY DESSERT COMPANY,Pune,Desserts,4.8,20,200,https://www.swiggy.com/restaurants/gowhey-healthy-dessert-company-undri-aundh-pune-533492
+222,PM's Shaahi Mithaas,Pune,Sweets,4.8,20,100,https://www.swiggy.com/restaurants/pms-shaahi-mithaas-hadapsar-pune-554984
+223,Ice Cream Works,Pune,Ice Cream,4.8,20,300,https://www.swiggy.com/restaurants/ice-cream-works-viman-nagar-pune-462468
+224,Kouzina Kafe - The Food Court,Pune,Bakery,4.8,20,200,https://www.swiggy.com/restaurants/kouzina-kafe-the-food-court-baner-pune-528537
+225,Dime N Dine,Pune,Chinese,4.7,50,400,https://www.swiggy.com/restaurants/dime-n-dine-salunke-vihar-road-mohammed-wadi-pune-165994
+226,ONE SLICE,Kolkata,Pizzas,5.0,20,120,https://www.swiggy.com/restaurants/one-slice-chinar-park-kolkata-577371
+227,DESI REPUBLIC,Kolkata,North Indian,5.0,20,300,https://www.swiggy.com/restaurants/desi-republic-south-kolkata-kolkata-476997
+228,BREW BUGS FOOD AND COFFEE,Kolkata,Chinese,4.9,20,300,https://www.swiggy.com/restaurants/brew-bugs-food-and-coffee-eco-park-newtown-kolkata-564330
+229,Badmash Biryani,Kolkata,Biryani,4.9,20,350,https://www.swiggy.com/restaurants/badmash-biryani-howrah-kolkata-516836
+230,SHREE KRISHNA SWEETS,Kolkata,Sweets,4.9,20,200,https://www.swiggy.com/restaurants/shree-krishna-sweets-central-kolkata-kolkata-469851
+231,THE BIG CRUNCH CAFE,Kolkata,Fast Food,4.9,20,200,https://www.swiggy.com/restaurants/the-big-crunch-cafe-howrah-kolkata-549213
+232,Mr And Mrs Kitchen,Kolkata,Tandoor,4.9,20,300,https://www.swiggy.com/restaurants/mr-and-mrs-kitchen-baganhati-baguiati-kolkata-528238
+233,Biryani Hazir Ho,Kolkata,Biryani,4.9,20,350,https://www.swiggy.com/restaurants/biryani-hazir-ho-howrah-kolkata-513719
+234,INOX,Kolkata,Fast Food,4.9,20,400,https://www.swiggy.com/restaurants/inox-hilandpark-santoshpur-kolkata-260149
+235,Slurpy Shakes,Kolkata,Beverages,4.9,20,150,https://www.swiggy.com/restaurants/slurpy-shakes-central-ballygunge-broad-street-kolkata-566903
+236,THE TASTE OF KOLKATA,Kolkata,Chinese,4.9,50,300,https://www.swiggy.com/restaurants/the-taste-of-kolkata-vidyasagar-colony-baghajatin-kolkata-554729
+237,The Dessert Zone,Kolkata,Bakery,4.9,20,200,https://www.swiggy.com/restaurants/the-dessert-zone-central-ballygunge-broad-street-kolkata-537366
+238,Burger It Up,Kolkata,American,4.9,20,200,https://www.swiggy.com/restaurants/burger-it-up-central-ballygunge-broad-street-kolkata-537344
+239,Wrap Ur Wraaps,Kolkata,Continental,4.9,20,300,https://www.swiggy.com/restaurants/wrap-ur-wraaps-central-south-kolkata-kolkata-387162
+240,Pabrai's Fresh And Naturelle IceCream,Kolkata,Ice Cream,4.8,20,300,https://www.swiggy.com/restaurants/pabrais-fresh-and-naturelle-icecream-burrabazar-girish-park-kolkata-416376
+241,Grand Ma's Kitchen,Kolkata,Indian,4.8,20,250,https://www.swiggy.com/restaurants/grand-mas-kitchen-alipore-deul-kolkata-295045
+242,ROYCE' Chocolate,Kolkata,Desserts,4.8,20,750,https://www.swiggy.com/restaurants/royce-chocolate-quest-mall-ballygunge-kolkata-48341
+243,Cupcake Bliss Cake & Desserts,Kolkata,Bakery,4.8,20,200,https://www.swiggy.com/restaurants/cupcake-bliss-cake-and-desserts-central-ballygunge-broad-street-kolkata-566691
+244,Cheesecake@sams,Kolkata,Bakery,4.8,20,450,https://www.swiggy.com/restaurants/cheesecake-sams-central-kolkata-kolkata-554159
+245,Shyamali's Fast Food Centre,Kolkata,Indian,4.8,20,200,https://www.swiggy.com/restaurants/shyamalis-fast-food-centre-shyamalis-fast-food-centre-paikpara-kolkata-165375
+246,BENFISH REVELRY,Kolkata,Seafood,4.8,20,350,https://www.swiggy.com/restaurants/benfish-revelry-salt-lake-kolkata-521095
+247,Wakka Makka Chinese,Kolkata,Chinese,4.8,20,300,https://www.swiggy.com/restaurants/wakka-makka-chinese-howrah-kolkata-514376
+248,Suchalis Artisan Bakehouse,Kolkata,Bakery,4.8,20,350,https://www.swiggy.com/restaurants/suchalis-artisan-bakehouse-salt-lake-kolkata-545753
+249,Potboiler Coffee House,Kolkata,American,4.8,20,400,https://www.swiggy.com/restaurants/potboiler-coffee-house-triangular-park-south-ballygunge-kolkata-231147
+250,SANSKARI BIRYANI,Kolkata,Biryani,4.8,20,300,https://www.swiggy.com/restaurants/sanskari-biryani-garia-kolkata-513641
+251,ITC Fabelle Chocolates,Chennai,Bakery,5.0,20,600,https://www.swiggy.com/restaurants/itc-fabelle-chocolates-t-nagar-chennai-563111
+252,CHINESE CARNIVAL,Chennai,Chinese,5.0,20,300,https://www.swiggy.com/restaurants/chinese-carnival-villivakkam-chennai-570609
+253,HRX by Eatfit,Chennai,Healthy Food,5.0,20,270,https://www.swiggy.com/restaurants/hrx-by-eatfit-madras-telephones-nagar-perungudi-chennai-558813
+254,Not Just A Cake by Jayaa Kennethh,Chennai,Bakery,5.0,20,400,https://www.swiggy.com/restaurants/not-just-a-cake-by-jayaa-kennethh-villivakkam-chennai-552398
+255,Bronies,Chennai,American,5.0,20,400,https://www.swiggy.com/restaurants/bronies-ecr-kottivakkam-adyar-chennai-69322
+256,Spice Nyce,Chennai,Indian,4.9,20,200,https://www.swiggy.com/restaurants/spice-nyce-iyyapanthangal-chennai-561599
+257,AMUL ICE CREAM PARLOUR,Chennai,Ice Cream,4.9,20,200,https://www.swiggy.com/restaurants/amul-ice-cream-parlour-villivakkam-chennai-437066
+258,NI FOODS AND DIET,Chennai,Healthy Food,4.9,20,300,https://www.swiggy.com/restaurants/ni-foods-and-diet-kanathur-navalur-chennai-267895
+259,THE BETEL LEAF CO - Originally from Bangalore,Chennai,Paan,4.9,20,200,https://www.swiggy.com/restaurants/the-betel-leaf-co-originally-from-bangalore-purasaiwakkam-chennai-427159
+260,THE LEAN BEAN CHENNAI,Chennai,Healthy Food,4.9,20,600,https://www.swiggy.com/restaurants/the-lean-bean-chennai-annanagar-chennai-385091
+261,SUMTI SNACKS,Chennai,Desserts,4.9,20,250,https://www.swiggy.com/restaurants/sumti-snacks-perambur-chennai-491585
+262,Miami Waffles & Jawbreakers,Chennai,Waffle,4.8,20,200,https://www.swiggy.com/restaurants/miami-waffles-and-jawbreakers-mogappair-chennai-535406
+263,Gourmet Ice Cream Cakes by Baskin Robbins,Chennai,Desserts,4.8,20,250,https://www.swiggy.com/restaurants/gourmet-ice-cream-cakes-by-baskin-robbins-palavakkam-ecr-kottivakkam-chennai-369358
+264,SHRI GANESH BHAVAN,Chennai,South Indian,4.8,20,250,https://www.swiggy.com/restaurants/shri-ganesh-bhavan-porur-chennai-428608
+265,Freshlings Cafe,Chennai,Salads,4.8,20,450,https://www.swiggy.com/restaurants/freshlings-cafe-omr-perungudi-chennai-511836
+266,Gobbelin,Chennai,Mediterranean,4.8,50,350,https://www.swiggy.com/restaurants/gobbelin-kalakshetra-colony-city-besant-nagar-chennai-374537
+267,ANN Fresh Salad,Chennai,Salads,4.8,20,200,https://www.swiggy.com/restaurants/ann-fresh-salad-chrompet-chennai-515364
+268,Mcrennett ( Parrys),Chennai,Bakery,4.8,20,300,https://www.swiggy.com/restaurants/mcrennett-parrys-parrys-george-town-chennai-211301
+269,Waffoh Waffles,Chennai,Waffle,4.8,20,300,https://www.swiggy.com/restaurants/waffoh-waffles-t-nagar-chennai-531105
+270,Dp Special,Chennai,Snacks,4.8,20,340,https://www.swiggy.com/restaurants/dp-special-kilpauk-chennai-452827
+271,Fabelle Chocolates - ITC Grand Chola,Chennai,Bakery,4.8,20,600,https://www.swiggy.com/restaurants/fabelle-chocolates-itc-grand-chola-guindy-kotturpuram-chennai-304596
+272,CAKES BY COCO JAUNT 1728,Chennai,Bakery,4.8,20,500,https://www.swiggy.com/restaurants/cakes-by-coco-jaunt-1728-annanagar-chennai-548198
+273,Glace & Yumm,Chennai,Ice Cream,4.8,20,200,https://www.swiggy.com/restaurants/glace-and-yumm-mogappair-chennai-556644
+274,Hotel Kumaran,Chennai,South Indian,4.8,20,200,https://www.swiggy.com/restaurants/hotel-kumaran-chrompet-chennai-386612
+275,CakeBee (Anna Nagar),Chennai,Bakery,4.7,100,300,https://www.swiggy.com/restaurants/cakebee-anna-nagar-annanagar-chennai-411230
