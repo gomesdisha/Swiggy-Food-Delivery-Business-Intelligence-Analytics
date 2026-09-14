@@ -1,9 +1,18 @@
 # ==============================================================================
 # Git Ignore Configuration — Swiggy Business Intelligence Analytics
-# Keeps GitHub repository focused strictly on BI deliverables
+# Keeps repository clean and displays only final deliverables
 # ==============================================================================
 
-# Internal Python automation & builder scripts
+# Private Documentation & Cheat Sheets (Kept local, hidden on GitHub)
+docs/INTERVIEW_QA_GUIDE.md
+docs/DATA_DICTIONARY.md
+
+# Private Power BI Design & DAX Cheat Sheets (Kept local, hidden on GitHub)
+power_bi/dashboard_layout_wireframes.md
+power_bi/dax_measures_library.md
+power_bi/power_bi_data_model_guide.md
+
+# Internal Python automation & builder scripts (Kept local, hidden on GitHub)
 src/
 
 # Python Cache & Artifacts
