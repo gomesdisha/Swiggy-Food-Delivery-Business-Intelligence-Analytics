@@ -1,0 +1,177 @@
+{
+  "name": "Swiggy_Food_Delivery_Model",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "orders_users_fk",
+        "fromTable": "orders",
+        "fromColumn": "user_id",
+        "toTable": "users",
+        "toColumn": "user_id"
+      },
+      {
+        "name": "orders_restaurants_fk",
+        "fromTable": "orders",
+        "fromColumn": "restaurant_id",
+        "toTable": "restaurants",
+        "toColumn": "restaurant_id"
+      },
+      {
+        "name": "orders_delivery_partners_fk",
+        "fromTable": "orders",
+        "fromColumn": "partner_id",
+        "toTable": "delivery_partners",
+        "toColumn": "partner_id"
+      },
+      {
+        "name": "order_items_orders_fk",
+        "fromTable": "order_items",
+        "fromColumn": "order_id",
+        "toTable": "orders",
+        "toColumn": "order_id"
+      },
+      {
+        "name": "order_items_menu_items_fk",
+        "fromTable": "order_items",
+        "fromColumn": "item_id",
+        "toTable": "menu_items",
+        "toColumn": "item_id"
+      }
+    ],
+    "tables": [
+      {
+        "name": "orders",
+        "columns": [
+          { "name": "order_id", "dataType": "int64", "sourceColumn": "order_id" },
+          { "name": "user_id", "dataType": "int64", "sourceColumn": "user_id" },
+          { "name": "restaurant_id", "dataType": "int64", "sourceColumn": "restaurant_id" },
+          { "name": "partner_id", "dataType": "int64", "sourceColumn": "partner_id" },
+          { "name": "order_date", "dataType": "dateTime", "sourceColumn": "order_date" },
+          { "name": "order_time", "dataType": "string", "sourceColumn": "order_time" },
+          { "name": "order_status", "dataType": "string", "sourceColumn": "order_status" },
+          { "name": "total_amount", "dataType": "decimal", "sourceColumn": "total_amount" },
+          { "name": "discount_amount", "dataType": "decimal", "sourceColumn": "discount_amount" },
+          { "name": "delivery_fee", "dataType": "decimal", "sourceColumn": "delivery_fee" },
+          { "name": "delivery_time_mins", "dataType": "int64", "sourceColumn": "delivery_time_mins" },
+          { "name": "payment_method", "dataType": "string", "sourceColumn": "payment_method" }
+        ],
+        "measures": [
+          {
+            "name": "Total Orders",
+            "expression": "CALCULATE(COUNTROWS('orders'), 'orders'[order_status] = \"Delivered\")",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Total GMV",
+            "expression": "CALCULATE(SUM('orders'[total_amount]), 'orders'[order_status] = \"Delivered\")",
+            "formatString": "₹ #,##0"
+          },
+          {
+            "name": "Average Order Value",
+            "expression": "DIVIDE([Total GMV], [Total Orders], 0)",
+            "formatString": "₹ #,##0.0"
+          },
+          {
+            "name": "Swiggy Commission Revenue",
+            "expression": "[Total GMV] * 0.21",
+            "formatString": "₹ #,##0"
+          },
+          {
+            "name": "Swiggy One Orders",
+            "expression": "CALCULATE([Total Orders], 'users'[is_swiggy_one] = 1)",
+            "formatString": "#,##0"
+          },
+          {
+            "name": "Swiggy One Order Share %",
+            "expression": "DIVIDE([Swiggy One Orders], [Total Orders], 0)",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Average Delivery Time",
+            "expression": "CALCULATE(AVERAGE('orders'[delivery_time_mins]), 'orders'[order_status] = \"Delivered\")",
+            "formatString": "0.0"
+          },
+          {
+            "name": "On-Time Delivery Rate %",
+            "expression": "DIVIDE(CALCULATE([Total Orders], 'orders'[delivery_time_mins] <= 35), [Total Orders], 0)",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "SLA Breach Rate %",
+            "expression": "DIVIDE(CALCULATE([Total Orders], 'orders'[delivery_time_mins] > 40), [Total Orders], 0)",
+            "formatString": "0.0%"
+          },
+          {
+            "name": "Cancellation Rate %",
+            "expression": "DIVIDE(CALCULATE(COUNTROWS('orders'), 'orders'[order_status] = \"Cancelled\"), COUNTROWS('orders'), 0)",
+            "formatString": "0.0%"
+          }
+        ]
+      },
+      {
+        "name": "users",
+        "columns": [
+          { "name": "user_id", "dataType": "int64", "sourceColumn": "user_id" },
+          { "name": "name", "dataType": "string", "sourceColumn": "name" },
+          { "name": "gender", "dataType": "string", "sourceColumn": "gender" },
+          { "name": "age", "dataType": "int64", "sourceColumn": "age" },
+          { "name": "city", "dataType": "string", "sourceColumn": "city" },
+          { "name": "signup_date", "dataType": "dateTime", "sourceColumn": "signup_date" },
+          { "name": "is_swiggy_one", "dataType": "int64", "sourceColumn": "is_swiggy_one" }
+        ]
+      },
+      {
+        "name": "restaurants",
+        "columns": [
+          { "name": "restaurant_id", "dataType": "int64", "sourceColumn": "restaurant_id" },
+          { "name": "restaurant_name", "dataType": "string", "sourceColumn": "restaurant_name" },
+          { "name": "city", "dataType": "string", "sourceColumn": "city" },
+          { "name": "cuisine", "dataType": "string", "sourceColumn": "cuisine" },
+          { "name": "rating", "dataType": "decimal", "sourceColumn": "rating" },
+          { "name": "rating_count", "dataType": "int64", "sourceColumn": "rating_count" },
+          { "name": "cost_for_two", "dataType": "decimal", "sourceColumn": "cost_for_two" },
+          { "name": "swiggy_url", "dataType": "string", "sourceColumn": "swiggy_url" }
+        ]
+      },
+      {
+        "name": "menu_items",
+        "columns": [
+          { "name": "item_id", "dataType": "int64", "sourceColumn": "item_id" },
+          { "name": "item_name", "dataType": "string", "sourceColumn": "item_name" },
+          { "name": "menu_category", "dataType": "string", "sourceColumn": "menu_category" },
+          { "name": "price", "dataType": "decimal", "sourceColumn": "price" },
+          { "name": "veg_or_non_veg", "dataType": "string", "sourceColumn": "veg_or_non_veg" }
+        ]
+      },
+      {
+        "name": "delivery_partners",
+        "columns": [
+          { "name": "partner_id", "dataType": "int64", "sourceColumn": "partner_id" },
+          { "name": "partner_name", "dataType": "string", "sourceColumn": "partner_name" },
+          { "name": "city", "dataType": "string", "sourceColumn": "city" },
+          { "name": "vehicle_type", "dataType": "string", "sourceColumn": "vehicle_type" },
+          { "name": "rating", "dataType": "decimal", "sourceColumn": "rating" }
+        ]
+      },
+      {
+        "name": "order_items",
+        "columns": [
+          { "name": "order_item_id", "dataType": "int64", "sourceColumn": "order_item_id" },
+          { "name": "order_id", "dataType": "int64", "sourceColumn": "order_id" },
+          { "name": "item_id", "dataType": "int64", "sourceColumn": "item_id" },
+          { "name": "item_name", "dataType": "string", "sourceColumn": "item_name" },
+          { "name": "price", "dataType": "decimal", "sourceColumn": "price" },
+          { "name": "quantity", "dataType": "int64", "sourceColumn": "quantity" },
+          { "name": "line_total", "dataType": "decimal", "sourceColumn": "line_total" }
+        ]
+      }
+    ]
+  }
+}

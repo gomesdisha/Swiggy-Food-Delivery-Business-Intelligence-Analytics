@@ -1,4 +1,12 @@
-# Python
+# ==============================================================================
+# Git Ignore Configuration — Swiggy Business Intelligence Analytics
+# Keeps GitHub repository focused strictly on BI deliverables
+# ==============================================================================
+
+# Internal Python automation & builder scripts
+src/
+
+# Python Cache & Artifacts
 __pycache__/
 *.py[cod]
 *$py.class
@@ -8,12 +16,17 @@ __pycache__/
 .venv/
 env/
 venv/
+ENV/
 
-# Operating System
+# Operating System & Cache Files
 .DS_Store
 Thumbs.db
 desktop.ini
+*.tmp
+*.log
 
-# IDEs
+# IDE & Editor Configurations
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace

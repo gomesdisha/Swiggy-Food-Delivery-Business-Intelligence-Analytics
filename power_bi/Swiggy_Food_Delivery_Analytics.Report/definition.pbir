@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Swiggy_Food_Delivery_Analytics.Dataset"
+    },
+    "byConnection": null
+  }
+}

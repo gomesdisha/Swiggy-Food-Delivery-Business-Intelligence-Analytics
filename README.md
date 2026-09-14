@@ -3,7 +3,7 @@
 [![Database: MySQL](https://img.shields.io/badge/Database-MySQL_8.0-00758F?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![BI Tool: Power BI](https://img.shields.io/badge/BI_Tool-Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
 [![Modeling: Excel](https://img.shields.io/badge/Modeling-Microsoft_Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://www.microsoft.com/en-us/microsoft-365/excel)
-[![ETL: Python](https://img.shields.io/badge/Pipeline-Python_3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Dashboard: Interactive](https://img.shields.io/badge/Dashboard-Interactive_App-FC8019?style=for-the-badge&logo=html5&logoColor=white)](power_bi/swiggy_bi_dashboard.html)
 
 An end-to-end Data Analytics and Business Intelligence project analyzing Swiggy's food delivery transactions across 7 major Indian metro cities (**Bangalore, Mumbai, Delhi, Hyderabad, Pune, Kolkata, and Chennai**). 
 
@@ -28,22 +28,14 @@ The project utilizes **MySQL**, **Power BI**, and **Excel** to evaluate marketpl
 
 ```
                           ┌──────────────────────────────────────────────┐
-                          │  REAL SCRAPED SWIGGY DATASETS (GitHub/Web)   │
+                          │  REAL SCRAPED SWIGGY DATASETS                │
                           │  • 175 Iconic Restaurants across 7 Cities    │
                           │  • 1,200 Real Menu Items & Actual Prices     │
                           └──────────────────────┬───────────────────────┘
                                                  │
                                                  ▼
                           ┌──────────────────────────────────────────────┐
-                          │  1. DATASET BUILDER & ETL (Python)           │
-                          │  • Synthesizes realistic customer profiles   │
-                          │  • Generates 15k orders with seasonality     │
-                          │  • Exports 6 clean relational CSV tables     │
-                          └──────────────────────┬───────────────────────┘
-                                                 │
-                                                 ▼
-                          ┌──────────────────────────────────────────────┐
-                          │  2. MySQL 8.0 DATABASE (`swiggy_db`)         │
+                          │  1. MySQL 8.0 DATABASE (`swiggy_db`)         │
                           │  • Star Schema DDL with PK/FK constraints    │
                           │  • 15 Production Business Analysis Queries   │
                           │  • Window Functions: DENSE_RANK, LAG, NTILE  │
@@ -52,11 +44,11 @@ The project utilizes **MySQL**, **Power BI**, and **Excel** to evaluate marketpl
                          ┌───────────────┴───────────────┐
                          ▼                               ▼
           ┌─────────────────────────────┐ ┌─────────────────────────────┐
-          │  3. POWER BI DASHBOARD      │ │  4. EXCEL FINANCIAL MODEL   │
-          │  • Executive Overview       │ │  • Monthly Business Review  │
-          │  • Swiggy One Retention     │ │  • Take-Rate & Unit P&L     │
-          │  • Delivery Logistics Tower │ │  • Dynamic Formulas         │
-          │  • 22 Custom DAX Measures   │ │    (SUMIFS, AVERAGEIFS)     │
+          │  2. POWER BI DASHBOARD      │ │  3. EXCEL FINANCIAL MODEL   │
+          │  • Native Project (.pbip)   │ │  • Monthly Business Review  │
+          │  • Interactive Web App      │ │  • Take-Rate & Unit P&L     │
+          │  • Star Schema Semantic Mod.│ │  • Dynamic Formulas         │
+          │  • 22 Production DAX Meas.  │ │    (SUMIFS, AVERAGEIFS)     │
           └─────────────────────────────┘ └─────────────────────────────┘
 ```
 
@@ -76,7 +68,25 @@ The database is organized into 6 normalized relational tables:
 
 ---
 
-## 💡 Top SQL Business Queries & Technical Highlights
+## 📊 Power BI Dashboard
+
+The repository includes both an official **Power BI Project (.pbip)** and a standalone **Interactive Web Dashboard**:
+
+1. **Native Power BI Project:** [`power_bi/Swiggy_Food_Delivery_Analytics.pbip`](power_bi/Swiggy_Food_Delivery_Analytics.pbip)
+   - Double-click to open in Power BI Desktop.
+   - Built-in Star Schema with 1-to-many relationships and 22 custom DAX measures.
+2. **Interactive HTML Dashboard:** [`power_bi/swiggy_bi_dashboard.html`](power_bi/swiggy_bi_dashboard.html)
+   - Open directly in any web browser.
+   - Features 3 interactive pages:
+     * **Page 1: Executive Performance Overview:** Top KPI cards, Monthly GMV vs. MoM growth, City breakdown, and Payment channel donut.
+     * **Page 2: Swiggy One & Customer Loyalty:** Member vs. Non-Member economics, RFM Frequency tiers, and Top 5% Spenders table.
+     * **Page 3: Delivery Logistics & SLA Control Tower:** Average delivery duration by city, EV vs. Petrol motorcycle comparison, and Quality Risk alerts.
+
+👉 *Explore the [DAX Measures Library](power_bi/dax_measures_library.md) and [Dashboard Wireframes](power_bi/dashboard_layout_wireframes.md).*
+
+---
+
+## 💡 Top SQL Business Queries
 
 All 15 SQL queries are located in [`sql/03_swiggy_business_analysis.sql`](sql/03_swiggy_business_analysis.sql). Here are 3 signature queries:
 
@@ -140,23 +150,12 @@ ORDER BY total_orders DESC;
 
 ---
 
-## 📊 Power BI Dashboard Blueprint
-
-The Power BI report contains 3 dedicated executive pages:
-* **Page 1: Executive Performance Overview:** Top KPI cards, Monthly GMV vs. MoM growth line/bar combo, City revenue breakdown, and Payment channel donut.
-* **Page 2: Swiggy One & Customer Loyalty:** Member vs. Non-Member unit economics, Frequency tier segmentation, and Customer Lifetime Value (LTV) scatter plots.
-* **Page 3: Delivery Logistics & SLA Control Tower:** Average delivery time heatmap across meal slots, On-Time delivery rate by city, and EV vs. Motorcycle fleet benchmarking.
-
-👉 *Explore the [DAX Measures Library](power_bi/dax_measures_library.md) and [Dashboard Wireframes](power_bi/dashboard_layout_wireframes.md).*
-
----
-
 ## 📗 Excel Monthly Business Review (MBR) & Unit Economics
 
 Located in [`excel/swiggy_business_performance_review.xlsx`](excel/swiggy_business_performance_review.xlsx):
 * **Tab 1: Executive Summary:** KPI cards and city-wise performance metrics.
 * **Tab 2: Monthly Business Review (MBR):** Dynamic month-by-month financial statement with `SUMIFS`, `AVERAGEIFS`, and MoM % formulas.
-* **Tab 3: Commission & Take-Rate P&L:** Unit economics model analyzing restaurant commission (21%), customer delivery fees, rider payouts, and net contribution margin.
+* **Tab 3: Commission & Take-Rate P&L:** Unit economics model analyzing restaurant commission (21%), customer delivery fees, rider payouts (₹42/order), and net contribution margin.
 
 ---
 
@@ -168,17 +167,18 @@ git clone https://github.com/gomesdisha/Swiggy-Food-Delivery-Business-Intelligen
 cd Swiggy-Food-Delivery-Business-Intelligence-Analytics
 ```
 
-### 2. Set Up MySQL Database
+### 2. Open the Power BI Dashboard
+* **Option A:** Open `power_bi/Swiggy_Food_Delivery_Analytics.pbip` directly in **Power BI Desktop**.
+* **Option B:** Double-click `power_bi/swiggy_bi_dashboard.html` to explore the interactive visual dashboard directly in your browser.
+
+### 3. Set Up MySQL Database
 1. Open **MySQL Workbench**.
 2. Run `sql/01_swiggy_schema.sql` to create `swiggy_db` and tables.
 3. Import the CSV files from `data/` using the **Table Data Import Wizard** (see `sql/02_load_data_mysql.sql`).
 4. Execute `sql/03_swiggy_business_analysis.sql` to view all analytical results!
 
-### 3. Open in Power BI Desktop
-1. Launch Power BI Desktop.
-2. Connect to the clean CSV files in `data/` (or connect directly to your local MySQL database).
-3. Verify relationships match the Star Schema in `power_bi/power_bi_data_model_guide.md`.
-4. Copy-paste DAX measures from `power_bi/dax_measures_library.md`.
+### 4. Explore the Excel Model
+* Open `excel/swiggy_business_performance_review.xlsx` directly in **Microsoft Excel**.
 
 ---
 
@@ -197,19 +197,19 @@ Swiggy-Food-Delivery-Business-Intelligence-Analytics/
 │   ├── 01_swiggy_schema.sql             # Table DDL & indexes
 │   ├── 02_load_data_mysql.sql           # Data ingestion scripts
 │   └── 03_swiggy_business_analysis.sql  # 15 Core Business Queries
-├── power_bi/                             # Power BI design assets
+├── power_bi/                             # Power BI Dashboard & Assets
+│   ├── Swiggy_Food_Delivery_Analytics.pbip # Native Power BI Project file
+│   ├── swiggy_bi_dashboard.html         # Interactive Web Dashboard
 │   ├── dax_measures_library.md          # 22 Production DAX measures
 │   ├── power_bi_data_model_guide.md     # Star schema modeling guide
 │   └── dashboard_layout_wireframes.md   # Visual blueprints & layouts
 ├── excel/                                # Excel financial model
 │   └── swiggy_business_performance_review.xlsx
-├── src/                                  # Data generation & automation scripts
-│   ├── build_swiggy_dataset.py          # Scraped data ingestion & order synthesis
-│   └── build_excel_model.py             # OpenPyXL automated workbook builder
 ├── docs/                                 # Project documentation
 │   ├── DATA_DICTIONARY.md               # Table & column descriptions
 │   ├── EXECUTIVE_INSIGHTS_REPORT.md     # Business insights & strategy
 │   └── INTERVIEW_QA_GUIDE.md            # Scripted interview talking points
+├── .gitignore                            # Ignores internal scripts & temp files
 └── README.md                            # Flagship project documentation
 ```
 

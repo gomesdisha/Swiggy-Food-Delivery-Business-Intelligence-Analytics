@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy Business Intelligence Dashboard</title>
+    <!-- Chart.js & Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --pbi-bg: #F3F4F6;
+            --pbi-card: #FFFFFF;
+            --pbi-dark: #1F2937;
+            --swiggy-orange: #FC8019;
+            --swiggy-orange-light: #FFF4E8;
+            --pbi-border: #E5E7EB;
+            --pbi-text: #111827;
+            --pbi-muted: #6B7280;
+            --pbi-success: #10B981;
+            --pbi-danger: #EF4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--pbi-bg);
+            color: var(--pbi-text);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Power BI Sidebar Navigation */
+        .sidebar {
+            width: 240px;
+            background: var(--pbi-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .sidebar-header {
+            padding: 20px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sidebar-header i {
+            color: var(--swiggy-orange);
+            font-size: 24px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-section {
+            padding: 16px 0;
+            flex-grow: 1;
+        }
+
+        .nav-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9CA3AF;
+            padding: 0 20px 8px;
+            font-weight: 600;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: #D1D5DB;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        .nav-item.active {
+            background: rgba(252, 128, 25, 0.15);
+            color: var(--swiggy-orange);
+            border-left-color: var(--swiggy-orange);
+            font-weight: 600;
+        }
+
+        .nav-item i {
+            font-size: 16px;
+            width: 20px;
+        }
+
+        .sidebar-footer {
+            padding: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+            color: #9CA3AF;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Main Power BI Canvas */
+        .main-canvas {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        /* Top Action Bar / Slicers */
+        .topbar {
+            background: white;
+            border-bottom: 1px solid var(--pbi-border);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .topbar-title h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--pbi-dark);
+        }
+
+        .topbar-title p {
+            font-size: 12px;
+            color: var(--pbi-muted);
+        }
+
+        .slicer-group {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .slicer-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--pbi-muted);
+        }
+
+        .slicer-select {
+            padding: 6px 12px;
+            font-size: 12px;
+            border: 1px solid var(--pbi-border);
+            border-radius: 4px;
+            background: white;
+            color: var(--pbi-text);
+            cursor: pointer;
+            outline: none;
+        }
+
+        .slicer-select:focus {
+            border-color: var(--swiggy-orange);
+        }
+
+        /* Report Canvas Area */
+        .report-content {
+            padding: 20px 24px;
+            display: none;
+        }
+
+        .report-content.active {
+            display: block;
+        }
+
+        /* KPI Card Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .kpi-card {
+            background: var(--pbi-card);
+            border-radius: 6px;
+            padding: 16px 20px;
+            border: 1px solid var(--pbi-border);
+            border-left: 4px solid var(--swiggy-orange);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .kpi-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .kpi-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--pbi-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .kpi-icon {
+            color: var(--swiggy-orange);
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .kpi-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--pbi-dark);
+        }
+
+        .kpi-footer {
+            margin-top: 8px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .badge-success {
+            color: var(--pbi-success);
+            font-weight: 600;
+        }
+
+        .badge-danger {
+            color: var(--pbi-danger);
+            font-weight: 600;
+        }
+
+        /* Visuals Grid */
+        .visuals-grid-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .visuals-grid-equal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .visual-card {
+            background: var(--pbi-card);
+            border-radius: 6px;
+            border: 1px solid var(--pbi-border);
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .visual-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--pbi-dark);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 280px;
+            width: 100%;
+        }
+
+        /* Data Table Styling */
+        .pbi-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .pbi-table th {
+            text-align: left;
+            padding: 10px;
+            background: #F9FAFB;
+            color: var(--pbi-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--pbi-border);
+        }
+
+        .pbi-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--pbi-border);
+            color: var(--pbi-dark);
+        }
+
+        .pbi-table tr:hover {
+            background-color: #F9FAFB;
+        }
+
+        .rating-badge {
+            display: inline-block;
+            background: #EBF5FF;
+            color: #1E40AF;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .badge-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .badge-pill-ev {
+            background: #DEF7EC;
+            color: #03543F;
+        }
+
+        .badge-pill-petrol {
+            background: #FDE8E8;
+            color: #9B1C1C;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-motorcycle"></i>
+            <div>
+                <h2>SWIGGY BI</h2>
+                <div style="font-size: 10px; color: #9CA3AF;">Power BI Executive Suite</div>
+            </div>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-label">Report Pages</div>
+            <div class="nav-item active" onclick="switchPage('page1', this)">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Executive Overview</span>
+            </div>
+            <div class="nav-item" onclick="switchPage('page2', this)">
+                <i class="fa-solid fa-crown"></i>
+                <span>Swiggy One Loyalty</span>
+            </div>
+            <div class="nav-item" onclick="switchPage('page3', this)">
+                <i class="fa-solid fa-route"></i>
+                <span>Delivery & Logistics</span>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-database"></i>
+            <span>Connected: MySQL 8.0</span>
+        </div>
+    </div>
+
+    <!-- Main Canvas Area -->
+    <div class="main-canvas">
+        
+        <!-- Top Slicer Bar -->
+        <div class="topbar">
+            <div class="topbar-title">
+                <h1 id="page-title">Executive Performance Overview</h1>
+                <p id="page-subtitle">Marketplace Gross Sales, Average Order Value & City Benchmarks (FY24)</p>
+            </div>
+
+            <div class="slicer-group">
+                <span class="slicer-label"><i class="fa-solid fa-filter"></i> City Slicer:</span>
+                <select class="slicer-select" id="cityFilter" onchange="filterData()">
+                    <option value="All">All Metro Cities</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+
+                <select class="slicer-select">
+                    <option>FY 2024 (Full Year)</option>
+                    <option>H2 2024</option>
+                    <option>H1 2024</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- PAGE 1: EXECUTIVE PERFORMANCE OVERVIEW -->
+        <div id="page1" class="report-content active">
+            <!-- 4 Top KPIs -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Total GMV (Food Sales)</span>
+                        <i class="fa-solid fa-indian-rupee-sign kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">₹ 6.42 Cr</div>
+                    <div class="kpi-footer">
+                        <span class="badge-success"><i class="fa-solid fa-arrow-trend-up"></i> +14.8%</span>
+                        <span style="color: var(--pbi-muted);">vs target</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Delivered Orders</span>
+                        <i class="fa-solid fa-bag-shopping kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">14,175</div>
+                    <div class="kpi-footer">
+                        <span class="badge-success"><i class="fa-solid fa-check"></i> 94.5%</span>
+                        <span style="color: var(--pbi-muted);">fulfillment rate</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Average Order Value (AOV)</span>
+                        <i class="fa-solid fa-receipt kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">₹ 453.2</div>
+                    <div class="kpi-footer">
+                        <span class="badge-success">+₹28.4</span>
+                        <span style="color: var(--pbi-muted);">lift in Delhi NCR</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Est. Swiggy Commission</span>
+                        <i class="fa-solid fa-sack-dollar kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">₹ 1.35 Cr</div>
+                    <div class="kpi-footer">
+                        <span style="color: var(--pbi-dark); font-weight: 600;">21.0%</span>
+                        <span style="color: var(--pbi-muted);">blended take rate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row 1 -->
+            <div class="visuals-grid-2">
+                <div class="visual-card">
+                    <div class="visual-title">
+                        <span>Monthly GMV Trend (₹ Lakhs) & MoM Growth %</span>
+                        <span style="font-size: 11px; color: var(--pbi-muted);">Source: fact_orders</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="monthlyChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-title">
+                        <span>Payment Channel Share</span>
+                        <span style="font-size: 11px; color: var(--pbi-muted);">Delivered Orders</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="paymentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row 2 -->
+            <div class="visuals-grid-equal">
+                <div class="visual-card">
+                    <div class="visual-title">
+                        <span>City Revenue Breakdown (₹ Lakhs)</span>
+                        <span style="font-size: 11px; color: var(--pbi-muted);">Top Metro Cities</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="cityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-title">
+                        <span>Top Cuisines by Gross Volume</span>
+                        <span style="font-size: 11px; color: var(--pbi-muted);">Delivered Orders</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="cuisineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: SWIGGY ONE MEMBERSHIP & CUSTOMER RETENTION -->
+        <div id="page2" class="report-content">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Swiggy One Order Share</span>
+                        <i class="fa-solid fa-crown kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">58.4%</div>
+                    <div class="kpi-footer">
+                        <span class="badge-success"><i class="fa-solid fa-arrow-trend-up"></i> +12.4%</span>
+                        <span style="color: var(--pbi-muted);">YoY growth</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Order Frequency Lift</span>
+                        <i class="fa-solid fa-repeat kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">2.6x</div>
+                    <div class="kpi-footer">
+                        <span style="color: var(--pbi-dark); font-weight: 600;">18.4</span>
+                        <span style="color: var(--pbi-muted);">orders/yr vs 7.1 regular</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Member AOV Expansion</span>
+                        <i class="fa-solid fa-arrow-up-right-dots kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">+ 24.2%</div>
+                    <div class="kpi-footer">
+                        <span class="badge-success">₹488.1</span>
+                        <span style="color: var(--pbi-muted);">member AOV</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Incremental Net Margin/User</span>
+                        <i class="fa-solid fa-wallet kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">+ ₹ 1,850</div>
+                    <div class="kpi-footer">
+                        <span class="badge-success">Highly Profitable</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visuals-grid-equal">
+                <div class="visual-card">
+                    <div class="visual-title">
+                        <span>Swiggy One vs. Regular Orders across Cities</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="oneCityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-title">
+                        <span>Customer RFM Frequency Segmentation</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="rfmChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table for Top 5% Spenders -->
+            <div class="visual-card" style="margin-top: 16px;">
+                <div class="visual-title">
+                    <span>VIP Customer Cohort Snapshot (Query 7: NTILE(20) Top 5% Spenders)</span>
+                    <span style="font-size: 11px; color: var(--pbi-muted);">High Lifetime Value</span>
+                </div>
+                <table class="pbi-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Customer Name</th>
+                            <th>City</th>
+                            <th>Swiggy One</th>
+                            <th>Annual Orders</th>
+                            <th>Total Spend (₹)</th>
+                            <th>Avg Order (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1042</td><td><b>Rahul Sharma</b></td><td>Bangalore</td><td><span class="badge-pill badge-pill-ev">Yes</span></td><td>38</td><td><b>₹ 21,450</b></td><td>₹ 564</td></tr>
+                        <tr><td>1089</td><td><b>Priya Patel</b></td><td>Mumbai</td><td><span class="badge-pill badge-pill-ev">Yes</span></td><td>34</td><td><b>₹ 19,820</b></td><td>₹ 582</td></tr>
+                        <tr><td>1154</td><td><b>Aditya Verma</b></td><td>Delhi</td><td><span class="badge-pill badge-pill-ev">Yes</span></td><td>31</td><td><b>₹ 18,940</b></td><td>₹ 611</td></tr>
+                        <tr><td>1208</td><td><b>Ananya Iyer</b></td><td>Bangalore</td><td><span class="badge-pill badge-pill-ev">Yes</span></td><td>29</td><td><b>₹ 17,200</b></td><td>₹ 593</td></tr>
+                        <tr><td>1322</td><td><b>Kunal Gupta</b></td><td>Hyderabad</td><td><span class="badge-pill badge-pill-petrol">No</span></td><td>26</td><td><b>₹ 15,480</b></td><td>₹ 595</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PAGE 3: DELIVERY LOGISTICS & SLA CONTROL TOWER -->
+        <div id="page3" class="report-content">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Average Delivery Duration</span>
+                        <i class="fa-solid fa-stopwatch kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">32.4 mins</div>
+                    <div class="kpi-footer">
+                        <span class="badge-success"><i class="fa-solid fa-bolt"></i> Target: 35m</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">On-Time Delivery Rate</span>
+                        <i class="fa-solid fa-shield-halved kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">78.6%</div>
+                    <div class="kpi-footer">
+                        <span style="color: var(--pbi-muted);">≤ 35 mins SLA</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Severe Delays (> 40 Mins)</span>
+                        <i class="fa-solid fa-triangle-exclamation kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value" style="color: var(--pbi-danger);">12.1%</div>
+                    <div class="kpi-footer">
+                        <span class="badge-danger">+4.8%</span>
+                        <span style="color: var(--pbi-muted);">in monsoon season</span>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Electric Vehicle (EV) Adoption</span>
+                        <i class="fa-solid fa-leaf kpi-icon"></i>
+                    </div>
+                    <div class="kpi-value">15.0%</div>
+                    <div class="kpi-footer">
+                        <span class="badge-success">32.8 mins avg speed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visuals-grid-equal">
+                <div class="visual-card">
+                    <div class="visual-title">
+                        <span>Average Delivery Time by City (Minutes)</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="delivCityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <div class="visual-title">
+                        <span>Fleet Performance: EV vs. Petrol Motorcycle</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="evChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table for Quality Risk Alert -->
+            <div class="visual-card" style="margin-top: 16px;">
+                <div class="visual-title">
+                    <span>Quality Risk Alert: High Volume / Rating &lt; 4.0 (SQL Query 12)</span>
+                    <span style="font-size: 11px; color: var(--pbi-danger); font-weight: 600;"><i class="fa-solid fa-circle-exclamation"></i> Immediate Operations Action Required</span>
+                </div>
+                <table class="pbi-table">
+                    <thead>
+                        <tr>
+                            <th>Restaurant Name</th>
+                            <th>City</th>
+                            <th>Cuisine</th>
+                            <th>Rating</th>
+                            <th>Total Orders</th>
+                            <th>Total Revenue (₹)</th>
+                            <th>Avg Prep/Delivery</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><b>Delhi Food Point</b></td><td>Bangalore</td><td>North Indian</td><td><span class="rating-badge" style="background:#FEE2E2; color:#B91C1C;">3.8 ★</span></td><td>114</td><td>₹ 48,250</td><td>38.2 mins</td><td>Audit Kitchen SLA</td></tr>
+                        <tr><td><b>Anjappar (Koramangala)</b></td><td>Bangalore</td><td>Chettinad</td><td><span class="rating-badge" style="background:#FEE2E2; color:#B91C1C;">3.9 ★</span></td><td>98</td><td>₹ 54,100</td><td>39.1 mins</td><td>Packaging Review</td></tr>
+                        <tr><td><b>Sardar Refreshments</b></td><td>Mumbai</td><td>Street Food</td><td><span class="rating-badge" style="background:#FEE2E2; color:#B91C1C;">3.9 ★</span></td><td>86</td><td>₹ 36,400</td><td>37.4 mins</td><td>Rider Dispatch Delay</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Chart Scripts -->
+    <script>
+        // Page switcher
+        function switchPage(pageId, elem) {
+            document.querySelectorAll('.report-content').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            
+            document.getElementById(pageId).classList.add('active');
+            elem.classList.add('active');
+
+            const titles = {
+                'page1': ['Executive Performance Overview', 'Marketplace Gross Sales, Average Order Value & City Benchmarks (FY24)'],
+                'page2': ['Swiggy One Loyalty & Customer Retention', 'Subscription ROI, Frequency Lift & VIP Customer Segmentation'],
+                'page3': ['Delivery Logistics & SLA Control Tower', 'Fleet Performance, Speed Benchmarks & Electric Vehicle (EV) Analytics']
+            };
+            document.getElementById('page-title').innerText = titles[pageId][0];
+            document.getElementById('page-subtitle').innerText = titles[pageId][1];
+        }
+
+        // Charts Initialization
+        window.addEventListener('DOMContentLoaded', () => {
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            
+            // Monthly Trend Chart
+            new Chart(document.getElementById('monthlyChart'), {
+                type: 'bar',
+                data: {
+                    labels: months,
+                    datasets: [{
+                        label: 'Total GMV (₹ Lakhs)',
+                        data: [48.2, 46.5, 49.8, 57.4, 59.8, 48.9, 47.5, 47.1, 52.0, 61.2, 62.4, 58.9],
+                        backgroundColor: '#FC8019',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // Payment Donut
+            new Chart(document.getElementById('paymentChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['UPI (63%)', 'Credit Card (19%)', 'Debit Card (8%)', 'COD (7%)', 'Net Banking (3%)'],
+                    datasets: [{
+                        data: [63, 19, 8, 7, 3],
+                        backgroundColor: ['#FC8019', '#1F2937', '#3B82F6', '#EF4444', '#10B981']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+
+            // City Revenue Chart
+            new Chart(document.getElementById('cityChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad', 'Pune', 'Kolkata', 'Chennai'],
+                    datasets: [{
+                        label: 'GMV (₹ Lakhs)',
+                        data: [142.5, 128.4, 114.2, 98.6, 68.4, 52.1, 37.8],
+                        backgroundColor: '#1F2937',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // Cuisine Bar Chart
+            new Chart(document.getElementById('cuisineChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Biryani', 'North Indian', 'South Indian', 'Fast Food', 'Chinese', 'Desserts', 'Cafe'],
+                    datasets: [{
+                        label: 'Delivered Orders',
+                        data: [3850, 3420, 2180, 1950, 1420, 850, 505],
+                        backgroundColor: '#FC8019',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // Swiggy One vs Regular by City
+            new Chart(document.getElementById('oneCityChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad', 'Pune', 'Kolkata', 'Chennai'],
+                    datasets: [
+                        { label: 'Swiggy One Orders', data: [62, 60, 59, 58, 55, 52, 51], backgroundColor: '#FC8019' },
+                        { label: 'Regular Orders', data: [38, 40, 41, 42, 45, 48, 49], backgroundColor: '#E5E7EB' }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { x: { stacked: true }, y: { stacked: true, max: 100 } },
+                    plugins: { legend: { position: 'top', labels: { boxWidth: 10 } } }
+                }
+            });
+
+            // RFM Chart
+            new Chart(document.getElementById('rfmChart'), {
+                type: 'pie',
+                data: {
+                    labels: ['Power Users (25+)', 'Frequent (12-24)', 'Regular (5-11)', 'Occasional (1-4)'],
+                    datasets: [{
+                        data: [42, 31, 18, 9],
+                        backgroundColor: ['#FC8019', '#FB923C', '#FDBA74', '#FED7AA']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10 } } }
+                }
+            });
+
+            // Delivery Duration by City
+            new Chart(document.getElementById('delivCityChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mumbai', 'Bangalore', 'Delhi', 'Kolkata', 'Chennai', 'Hyderabad', 'Pune'],
+                    datasets: [{
+                        label: 'Average Minutes',
+                        data: [35.2, 34.8, 33.1, 31.8, 30.9, 29.8, 28.5],
+                        backgroundColor: '#3B82F6',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // EV vs Petrol
+            new Chart(document.getElementById('evChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Delivery Speed (Mins)', 'On-Time Rate %', 'Rider Rating (x20)'],
+                    datasets: [
+                        { label: 'Electric Vehicle (EV)', data: [32.8, 81.2, 92.4], backgroundColor: '#10B981' },
+                        { label: 'Petrol Motorcycle', data: [32.1, 80.5, 91.8], backgroundColor: '#1F2937' }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top' } }
+                }
+            });
+        });
+
+        function filterData() {
+            // Slicer interactive feedback
+            const selected = document.getElementById('cityFilter').value;
+            console.log("Filtered city to: " + selected);
+        }
+    </script>
+</body>
+</html>
