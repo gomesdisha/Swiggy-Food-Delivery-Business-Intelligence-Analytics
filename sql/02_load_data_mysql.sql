@@ -7,23 +7,18 @@
 USE swiggy_db;
 
 -- ----------------------------------------------------------------------------
--- METHOD 1: Using MySQL Workbench Table Data Import Wizard (RECOMMENDED FOR WINDOWS)
+-- METHOD 1: One-Click SQL Script (RECOMMENDED & FASTEST)
 -- ----------------------------------------------------------------------------
--- Because MySQL on Windows frequently enforces strict `secure_file_priv` policies,
--- the fastest and most foolproof way in MySQL Workbench is:
+-- MySQL Workbench's GUI "Table Data Import Wizard" frequently causes foreign key 
+-- errors (Error 1452) and column alignment shifts on Windows when loading large CSVs.
 --
--- 1. Open MySQL Workbench and connect to your local instance.
--- 2. In the left Schema panel, expand `swiggy_db` -> `Tables`.
--- 3. Right-click on each table and select "Table Data Import Wizard":
---    - Import `users.csv`            -> Into table `users`
---    - Import `restaurants.csv`      -> Into table `restaurants`
---    - Import `menu_items.csv`       -> Into table `menu_items`
---    - Import `delivery_partners.csv`-> Into table `delivery_partners`
---    - Import `orders.csv`           -> Into table `orders`
---    - Import `order_items.csv`      -> Into table `order_items`
--- 4. Follow the on-screen wizard (accept UTF-8 encoding) and click Next.
+-- To avoid these GUI bugs completely, simply open and execute:
+--    sql/02_populate_swiggy_db.sql
 --
--- NOTE: Always import in the exact order listed above to satisfy Foreign Key constraints!
+-- Click the Lightning Bolt (⚡) in MySQL Workbench. It automatically disables foreign
+-- key checks, truncates any partially imported tables, and batch-inserts all 
+-- 15,000 orders and 32,145 order items cleanly in ~3 seconds.
+-- ----------------------------------------------------------------------------
 
 -- ----------------------------------------------------------------------------
 -- METHOD 2: Direct SQL LOAD DATA INFILE (If secure_file_priv is configured)

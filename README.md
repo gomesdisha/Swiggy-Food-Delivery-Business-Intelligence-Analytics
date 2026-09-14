@@ -119,8 +119,8 @@ streamlit run streamlit_app/app.py
 
 ### 3. Run the MySQL Scripts in MySQL Workbench
 1. Open **MySQL Workbench** and connect to your local MySQL server.
-2. Open and execute [`sql/01_swiggy_schema.sql`](sql/01_swiggy_schema.sql) (click the ⚡ icon) to create `swiggy_db`.
-3. Import the CSV files from `data/` using the **Table Data Import Wizard** (see [`sql/02_load_data_mysql.sql`](sql/02_load_data_mysql.sql)).
+2. Open and execute [`sql/01_swiggy_schema.sql`](sql/01_swiggy_schema.sql) (click the ⚡ icon) to create `swiggy_db` and all tables.
+3. Open and execute [`sql/02_populate_swiggy_db.sql`](sql/02_populate_swiggy_db.sql) (click the ⚡ icon) to populate all 15,000 orders, 32,145 order items, users, riders, and restaurants in one click with zero errors!
 4. Open and execute [`sql/03_swiggy_business_analysis.sql`](sql/03_swiggy_business_analysis.sql) to run the 15 analytical queries!
 
 ---
@@ -138,7 +138,8 @@ Swiggy-Food-Delivery-Business-Intelligence-Analytics/
 │   └── order_items.csv
 ├── sql/                                  # Production SQL scripts
 │   ├── 01_swiggy_schema.sql             # Table DDL & indexes
-│   ├── 02_load_data_mysql.sql           # Data ingestion scripts
+│   ├── 02_populate_swiggy_db.sql        # One-click direct DB population script
+│   ├── 02_load_data_mysql.sql           # Data ingestion documentation & verification
 │   └── 03_swiggy_business_analysis.sql  # 15 Core Business Queries
 ├── power_bi/                             # Power BI Dashboard Assets
 │   ├── Swiggy_Food_Delivery_Analytics.pbip # Native Power BI Project file
