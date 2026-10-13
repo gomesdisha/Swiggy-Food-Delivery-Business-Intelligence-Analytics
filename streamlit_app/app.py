@@ -6,6 +6,16 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 # -----------------------------------------------------------------------------
+# HTML Rendering Helper (Bypasses Markdown Indented Code Block Interpretation)
+# -----------------------------------------------------------------------------
+def render_html(html_str):
+    if hasattr(st, "html"):
+        st.html(html_str)
+    else:
+        import textwrap
+        st.markdown(textwrap.dedent(html_str), unsafe_allow_html=True)
+
+# -----------------------------------------------------------------------------
 # 1. Page Configuration & Custom CSS (Matching HTML BI Dashboard Exactly)
 # -----------------------------------------------------------------------------
 st.set_page_config(
@@ -614,13 +624,6 @@ elif selected_page == "👑 Swiggy One Loyalty":
     st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
     
     # Commercial Unit Economics Table
-    st.markdown("""
-    <div class="visual-box">
-        <div class="visual-header">👑 Swiggy One vs. Regular Customers: Commercial Unit Economics</div>
-        <div class="visual-sub">Demonstrating that zero-delivery-fee perks are heavily offset by 2.6x higher order frequency.</div>
-    </div>
-    """, unsafe_allow_html=True)
-    
     comp_df = delivered_df.groupby("is_swiggy_one").agg(
         Customers=("user_id", "nunique"),
         Total_Orders=("order_id", "count"),
@@ -632,39 +635,43 @@ elif selected_page == "👑 Swiggy One Loyalty":
     comp_df["Tier"] = comp_df["is_swiggy_one"].map({1: "Swiggy One Member", 0: "Regular Customer"})
     comp_df["Orders_Per_User"] = comp_df["Total_Orders"] / comp_df["Customers"]
     
-    table_html = """
-    <table class="pbi-table">
-        <thead>
-            <tr>
-                <th>Customer Tier</th>
-                <th>Active Customers</th>
-                <th>Total Orders</th>
-                <th>Frequency (Orders/User)</th>
-                <th>Total GMV (₹)</th>
-                <th>Average Order Value</th>
-                <th>Avg Discount / Order</th>
-                <th>Delivery Fee Collected</th>
-            </tr>
-        </thead>
-        <tbody>
-    """
+    rows_comp = []
     for _, r in comp_df.iterrows():
         is_sub = r["Tier"] == "Swiggy One Member"
         badge = '<span class="badge-pill-green">👑 Swiggy One Member</span>' if is_sub else '<span class="badge-pill-muted">Regular Customer</span>'
-        table_html += f"""
-            <tr>
-                <td><b>{badge}</b></td>
-                <td>{int(r['Customers']):,}</td>
-                <td><b>{int(r['Total_Orders']):,}</b></td>
-                <td><b style="color: #FC8019;">{r['Orders_Per_User']:.1f}x</b></td>
-                <td><b>₹ {r['Total_GMV']/1e5:,.1f} Lakhs</b></td>
-                <td>₹ {r['AOV']:.1f}</td>
-                <td>₹ {r['Avg_Discount']:.1f}</td>
-                <td>₹ {r['Avg_Delivery_Fee']:.1f}</td>
-            </tr>
-        """
-    table_html += "</tbody></table>"
-    st.markdown(table_html, unsafe_allow_html=True)
+        rows_comp.append(f"""<tr>
+<td><b>{badge}</b></td>
+<td>{int(r['Customers']):,}</td>
+<td><b>{int(r['Total_Orders']):,}</b></td>
+<td><b style="color: #FC8019;">{r['Orders_Per_User']:.1f}x</b></td>
+<td><b>₹ {r['Total_GMV']/1e5:,.1f} Lakhs</b></td>
+<td>₹ {r['AOV']:.1f}</td>
+<td>₹ {r['Avg_Discount']:.1f}</td>
+<td>₹ {r['Avg_Delivery_Fee']:.1f}</td>
+</tr>""")
+    
+    table_html = f"""<div class="visual-box">
+<div class="visual-header">👑 Swiggy One vs. Regular Customers: Commercial Unit Economics</div>
+<div class="visual-sub">Demonstrating that zero-delivery-fee perks are heavily offset by 2.6x higher order frequency.</div>
+<table class="pbi-table">
+<thead>
+<tr>
+<th>Customer Tier</th>
+<th>Active Customers</th>
+<th>Total Orders</th>
+<th>Frequency (Orders/User)</th>
+<th>Total GMV (₹)</th>
+<th>Average Order Value</th>
+<th>Avg Discount / Order</th>
+<th>Delivery Fee Collected</th>
+</tr>
+</thead>
+<tbody>
+{''.join(rows_comp)}
+</tbody>
+</table>
+</div>"""
+    render_html(table_html)
     
     st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
     
@@ -710,49 +717,46 @@ elif selected_page == "👑 Swiggy One Loyalty":
         st.plotly_chart(fig_rfm, use_container_width=True, config={"displayModeBar": False})
         
     with col_l2:
-        st.markdown("""
-        <div class="visual-box">
-            <div class="visual-header">🌟 VIP Customer Cohort Snapshot (Query 7: NTILE(20))</div>
-            <div class="visual-sub">Top lifetime spenders generating outsized marketplace Gross Merchandise Value.</div>
-        </div>
-        """, unsafe_allow_html=True)
-        
         top_users = delivered_df.groupby(["user_id", "name", "city", "is_swiggy_one"]).agg(
             Total_Orders=("order_id", "count"),
             Total_Spend=("total_amount", "sum"),
             Avg_Spend=("total_amount", "mean")
         ).reset_index().sort_values(by="Total_Spend", ascending=False).head(5)
         
-        top_users_html = """
-        <table class="pbi-table">
-            <thead>
-                <tr>
-                    <th>User ID</th>
-                    <th>Customer Name</th>
-                    <th>City</th>
-                    <th>Swiggy One</th>
-                    <th>Orders</th>
-                    <th>Total Spend (₹)</th>
-                    <th>Avg Ticket</th>
-                </tr>
-            </thead>
-            <tbody>
-        """
+        rows_top = []
         for _, u in top_users.iterrows():
             badge = '<span class="badge-pill-green">Active</span>' if u['is_swiggy_one'] == 1 else '<span class="badge-pill-red">Non-Member</span>'
-            top_users_html += f"""
-                <tr>
-                    <td><code>#{int(u['user_id'])}</code></td>
-                    <td><b>{u['name']}</b></td>
-                    <td>{u['city']}</td>
-                    <td>{badge}</td>
-                    <td><b>{int(u['Total_Orders'])}</b></td>
-                    <td><b style="color: #FC8019;">₹ {u['Total_Spend']:,.0f}</b></td>
-                    <td>₹ {u['Avg_Spend']:.1f}</td>
-                </tr>
-            """
-        top_users_html += "</tbody></table>"
-        st.markdown(top_users_html, unsafe_allow_html=True)
+            rows_top.append(f"""<tr>
+<td><code>#{int(u['user_id'])}</code></td>
+<td><b>{u['name']}</b></td>
+<td>{u['city']}</td>
+<td>{badge}</td>
+<td><b>{int(u['Total_Orders'])}</b></td>
+<td><b style="color: #FC8019;">₹ {u['Total_Spend']:,.0f}</b></td>
+<td>₹ {u['Avg_Spend']:.1f}</td>
+</tr>""")
+        
+        top_users_html = f"""<div class="visual-box">
+<div class="visual-header">🌟 VIP Customer Cohort Snapshot (Query 7: NTILE(20))</div>
+<div class="visual-sub">Top lifetime spenders generating outsized marketplace Gross Merchandise Value.</div>
+<table class="pbi-table">
+<thead>
+<tr>
+<th>User ID</th>
+<th>Customer Name</th>
+<th>City</th>
+<th>Swiggy One</th>
+<th>Orders</th>
+<th>Total Spend (₹)</th>
+<th>Avg Ticket</th>
+</tr>
+</thead>
+<tbody>
+{''.join(rows_top)}
+</tbody>
+</table>
+</div>"""
+        render_html(top_users_html)
 
 # =============================================================================
 # PAGE 3: DELIVERY LOGISTICS & SLA CONTROL TOWER
@@ -965,67 +969,55 @@ elif selected_page == "⏱️ Delivery & Logistics":
         st.plotly_chart(fig_city_sla, use_container_width=True, config={"displayModeBar": False})
         
     with col_d4:
-        st.markdown("""
-        <div class="visual-box">
-            <div class="visual-header">🌱 Green Fleet Transition: Electric Vehicles (EV) vs. Petrol</div>
-            <div class="visual-sub">EV riders achieve higher customer ratings (4.34 ★) and reduce fuel subsidies.</div>
-        </div>
-        """, unsafe_allow_html=True)
-        
         fleet_df = delivered_df.groupby("vehicle_type").agg(
             Deliveries=("order_id", "count"),
             Avg_Duration=("delivery_time_mins", "mean"),
             Rider_Rating=("rating_rider", "mean")
         ).reset_index()
-        
-        fleet_html = """
-        <table class="pbi-table">
-            <thead>
-                <tr>
-                    <th>Vehicle Fleet</th>
-                    <th>Deliveries</th>
-                    <th>Share %</th>
-                    <th>Avg Duration</th>
-                    <th>Rider Rating</th>
-                    <th>ESG Status</th>
-                </tr>
-            </thead>
-            <tbody>
-        """
         total_fleet_deliv = fleet_df["Deliveries"].sum()
+        
+        rows_fleet = []
         for _, f_row in fleet_df.iterrows():
             is_ev = "Electric" in f_row["vehicle_type"]
             badge = '<span class="badge-pill-green">🌱 Net Zero Pioneer</span>' if is_ev else '<span class="badge-pill-muted">Standard Fleet</span>'
-            fleet_html += f"""
-                <tr>
-                    <td><b>{f_row['vehicle_type']}</b></td>
-                    <td>{int(f_row['Deliveries']):,}</td>
-                    <td><b>{(f_row['Deliveries']/total_fleet_deliv*100):.1f}%</b></td>
-                    <td>{f_row['Avg_Duration']:.1f} mins</td>
-                    <td><b style="color: #FC8019;">{f_row['Rider_Rating']:.2f} ★</b></td>
-                    <td>{badge}</td>
-                </tr>
-            """
-        fleet_html += "</tbody></table>"
-        st.markdown(fleet_html, unsafe_allow_html=True)
+            rows_fleet.append(f"""<tr>
+<td><b>{f_row['vehicle_type']}</b></td>
+<td>{int(f_row['Deliveries']):,}</td>
+<td><b>{(f_row['Deliveries']/total_fleet_deliv*100):.1f}%</b></td>
+<td>{f_row['Avg_Duration']:.1f} mins</td>
+<td><b style="color: #FC8019;">{f_row['Rider_Rating']:.2f} ★</b></td>
+<td>{badge}</td>
+</tr>""")
         
-        st.markdown("""
-        <div style="background: #DEF7EC; border: 1px solid #BCF0DA; border-radius: 8px; padding: 10px 14px; margin-top: 14px; font-size: 12px; color: #03543F; display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 18px;">🔋</span>
-            <div>
-                <b>Swiggy Green Mile:</b> 1,905 zero-emission deliveries completed in FY24, preventing an estimated <b>28.4 tonnes of CO2 emissions</b>.
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        fleet_html = f"""<div class="visual-box">
+<div class="visual-header">🌱 Green Fleet Transition: Electric Vehicles (EV) vs. Petrol</div>
+<div class="visual-sub">EV riders achieve higher customer ratings (4.34 ★) and reduce fuel subsidies.</div>
+<table class="pbi-table">
+<thead>
+<tr>
+<th>Vehicle Fleet</th>
+<th>Deliveries</th>
+<th>Share %</th>
+<th>Avg Duration</th>
+<th>Rider Rating</th>
+<th>ESG Status</th>
+</tr>
+</thead>
+<tbody>
+{''.join(rows_fleet)}
+</tbody>
+</table>
+<div style="background: #DEF7EC; border: 1px solid #BCF0DA; border-radius: 8px; padding: 10px 14px; margin-top: 14px; font-size: 12px; color: #03543F; display: flex; align-items: center; gap: 8px;">
+<span style="font-size: 18px;">🔋</span>
+<div>
+<b>Swiggy Green Mile:</b> 1,905 zero-emission deliveries completed in FY24, preventing an estimated <b>28.4 tonnes of CO2 emissions</b>.
+</div>
+</div>
+</div>"""
+        render_html(fleet_html)
 
     # Operational Alerts Table
     st.markdown("<div style='margin-top: 16px;'></div>", unsafe_allow_html=True)
-    st.markdown("""
-    <div class="visual-box">
-        <div class="visual-header">⚠️ Quality Risk Alert: High Volume / Low Rating (< 4.0 ★) Kitchens (SQL Query 12)</div>
-        <div class="visual-sub">Immediate operational review required for kitchens with high fulfillment volume but lagging customer ratings.</div>
-    </div>
-    """, unsafe_allow_html=True)
     
     rest_risk = delivered_df.groupby(["restaurant_name", "city", "cuisine", "rating_rest"]).agg(
         Orders_Fulfilled=("order_id", "count"),
@@ -1035,37 +1027,41 @@ elif selected_page == "⏱️ Delivery & Logistics":
     risk_alert = rest_risk[(rest_risk["Orders_Fulfilled"] >= 50) & (rest_risk["rating_rest"] < 4.0)].sort_values(by="Orders_Fulfilled", ascending=False)
     
     if not risk_alert.empty:
-        risk_html = """
-        <table class="pbi-table">
-            <thead>
-                <tr>
-                    <th>Restaurant Partner</th>
-                    <th>City</th>
-                    <th>Cuisine</th>
-                    <th>Rating</th>
-                    <th>Fulfilled Orders</th>
-                    <th>Total GMV</th>
-                    <th>Avg Speed</th>
-                    <th>Operational Recommendation</th>
-                </tr>
-            </thead>
-            <tbody>
-        """
+        rows_risk = []
         for _, r_row in risk_alert.iterrows():
             action = "Audit Kitchen Prep SLA" if r_row["Avg_Delivery"] > 35 else "Packaging & Temperature Review"
-            risk_html += f"""
-                <tr>
-                    <td><b>{r_row['restaurant_name']}</b></td>
-                    <td>{r_row['city']}</td>
-                    <td>{r_row['cuisine']}</td>
-                    <td><span class="badge-pill-red">{r_row['rating_rest']:.1f} ★</span></td>
-                    <td><b>{int(r_row['Orders_Fulfilled'])}</b></td>
-                    <td>₹ {r_row['Total_GMV']:,.0f}</td>
-                    <td>{r_row['Avg_Delivery']:.1f} mins</td>
-                    <td><span style="background: #EFF6FF; color: #1D4ED8; padding: 3px 8px; border-radius: 4px; font-weight: 600; font-size: 11px;">{action}</span></td>
-                </tr>
-            """
-        risk_html += "</tbody></table>"
-        st.markdown(risk_html, unsafe_allow_html=True)
+            rows_risk.append(f"""<tr>
+<td><b>{r_row['restaurant_name']}</b></td>
+<td>{r_row['city']}</td>
+<td>{r_row['cuisine']}</td>
+<td><span class="badge-pill-red">{r_row['rating_rest']:.1f} ★</span></td>
+<td><b>{int(r_row['Orders_Fulfilled'])}</b></td>
+<td>₹ {r_row['Total_GMV']:,.0f}</td>
+<td>{r_row['Avg_Delivery']:.1f} mins</td>
+<td><span style="background: #EFF6FF; color: #1D4ED8; padding: 3px 8px; border-radius: 4px; font-weight: 600; font-size: 11px;">{action}</span></td>
+</tr>""")
+        
+        risk_html = f"""<div class="visual-box">
+<div class="visual-header">⚠️ Quality Risk Alert: High Volume / Low Rating (&lt; 4.0 ★) Kitchens (SQL Query 12)</div>
+<div class="visual-sub">Immediate operational review required for kitchens with high fulfillment volume but lagging customer ratings.</div>
+<table class="pbi-table">
+<thead>
+<tr>
+<th>Restaurant Partner</th>
+<th>City</th>
+<th>Cuisine</th>
+<th>Rating</th>
+<th>Fulfilled Orders</th>
+<th>Total GMV</th>
+<th>Avg Speed</th>
+<th>Operational Recommendation</th>
+</tr>
+</thead>
+<tbody>
+{''.join(rows_risk)}
+</tbody>
+</table>
+</div>"""
+        render_html(risk_html)
     else:
         st.success("No high-volume restaurants with sub-4.0 ratings detected under current filter selection.")
