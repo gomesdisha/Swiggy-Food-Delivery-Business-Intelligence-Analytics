@@ -24,8 +24,7 @@ The project connects **MySQL 8.0**, **Power BI**, **Streamlit**, and **Excel** t
 
 <img width="951" height="401" alt="image" src="https://github.com/user-attachments/assets/643ad13b-ad30-4165-be33-4b0b33b925c6" />
 <img width="956" height="412" alt="image" src="https://github.com/user-attachments/assets/4d82505f-17d1-4d22-9404-bcd382c50091" />
-![Uploading image.png…]()
-
+<img width="952" height="411" alt="image" src="https://github.com/user-attachments/assets/16f2295e-5d21-4b53-8b03-9ca675c41e4c" />
 
 ---
 
