@@ -22,6 +22,11 @@ The project connects **MySQL 8.0**, **Power BI**, **Streamlit**, and **Excel** t
 | **On-Time Delivery Rate** | **78.6%** | Delivered within 35 mins; 12.1% delayed during monsoon/dinner peaks. |
 | **Dominant Payment Channel** | **UPI (63%)** | Cash on Delivery (COD) represents 7% of orders but **44% of cancellations**. |
 
+<img width="951" height="401" alt="image" src="https://github.com/user-attachments/assets/643ad13b-ad30-4165-be33-4b0b33b925c6" />
+<img width="956" height="412" alt="image" src="https://github.com/user-attachments/assets/4d82505f-17d1-4d22-9404-bcd382c50091" />
+![Uploading image.png…]()
+
+
 ---
 
 ## 🏗️ System Architecture
